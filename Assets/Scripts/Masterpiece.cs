@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Masterpiece : Collectable
 {
-    private Sprite none;
+    [SerializeField] private Stealable stealable;
 
     protected override void OnCollect()
     {
         if (!collected)
         {
             collected = true;
-            GetComponent<SpriteRenderer>().sprite = none;
+            StealedManager.instance.Add(stealable);
+            Destroy(gameObject);
         }
     }
 
