@@ -11,4 +11,9 @@ public class Stealable : ScriptableObject
     public Sprite icon;
 
     public bool sold = false;
+
+    public void SetAsSold()
+    {
+        sold = true;
+    }
 }

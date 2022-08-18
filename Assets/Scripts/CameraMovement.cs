@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    //private Transform lookAt;
-    [SerializeField] private Transform lookAt;
+    private Transform lookAt;
     [SerializeField] private float boundX = 0.3f;
     [SerializeField] private float boundY = 0.15f;
 
     private void Start()
     {
-        //lookAt = GameManager.instance.player.transform;
+        lookAt = GameManager.instance.GetPlayer().transform;
     }
 
     private void LateUpdate()

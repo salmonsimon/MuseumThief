@@ -11,7 +11,7 @@ public class Masterpiece : Collectable
         if (!collected)
         {
             collected = true;
-            StealedManager.instance.Add(stealable);
+            StolenManager.instance.AddToCarrying(stealable);
             Destroy(gameObject);
         }
     }

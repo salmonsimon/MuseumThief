@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class Portal : Collidable
 {
-    //[SerializeField] private Sprite openedPortal;
-    [SerializeField] string[] sceneNames;
+    [SerializeField] private string[] sceneNames;
+    [SerializeField] private bool isFinalPortal = false;
+    [SerializeField] private bool isRandomPortal = false;
 
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
         {
-            //GetComponent<SpriteRenderer>().sprite = openedPortal;
+            string sceneName;
 
             //GameManager.instance.SaveState();
 
-            string randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
+            if (isRandomPortal)
+                sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
+            else
+                sceneName = sceneNames[0];
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene(randomScene);
+            if (isFinalPortal)
+                StolenManager.instance.CarryingToStolen();
+
+            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
     }
 }

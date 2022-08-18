@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 7873633671100587134}
   - component: {fileID: 7873633671100587132}
   - component: {fileID: 7873633671100587135}
-  - component: {fileID: 6299017352558161575}
   m_Layer: 0
   m_Name: Painting Medium
   m_TagString: Untagged
@@ -139,17 +138,4 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  stealable: {fileID: 11400000, guid: 5911d3aa30d47ff4f9b0753d401b291b, type: 2}
---- !u!114 &6299017352558161575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7873633671100587392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0fd415e9bf823d48a34aa07c79fa23a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   stealable: {fileID: 11400000, guid: 5911d3aa30d47ff4f9b0753d401b291b, type: 2}
