@@ -14,7 +14,7 @@ public class Guard : Mover
     private bool retreating;
     protected bool onChasingPath;
     protected Transform playerTransform;
-    [SerializeField] protected Vector3 startingPosition;
+    protected Vector3 startingPosition;
 
     protected Seeker seeker;
     protected Path path;

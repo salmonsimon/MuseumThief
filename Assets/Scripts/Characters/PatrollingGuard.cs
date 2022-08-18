@@ -10,8 +10,7 @@ public class PatrollingGuard : Guard
     [SerializeField] private float roundingDistance = 0.16f;
     [SerializeField] private float waitInPatrollingPoint = 2f;
 
-    private bool waiting = false;
-    private bool patrolling = true;
+    [SerializeField] private bool waiting = false;
     private bool startedChasing = false;
 
     protected override void UpdatePath()
@@ -23,9 +22,7 @@ public class PatrollingGuard : Guard
                 onChasingPath = true;
                 seeker.StartPath(transform.position, playerTransform.position, OnPathComplete);
             }
-
-            //else if (!reachedEndOfPath)
-            else
+            else if (!waiting)
             {
                 onChasingPath = false;
                 seeker.StartPath(transform.position, currentPatrollingGoal.position, OnPathComplete);
@@ -35,11 +32,11 @@ public class PatrollingGuard : Guard
 
     protected override void FixedUpdate()
     {
-        if (Vector3.Distance(currentPatrollingGoal.position, transform.position) < roundingDistance)
-            ChangePatrollingGoal();
+        if (Vector3.Distance(currentPatrollingGoal.position, transform.position) < roundingDistance && !waiting)
+            StartCoroutine(ChangePatrollingGoalDelayed());
 
         if (!startedChasing && !chasing)
-            startingPosition = transform.position;
+        startingPosition = transform.position;
 
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
         {
