@@ -15,5 +15,5 @@ MonoBehaviour:
   id: 1
   stealableName: 
   price: 50
-  icon: {fileID: -1872188119, guid: f7b80b7e5652f8245bba76c39bf2e295, type: 3}
+  icon: {fileID: 0}
   sold: 0

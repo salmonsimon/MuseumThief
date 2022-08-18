@@ -9,8 +9,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private FloatingTextManager floatingTextManager;
-
     [SerializeField] private int money;
+
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
 
     private void Awake()
     {
