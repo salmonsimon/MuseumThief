@@ -221,7 +221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6660181505740948762, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
       propertyPath: m_Name
-      value: Stealed Inventory
+      value: Stolen Inventory
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
@@ -15575,7 +15575,7 @@ GameObject:
   - component: {fileID: 464074526}
   - component: {fileID: 464074528}
   m_Layer: 0
-  m_Name: StealedManager
+  m_Name: StolenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15594,9 +15594,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carrying: []
-  stealed: []
-  stealableContent: {fileID: 1176531599}
-  stealedObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
+  stolen: []
+  stealableContentCarrying: {fileID: 1176531599}
+  stealableContentStolen: {fileID: 1707812857}
+  stolenObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
 --- !u!4 &464074527
 Transform:
   m_ObjectHideFlags: 0
@@ -15633,7 +15634,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7947394192494628226, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
       propertyPath: m_Name
-      value: Stealed Button
+      value: Stolen Button
       objectReference: {fileID: 0}
     - target: {fileID: 7947394192494628227, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
       propertyPath: m_Pivot.x
@@ -15727,13 +15728,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 464074526}
+    - target: {fileID: 7947394192494628236, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ListItemsStolen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947394192494628236, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: StolenManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7947394193557245296, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
+      propertyPath: m_Text
+      value: Stolen
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ee7444d6064ccf4e9ee050b5f4626db, type: 3}
---- !u!1 &483886026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7118442816009287387, guid: e277b3d70636e4a4e81cfbca65c5adee, type: 3}
-  m_PrefabInstance: {fileID: 7118442815621407221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &599511052
 GameObject:
   m_ObjectHideFlags: 0
@@ -15946,29 +15954,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20a4b95be5c766640abd33289f4d2915, type: 3}
---- !u!4 &958502706 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7118442816009287367, guid: e277b3d70636e4a4e81cfbca65c5adee, type: 3}
-  m_PrefabInstance: {fileID: 7118442815621407221}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &958502711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483886026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2686cfae2b814488710f085cee7076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &958502712 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 958502708, guid: e277b3d70636e4a4e81cfbca65c5adee, type: 3}
   m_PrefabInstance: {fileID: 7118442815621407221}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483886026}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c2c450ef30c2f4743b3a973793697353, type: 3}
@@ -16017,7 +16008,6 @@ GameObject:
   - component: {fileID: 1152625731}
   - component: {fileID: 1152625730}
   - component: {fileID: 1152625733}
-  - component: {fileID: 1152625734}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16103,21 +16093,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f51c0de5dddc944b701cf5d75cfcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookAt: {fileID: 958502706}
   boundX: 0.3
   boundY: 0.15
---- !u!114 &1152625734
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1152625729}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e2686cfae2b814488710f085cee7076, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1170851266
 GameObject:
   m_ObjectHideFlags: 0
@@ -16150,6 +16127,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 958502712}
   floatingTextManager: {fileID: 0}
+  InventoriesUI: {fileID: 1827227074}
+  stolenManager: {fileID: 464074526}
   money: 0
 --- !u!4 &1170851268
 Transform:
@@ -16494,7 +16473,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1691754720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -16502,6 +16481,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1707812857 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6660181506287506273, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
+  m_PrefabInstance: {fileID: 122792720}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1720984820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2435392026615274949, guid: ddfc50139522e664383e6cd460eb4d41, type: 3}
@@ -16524,8 +16508,9 @@ GameObject:
   - component: {fileID: 1827227077}
   - component: {fileID: 1827227076}
   - component: {fileID: 1827227075}
+  - component: {fileID: 1827227079}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Canvas Inventories
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16616,6 +16601,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1827227079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1827227074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2686cfae2b814488710f085cee7076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1842728586
 PrefabInstance:
   m_ObjectHideFlags: 0

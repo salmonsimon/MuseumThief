@@ -10,18 +10,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private GameObject InventoriesUI;
-    [SerializeField] private StealedManager stealedManager;
+    [SerializeField] private StolenManager stolenManager;
     [SerializeField] private int money;
 
     private void Awake()
     {
-        if(GameManager.instance != null)
+        if (GameManager.instance != null)
         {
             Destroy(gameObject);
             Destroy(player.gameObject);
-            //Destroy(floatingTextManager.gameObject);
             Destroy(InventoriesUI.gameObject);
-            Destroy(stealedManager.gameObject);
+            Destroy(stolenManager.gameObject);
+            //Destroy(floatingTextManager.gameObject);
+
             return;
         }
 

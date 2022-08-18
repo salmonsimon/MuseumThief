@@ -22,7 +22,7 @@ public class Portal : Collidable
                 sceneName = sceneNames[0];
 
             if (isFinalPortal)
-                StealedManager.instance.CarryingToStealed();
+                StolenManager.instance.CarryingToStolen();
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }

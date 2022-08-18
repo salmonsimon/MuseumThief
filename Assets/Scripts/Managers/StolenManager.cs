@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StealedManager : MonoBehaviour
+public class StolenManager : MonoBehaviour
 {
-    public static StealedManager instance;
+    public static StolenManager instance;
     public List<Stealable> carrying = new List<Stealable>();
-    public List<Stealable> stealed = new List<Stealable>();
+    public List<Stealable> stolen = new List<Stealable>();
 
     public Transform stealableContentCarrying;
-    public Transform stealableContentStealed;
-    public GameObject stealedObject;
+    public Transform stealableContentStolen;
+    public GameObject stolenObject;
 
     private void Awake()
     {
@@ -28,38 +28,38 @@ public class StealedManager : MonoBehaviour
         carrying = new List<Stealable>();
     }
 
-    private void AddToStealed(Stealable stealable)
+    private void AddToStolen(Stealable stealable)
     {
-        stealed.Add(stealable);
+        stolen.Add(stealable);
 
         GameManager.instance.AddMoney(stealable.price);
         stealable.SetAsSold();
     }
 
-    public void CarryingToStealed()
+    public void CarryingToStolen()
     {
         foreach (Stealable stealable in carrying)
-            AddToStealed(stealable);
+            AddToStolen(stealable);
 
         ResetCarrying();
     }
 
     private void ListItems(List<Stealable> stealableList, Transform stealableContent)
     {
-        foreach (Transform stealed in stealableContent)
+        foreach (Transform stealable in stealableContent)
         {
-            Destroy(stealed.gameObject);
+            Destroy(stealable.gameObject);
         }
 
-        foreach (var stealed in stealableList)
+        foreach (var stealable in stealableList)
         {
-            GameObject obj = Instantiate(stealedObject, stealableContent);
+            GameObject obj = Instantiate(stolenObject, stealableContent);
 
             var name = obj.transform.Find("Item Name").GetComponent<Text>();
             var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
 
-            name.text = stealed.stealableName;
-            icon.sprite = stealed.icon;
+            name.text = stealable.stealableName;
+            icon.sprite = stealable.icon;
         }
     }
 
@@ -68,8 +68,8 @@ public class StealedManager : MonoBehaviour
         ListItems(carrying, stealableContentCarrying);
     }
 
-    public void ListItemsStealed()
+    public void ListItemsStolen()
     {
-        ListItems(stealed, stealableContentStealed);
+        ListItems(stolen, stealableContentStolen);
     }
 }
