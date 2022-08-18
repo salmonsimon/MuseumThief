@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Portal : Collidable
 {
-    //[SerializeField] private Sprite openedPortal;
-    [SerializeField] string[] sceneNames;
+    [SerializeField] private string[] sceneNames;
+    [SerializeField] private bool isFinalPortal = false;
 
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
         {
-            //GetComponent<SpriteRenderer>().sprite = openedPortal;
 
             //GameManager.instance.SaveState();
 
             string randomScene = sceneNames[Random.Range(0, sceneNames.Length)];
+
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(randomScene);
         }

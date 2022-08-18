@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class StealedManager : MonoBehaviour
 {
     public static StealedManager instance;
+    public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stealed = new List<Stealable>();
 
     public Transform stealableContent;
@@ -16,19 +17,30 @@ public class StealedManager : MonoBehaviour
         instance = this;
     }
 
-    public void Add(Stealable stealable)
+    public void AddToCarrying(Stealable stealable)
+        {
+            carrying.Add(stealable);
+        }
+
+    private void AddToStealed(Stealable stealable)
     {
         stealed.Add(stealable);
     }
 
-    public void ListItems()
+    public void CarryingToStealed()
+    {
+        foreach (Stealable stealable in carrying)
+            AddToStealed(stealable);
+    }
+
+    private void ListItems(List<Stealable> stealableList)
     {
         foreach (Transform stealed in stealableContent)
         {
             Destroy(stealed.gameObject);
         }
 
-        foreach (var stealed in stealed)
+        foreach (var stealed in stealableList)
         {
             GameObject obj = Instantiate(stealedObject, stealableContent);
 
@@ -38,5 +50,15 @@ public class StealedManager : MonoBehaviour
             name.text = stealed.stealableName;
             icon.sprite = stealed.icon;
         }
+    }
+
+    public void ListItemsCarrying()
+    {
+        ListItems(carrying);
+    }
+
+    public void ListItemsStealed()
+    {
+        ListItems(stealed);
     }
 }
