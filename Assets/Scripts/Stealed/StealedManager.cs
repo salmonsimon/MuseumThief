@@ -9,7 +9,8 @@ public class StealedManager : MonoBehaviour
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stealed = new List<Stealable>();
 
-    public Transform stealableContent;
+    public Transform stealableContentCarrying;
+    public Transform stealableContentStealed;
     public GameObject stealedObject;
 
     private void Awake()
@@ -22,18 +23,28 @@ public class StealedManager : MonoBehaviour
             carrying.Add(stealable);
         }
 
+    public void ResetCarrying()
+    {
+        carrying = new List<Stealable>();
+    }
+
     private void AddToStealed(Stealable stealable)
     {
         stealed.Add(stealable);
+
+        GameManager.instance.AddMoney(stealable.price);
+        stealable.SetAsSold();
     }
 
     public void CarryingToStealed()
     {
         foreach (Stealable stealable in carrying)
             AddToStealed(stealable);
+
+        ResetCarrying();
     }
 
-    private void ListItems(List<Stealable> stealableList)
+    private void ListItems(List<Stealable> stealableList, Transform stealableContent)
     {
         foreach (Transform stealed in stealableContent)
         {
@@ -54,11 +65,11 @@ public class StealedManager : MonoBehaviour
 
     public void ListItemsCarrying()
     {
-        ListItems(carrying);
+        ListItems(carrying, stealableContentCarrying);
     }
 
     public void ListItemsStealed()
     {
-        ListItems(stealed);
+        ListItems(stealed, stealableContentStealed);
     }
 }

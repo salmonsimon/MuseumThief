@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Stealable
+  - Interactible
   layers:
   - Default
   - TransparentFX
@@ -51,4 +52,10 @@ TagManager:
     locked: 0
   - name: Items
     uniqueID: 2251703101
+    locked: 0
+  - name: Interactible
+    uniqueID: 1012002021
+    locked: 0
+  - name: Decoration
+    uniqueID: 2596476987
     locked: 0

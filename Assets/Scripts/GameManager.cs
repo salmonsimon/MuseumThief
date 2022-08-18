@@ -9,17 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private FloatingTextManager floatingTextManager;
+    [SerializeField] private GameObject InventoriesUI;
+    [SerializeField] private StealedManager stealedManager;
     [SerializeField] private int money;
-
-    public Player GetPlayer()
-    {
-        return player;
-    }
-
-    public int GetMoney()
-    {
-        return money;
-    }
 
     private void Awake()
     {
@@ -27,7 +19,9 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(player.gameObject);
-            Destroy(floatingTextManager.gameObject);
+            //Destroy(floatingTextManager.gameObject);
+            Destroy(InventoriesUI.gameObject);
+            Destroy(stealedManager.gameObject);
             return;
         }
 
@@ -40,13 +34,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
 
     }
-
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
         player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
@@ -92,5 +84,19 @@ public class GameManager : MonoBehaviour
         //masterpiecesStolenIds = data[3];
 
         player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+    }
+
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
+    public void AddMoney(int newMoney)
+    {
+        money += newMoney;
     }
 }
