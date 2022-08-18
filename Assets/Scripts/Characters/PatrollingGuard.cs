@@ -10,7 +10,7 @@ public class PatrollingGuard : Guard
     [SerializeField] private float roundingDistance = 0.16f;
     [SerializeField] private float waitInPatrollingPoint = 2f;
 
-    [SerializeField] private bool waiting = false;
+    private bool waiting = false;
     private bool startedChasing = false;
 
     protected override void UpdatePath()
