@@ -1,75 +1,60 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
-public class Guard : Mover
+public class PatrollingGuard : Guard
 {
+    [SerializeField] Transform[] patrollingPath;
+    [SerializeField] private int currentPatrollingPoint = 0;
+    [SerializeField] private Transform currentPatrollingGoal;
+    [SerializeField] private float roundingDistance = 0.16f;
+    [SerializeField] private float waitInPatrollingPoint = 2f;
 
-    [SerializeField] protected float triggerLenght = 1;
-    [SerializeField] protected float chaseLenght = 3;
-    [SerializeField] protected float nextWaypointDistance = 0.08f;
+    private bool waiting = false;
+    private bool patrolling = true;
+    private bool startedChasing = false;
 
-    protected bool chasing;
-    private bool retreating;
-    protected bool onChasingPath;
-    protected Transform playerTransform;
-    [SerializeField] protected Vector3 startingPosition;
-
-    protected Seeker seeker;
-    protected Path path;
-    protected int currentWaypoint;
-    protected bool reachedEndOfPath = false;
-
-    protected override void Start()
-    {
-        base.Start();
-
-        playerTransform = GameManager.instance.GetPlayer().transform;
-        startingPosition = transform.position;
-
-        seeker = GetComponent<Seeker>();
-
-        InvokeRepeating("UpdatePath", 0f, .25f);
-    }
-
-    protected virtual void UpdatePath()
+    protected override void UpdatePath()
     {
         if (seeker.IsDone())
         {
-        if (chasing)
+            if (chasing)
             {
                 onChasingPath = true;
                 seeker.StartPath(transform.position, playerTransform.position, OnPathComplete);
             }
 
-        else if (retreating)
+            //else if (!reachedEndOfPath)
+            else
             {
                 onChasingPath = false;
-                seeker.StartPath(transform.position, startingPosition, OnPathComplete);
+                seeker.StartPath(transform.position, currentPatrollingGoal.position, OnPathComplete);
             }
         }
     }
 
-    protected void OnPathComplete(Path p)
+    protected override void FixedUpdate()
     {
-        if (!p.error)
-        {
-            path = p;
-            currentWaypoint = 0;
-        }
-    }
+        if (Vector3.Distance(currentPatrollingGoal.position, transform.position) < roundingDistance)
+            ChangePatrollingGoal();
 
-    protected virtual void FixedUpdate()
-    {
+        if (!startedChasing && !chasing)
+            startingPosition = transform.position;
+
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
         {
 
             if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLenght)
             {
                 chasing = true;
-                retreating = false;
                 animator.SetBool("Chasing", chasing);
+
+                if (!startedChasing)
+                {
+                    startedChasing = true;
+                    startingPosition = transform.position;
+                }
+
             }
 
             if (path == null)
@@ -79,13 +64,8 @@ public class Guard : Mover
             {
                 reachedEndOfPath = true;
 
-                if (onChasingPath)
-                    retreating = true;
-                else
-                {
-                    retreating = false;
+                if (!onChasingPath)
                     UpdateMotor(Vector3.zero, false);
-                }
 
                 return;
             }
@@ -108,15 +88,6 @@ public class Guard : Mover
             }
             else
             {
-                retreating = true;
-
-                if (retreating && chasing)
-                {
-                    chasing = false;
-                    animator.SetBool("Chasing", chasing);
-                    return;
-                }
-
                 Vector2 direction = (Vector2)(path.vectorPath[currentWaypoint] - transform.position).normalized;
                 UpdateMotor(direction, false);
 
@@ -129,15 +100,20 @@ public class Guard : Mover
 
                 chasing = false;
                 animator.SetBool("Chasing", chasing);
+
+                startedChasing = false;
             }
-            
+
         }
         else
         {
-            if (retreating && chasing)
+            if (chasing)
             {
                 chasing = false;
                 animator.SetBool("Chasing", chasing);
+
+                startedChasing = false;
+
                 return;
             }
 
@@ -147,15 +123,9 @@ public class Guard : Mover
             if (currentWaypoint >= path.vectorPath.Count)
             {
                 reachedEndOfPath = true;
-
-                if (onChasingPath)
-                    retreating = true;
-                else
-                {
-                    retreating = false;
-                    UpdateMotor(Vector3.zero, false);
-                }
                 
+                UpdateMotor(Vector3.zero, false);
+
                 return;
             }
             else
@@ -172,9 +142,34 @@ public class Guard : Mover
             {
                 currentWaypoint++;
             }
+        }
+    }
 
-            chasing = false;
-            animator.SetBool("Chasing", chasing);
+    IEnumerator ChangePatrollingGoalDelayed()
+    {
+        Debug.Log("Starting to wait");
+        waiting = true;
+
+        yield return new WaitForSeconds(waitInPatrollingPoint);
+
+        waiting = false;
+
+        Debug.Log("Wait finished");
+
+        ChangePatrollingGoal();
+    }
+
+    private void ChangePatrollingGoal()
+    {
+        if (currentPatrollingPoint == patrollingPath.Length - 1)
+        {
+            currentPatrollingPoint = 0;
+            currentPatrollingGoal = patrollingPath[0];
+        }
+        else
+        {
+            currentPatrollingPoint++;
+            currentPatrollingGoal = patrollingPath[currentPatrollingPoint];
         }
     }
 }
