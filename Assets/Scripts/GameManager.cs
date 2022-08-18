@@ -9,9 +9,17 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private FloatingTextManager floatingTextManager;
-
     [SerializeField] private int money;
-    private List<int> masterpiecesStolenIds = new List<int>();
+
+    public Player GetPlayer()
+    {
+        return player;
+    }
+
+    public int GetMoney()
+    {
+        return money;
+    }
 
     private void Awake()
     {
@@ -65,7 +73,7 @@ public class GameManager : MonoBehaviour
         string s = "";
 
         s += money.ToString() + "|";
-        s += masterpiecesStolenIds.ToString();
+        //s += masterpiecesStolenIds.ToString();
 
         PlayerPrefs.SetString("SaveState", s);
     }
@@ -78,8 +86,6 @@ public class GameManager : MonoBehaviour
             return;
 
         string[] data = PlayerPrefs.GetString("SaveState").Split("|");
-
-        
 
         money = int.Parse(data[0]);
 
