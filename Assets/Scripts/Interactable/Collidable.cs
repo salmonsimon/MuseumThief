@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Collidable : MonoBehaviour
 {
-    public ContactFilter2D filter;
+    private ContactFilter2D filter;
     private BoxCollider2D boxCollider;
     private Collider2D[] hits = new Collider2D[10];
 

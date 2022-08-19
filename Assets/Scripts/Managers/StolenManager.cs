@@ -5,18 +5,12 @@ using UnityEngine.UI;
 
 public class StolenManager : MonoBehaviour
 {
-    public static StolenManager instance;
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
 
     public Transform stealableContentCarrying;
     public Transform stealableContentStolen;
     public GameObject stolenObject;
-
-    private void Awake()
-    {
-        instance = this;
-    }
 
     public void AddToCarrying(Stealable stealable)
         {
@@ -25,7 +19,7 @@ public class StolenManager : MonoBehaviour
 
     public void ResetCarrying()
     {
-        carrying = new List<Stealable>();
+        carrying.Clear();
     }
 
     private void AddToStolen(Stealable stealable)

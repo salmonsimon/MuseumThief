@@ -100,4 +100,9 @@ public class GameManager : MonoBehaviour
     {
         money += newMoney;
     }
+
+    public StolenManager GetStolenManager()
+    {
+        return stolenManager;
+    }
 }
