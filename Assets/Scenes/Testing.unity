@@ -15960,7 +15960,7 @@ MonoBehaviour:
   isOn: 1
   groupID: 0
   autoSync: 1
-  _zuid: a1a0a3990a561fe42af8c9d5694d6475
+  _zuid: e51b2826ea5974443a3d775776137fa5
   _gozuid: 4b73f9dfea607524084db707ccb108b1
   carrying: []
   stolen: []
@@ -16416,7 +16416,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: e98293bf79a8f264e94f9635c9d4b126
+  _zuid: 4339dbdefb0fd9547ba028d1f329179e
   _gozuid: c44162b8254ddae43aa16b68b9ced61f
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -16713,7 +16713,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: ebda346f21474d14b99f33df156ad9f2
+  _zuid: 256043c663c6ed744a95b81361c87ef3
   _gozuid: 72964379c8a7898428790b16eb9f0be1
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,

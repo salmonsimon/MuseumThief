@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,6 +13,8 @@ public class GameManager : MonoBehaviour
     //[SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private GameObject InventoriesUI;
     [SerializeField] private StolenManager stolenManager;
+
+    private string MAIN_SCENE_NAME = "Testing";
 
     private void Awake()
     {
@@ -65,5 +69,35 @@ public class GameManager : MonoBehaviour
     public StolenManager GetStolenManager()
     {
         return stolenManager;
+    }
+
+    public void PlayGame()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(MAIN_SCENE_NAME);
+    }
+
+    public void QuitGame()
+    {
+        //To quit the built game
+        Application.Quit();
+
+        //To quit the editor application
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void DeleteSavedGame()
+    {
+        string path = Application.persistentDataPath;
+
+        DirectoryInfo di = new DirectoryInfo(path);
+
+        foreach (FileInfo file in di.EnumerateFiles())
+        {
+            file.Delete();
+        }
+        foreach (DirectoryInfo dir in di.EnumerateDirectories())
+        {
+            dir.Delete(true);
+        }
     }
 }
