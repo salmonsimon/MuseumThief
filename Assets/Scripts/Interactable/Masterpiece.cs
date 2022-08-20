@@ -17,9 +17,10 @@ public class Masterpiece : Collectable
             collected = true;
             GameManager.instance.GetStolenManager().AddToCarrying(stealable);
 
-            
-            GetComponent<SpriteRenderer>().sprite = empty;
-            GetComponent<BoxCollider2D>().enabled = false;
+
+            //GetComponent<SpriteRenderer>().sprite = empty;
+            //GetComponent<BoxCollider2D>().enabled = false;
+            Destroy(gameObject);
 
         }
     }
