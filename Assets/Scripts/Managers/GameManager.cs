@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     //[SerializeField] private FloatingTextManager floatingTextManager;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject InventoriesUI;
     [SerializeField] private StolenManager stolenManager;
 
-    private string MAIN_SCENE_NAME = "Testing";
+    private bool gameIsPaused = false;
+    [SerializeField] private bool onMainMenu = true;
 
     private void Awake()
     {
@@ -22,6 +25,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
             Destroy(player.gameObject);
+            Destroy(pauseMenu.gameObject);
+            Destroy(mainMenu.gameObject);
             Destroy(InventoriesUI.gameObject);
             Destroy(stolenManager.gameObject);
             //Destroy(floatingTextManager.gameObject);
@@ -35,6 +40,20 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ZSerializer.ZSerialize.LoadScene();
+
+        if (onMainMenu)
+        {
+            pauseMenu.SetActive(false);
+            InventoriesUI.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (onMainMenu == false && Input.GetKeyDown(KeyCode.Escape))
+            PauseGame();
+        else if (onMainMenu == false && gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
+            ResumeGame();
     }
 
     private void OnEnable()
@@ -44,12 +63,24 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-
     }
+
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
         ZSerializer.ZSerialize.LoadScene();
-        player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+
+        if (!onMainMenu)
+        {
+            player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            InventoriesUI.SetActive(true);
+            mainMenu.SetActive(false);
+        }
+        else if (onMainMenu)
+        {
+            InventoriesUI.SetActive(false);
+            mainMenu.SetActive(true);
+        }
+
     }
 
     /* Making this function available as public in the GameManager allow us to 
@@ -73,7 +104,8 @@ public class GameManager : MonoBehaviour
 
     public void PlayGame()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(MAIN_SCENE_NAME);
+        onMainMenu = false;
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Config.MAIN_SCENE_NAME);
     }
 
     public void QuitGame()
@@ -99,5 +131,36 @@ public class GameManager : MonoBehaviour
         {
             dir.Delete(true);
         }
+    }
+    
+    public void PauseGame()
+    {
+        gameIsPaused = true;
+
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+
+    public void ResumeGame()
+    {
+        gameIsPaused = false;
+
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
+    public void ToMainMenu()
+    {
+        gameIsPaused = false;
+        onMainMenu = true;
+
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(Config.MAIN_MENU_SCENE_NAME);
+        pauseMenu.SetActive(false);
+    }
+
+    public bool IsGamePaused()
+    {
+        return gameIsPaused;
     }
 }
