@@ -6,16 +6,19 @@ public class Player : Mover
 {
     private void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
-        if (movement != Vector2.zero)
+        if (!GameManager.instance.IsGamePaused())
         {
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
-        }
+            movement.x = Input.GetAxisRaw("Horizontal");
+            movement.y = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+            if (movement != Vector2.zero)
+            {
+                animator.SetFloat("Horizontal", movement.x);
+                animator.SetFloat("Vertical", movement.y);
+            }
+
+            animator.SetFloat("Speed", movement.sqrMagnitude);
+        }
     }
 
     private void FixedUpdate()
