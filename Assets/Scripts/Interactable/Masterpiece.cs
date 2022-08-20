@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ZSerializer;
 
 public class Masterpiece : Collectable
 {
     [SerializeField] private Stealable stealable;
-    private Sprite empty;
+    [NonZSerialized] private Sprite empty;
 
     protected override void OnCollect()
     {
@@ -16,8 +17,10 @@ public class Masterpiece : Collectable
             collected = true;
             GameManager.instance.GetStolenManager().AddToCarrying(stealable);
 
-            //Destroy(gameObject);
+            
             GetComponent<SpriteRenderer>().sprite = empty;
+            GetComponent<BoxCollider2D>().enabled = false;
+
         }
     }
 

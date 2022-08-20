@@ -2,15 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using ZSerializer;
 
-public class StolenManager : MonoBehaviour
+public class StolenManager : PersistentMonoBehaviour
 {
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
+    public int money;
 
-    public Transform stealableContentCarrying;
-    public Transform stealableContentStolen;
-    public GameObject stolenObject;
+    [NonZSerialized] public Transform stealableContentCarrying;
+    [NonZSerialized] public Transform stealableContentStolen;
+    [NonZSerialized] public GameObject stolenObject;
 
     public void AddToCarrying(Stealable stealable)
         {
@@ -26,7 +28,7 @@ public class StolenManager : MonoBehaviour
     {
         stolen.Add(stealable);
 
-        GameManager.instance.AddMoney(stealable.price);
+        AddMoney(stealable.price);
         stealable.SetAsSold();
     }
 
@@ -65,5 +67,13 @@ public class StolenManager : MonoBehaviour
     public void ListItemsStolen()
     {
         ListItems(stolen, stealableContentStolen);
+    }
+    public int GetMoney()
+    {
+        return money;
+    }
+    public void AddMoney(int newMoney)
+    {
+        money += newMoney;
     }
 }

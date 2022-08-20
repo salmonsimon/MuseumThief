@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Statue
   m_EditorClassIdentifier: 
   id: 1
-  stealableName: 
+  stealableName: Statue
   price: 50
-  icon: {fileID: 0}
-  sold: 0
+  icon: {fileID: -952250775, guid: 620a391802e12e04bb0fb878f0736f90, type: 3}
+  sold: 1
