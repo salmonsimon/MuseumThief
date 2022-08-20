@@ -8,10 +8,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private Player player;
-    [SerializeField] private FloatingTextManager floatingTextManager;
+    //[SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private GameObject InventoriesUI;
     [SerializeField] private StolenManager stolenManager;
-    [SerializeField] private int money;
 
     private void Awake()
     {
@@ -27,8 +26,11 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+    }
 
-        SceneManager.sceneLoaded += LoadState;
+    private void Start()
+    {
+        ZSerializer.ZSerialize.LoadScene();
     }
 
     private void OnEnable()
@@ -42,6 +44,7 @@ public class GameManager : MonoBehaviour
     }
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
+        ZSerializer.ZSerialize.LoadScene();
         player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
     }
 
@@ -51,40 +54,7 @@ public class GameManager : MonoBehaviour
      */
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
-        floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
-    }
-
-    /*
-     * Things we want to save in our game
-     * money
-     * masterpieces stolen
-     * items owned (FOR LATER)
-     */
-
-    public void SaveState()
-    {
-        string s = "";
-
-        s += money.ToString() + "|";
-        //s += masterpiecesStolenIds.ToString();
-
-        PlayerPrefs.SetString("SaveState", s);
-    }
-
-    public void LoadState(Scene scene, LoadSceneMode mode)
-    {
-        SceneManager.sceneLoaded -= LoadState;
-
-        if (!PlayerPrefs.HasKey("SaveState"))
-            return;
-
-        string[] data = PlayerPrefs.GetString("SaveState").Split("|");
-
-        money = int.Parse(data[0]);
-
-        //masterpiecesStolenIds = data[3];
-
-        player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+        //floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
 
     public Player GetPlayer()
@@ -92,12 +62,8 @@ public class GameManager : MonoBehaviour
         return player;
     }
 
-    public int GetMoney()
+    public StolenManager GetStolenManager()
     {
-        return money;
-    }
-    public void AddMoney(int newMoney)
-    {
-        money += newMoney;
+        return stolenManager;
     }
 }

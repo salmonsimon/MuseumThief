@@ -5,24 +5,23 @@ using UnityEngine;
 public class Portal : Collidable
 {
     [SerializeField] private string[] sceneNames;
-    [SerializeField] private bool isFinalPortal = false;
     [SerializeField] private bool isRandomPortal = false;
 
-    protected override void OnCollide(Collider2D coll)
+    protected async override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
         {
             string sceneName;
-
-            //GameManager.instance.SaveState();
 
             if (isRandomPortal)
                 sceneName = sceneNames[Random.Range(0, sceneNames.Length)];
             else
                 sceneName = sceneNames[0];
 
-            if (isFinalPortal)
-                StolenManager.instance.CarryingToStolen();
+            GameManager.instance.GetStolenManager().CarryingToStolen();
+
+            //Save game here
+            await ZSerializer.ZSerialize.SaveScene();
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
