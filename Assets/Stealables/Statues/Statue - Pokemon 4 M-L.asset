@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
-  m_Name: DinosaurPainting_medium
+  m_Name: Statue - Pokemon 4 M-L
   m_EditorClassIdentifier: 
-  id: 0
-  stealableName: Dinosaur Medium
-  price: 100
-  icon: {fileID: -1051014116, guid: 570d99a281426b14eaf5bea842f50d25, type: 3}
+  stealableName: Pokemon 6
+  weight: 6
+  price: 25
+  icon: {fileID: -610918101, guid: 542f4fe29f9a93f428b45506a8197e1a, type: 3}
   sold: 0

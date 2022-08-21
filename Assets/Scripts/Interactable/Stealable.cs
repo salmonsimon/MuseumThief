@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="New Stealable", menuName ="Stealable/Create New Stealable")]
 public class Stealable : ScriptableObject
 {
-    public int id;
     public string stealableName;
+    public int weight;
     public int price;
     public Sprite icon;
 
