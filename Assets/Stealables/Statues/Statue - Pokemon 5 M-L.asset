@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
-  m_Name: Statue
+  m_Name: Statue - Pokemon 5 M-L
   m_EditorClassIdentifier: 
-  id: 1
-  stealableName: Statue
-  price: 50
-  icon: {fileID: -952250775, guid: 620a391802e12e04bb0fb878f0736f90, type: 3}
-  sold: 1
+  stealableName: Pokemon 5
+  weight: 6
+  price: 30
+  icon: {fileID: 1611202810, guid: 542f4fe29f9a93f428b45506a8197e1a, type: 3}
+  sold: 0
