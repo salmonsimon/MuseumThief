@@ -18155,6 +18155,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 2060029145}
   mainMenu: {fileID: 52672516}
   InventoriesUI: {fileID: 1827227074}
+  events: {fileID: 0}
   stolenManager: {fileID: 464074526}
   onMainMenu: 0
 --- !u!224 &1176531599 stripped

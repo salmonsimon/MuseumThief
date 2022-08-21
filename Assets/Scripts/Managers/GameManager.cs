@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject InventoriesUI;
+    [SerializeField] private GameObject events;
     [SerializeField] private StolenManager stolenManager;
 
     private bool gameIsPaused = false;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
             Destroy(pauseMenu.gameObject);
             Destroy(mainMenu.gameObject);
             Destroy(InventoriesUI.gameObject);
+            Destroy(events.gameObject);
             Destroy(stolenManager.gameObject);
             //Destroy(floatingTextManager.gameObject);
 
@@ -50,9 +52,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (onMainMenu == false && Input.GetKeyDown(KeyCode.Escape))
+        if (!gameIsPaused && !onMainMenu && Input.GetKeyDown(KeyCode.Escape))
             PauseGame();
-        else if (onMainMenu == false && gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
+        else if (gameIsPaused && !onMainMenu && gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
             ResumeGame();
     }
 
