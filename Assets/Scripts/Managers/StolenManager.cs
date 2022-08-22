@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ZSerializer;
+using System.IO;
 
 public class StolenManager : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class StolenManager : MonoBehaviour
     {
         string path = Application.persistentDataPath + "/GlobalData/stolenManager.zsave";
 
-        JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
+        if (File.Exists(path))
+            JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
                     this);
     }
 

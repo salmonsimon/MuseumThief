@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject InventoriesUI;
-    [SerializeField] private GameObject events;
     [SerializeField] private StolenManager stolenManager;
 
     [SerializeField] private Transform stealableContentCarrying;
@@ -23,6 +22,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject stolenObject;
 
     private bool gameIsPaused = false;
+    private bool gameHasBeenSaved = false;
     [SerializeField] private bool onMainMenu = true;
 
     private void Awake()
@@ -34,7 +34,6 @@ public class GameManager : MonoBehaviour
             Destroy(pauseMenu.gameObject);
             Destroy(mainMenu.gameObject);
             Destroy(InventoriesUI.gameObject);
-            Destroy(events.gameObject);
             Destroy(stolenManager.gameObject);
             //Destroy(floatingTextManager.gameObject);
 
@@ -74,7 +73,8 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
-        ZSerializer.ZSerialize.LoadScene();
+        if (gameHasBeenSaved) 
+            ZSerializer.ZSerialize.LoadScene();
 
         if (!onMainMenu)
         {
@@ -122,14 +122,12 @@ public class GameManager : MonoBehaviour
         Application.Quit();
 
         //To quit the editor application
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void DeleteSavedGame()
     {
         string path = Application.persistentDataPath;
-
-        Debug.Log(path);
 
         DirectoryInfo di = new DirectoryInfo(path);
 
@@ -201,5 +199,10 @@ public class GameManager : MonoBehaviour
     public void ListItemsStolen()
     {
         ListItems(stolenManager.stolen, stealableContentStolen);
+    }
+
+    public void SetGameHasBeenSaved (bool x)
+    {
+        gameHasBeenSaved = x;
     }
 }

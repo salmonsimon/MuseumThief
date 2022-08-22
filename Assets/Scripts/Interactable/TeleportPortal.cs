@@ -6,7 +6,7 @@ public class TeleportPortal : Collidable
 {
     [SerializeField] private GameObject teleportPoint;
 
-    protected async override void OnCollide(Collider2D coll)
+    protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
         {
