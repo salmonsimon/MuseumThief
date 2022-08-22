@@ -4,6 +4,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject InventoriesUI;
     [SerializeField] private GameObject events;
     [SerializeField] private StolenManager stolenManager;
+
+    [SerializeField] private Transform stealableContentCarrying;
+    [SerializeField] private Transform stealableContentStolen;
+    [SerializeField] private GameObject stolenObject;
 
     private bool gameIsPaused = false;
     [SerializeField] private bool onMainMenu = true;
@@ -73,6 +78,7 @@ public class GameManager : MonoBehaviour
 
         if (!onMainMenu)
         {
+            stolenManager.LoadStolenManager();
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
@@ -123,6 +129,8 @@ public class GameManager : MonoBehaviour
     {
         string path = Application.persistentDataPath;
 
+        Debug.Log(path);
+
         DirectoryInfo di = new DirectoryInfo(path);
 
         foreach (FileInfo file in di.EnumerateFiles())
@@ -164,5 +172,34 @@ public class GameManager : MonoBehaviour
     public bool IsGamePaused()
     {
         return gameIsPaused;
+    }
+
+    private void ListItems(List<Stealable> stealableList, Transform stealableContent)
+    {
+        foreach (Transform stealable in stealableContent)
+        {
+            Destroy(stealable.gameObject);
+        }
+
+        foreach (var stealable in stealableList)
+        {
+            GameObject obj = Instantiate(stolenObject, stealableContent);
+
+            var name = obj.transform.Find("Item Name").GetComponent<Text>();
+            var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+
+            name.text = stealable.stealableName;
+            icon.sprite = stealable.icon;
+        }
+    }
+
+    public void ListItemsCarrying()
+    {
+        ListItems(stolenManager.carrying, stealableContentCarrying);
+    }
+
+    public void ListItemsStolen()
+    {
+        ListItems(stolenManager.stolen, stealableContentStolen);
     }
 }

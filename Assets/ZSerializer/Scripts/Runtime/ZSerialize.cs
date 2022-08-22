@@ -1422,7 +1422,7 @@ namespace ZSerializer
             });
         }
 
-        static async Task WriteToFileGlobal(GlobalDataType dataType, string fileName, string json)
+        public static async Task WriteToFileGlobal(GlobalDataType dataType, string fileName, string json)
         {
             await RunTask(() =>
             {
@@ -1438,11 +1438,13 @@ namespace ZSerializer
             });
         }
 
-        static async Task<string> ReadFromFileGlobal(GlobalDataType dataType, string fileName)
+        public static async Task<string> ReadFromFileGlobal(GlobalDataType dataType, string fileName)
         {
             return await RunTask(() =>
             {
                 var path = GetGlobalDataPath(dataType, fileName);
+
+                Debug.Log(path);
 
                 if (!File.Exists(path))
                 {

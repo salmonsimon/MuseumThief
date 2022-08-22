@@ -152,7 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &40781300
 PrefabInstance:
@@ -280,6 +280,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 40781300}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &40781302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 40781300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &40781303 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 40781300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &40781304 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 40781300}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &40781305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40781302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: d4bd474ebf58a1f4c864c706c23cf65f
+  _gozuid: 8bfd89579b6ada747a58f7ebbb13574a
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 40781301}
+    zuid: 3a47468d512fee348a2af15671d657a0
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 40781304}
+    zuid: d8ee36cbcf270604c94943d8a26624a8
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 40781303}
+    zuid: c9e94588f80490743a6f2dbae7efb060
 --- !u!1 &47210531
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,7 +533,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &149499535
 PrefabInstance:
@@ -747,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.2532624
+      value: 0.2807647
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -755,7 +818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.019795477
+      value: -0.033546627
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -860,6 +923,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 163260832}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &163260834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 163260832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &163260835 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 163260832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &163260836 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 163260832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &163260837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163260834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: f41d2543273f450419d6e7b372c878de
+  _gozuid: b6a478ee69e47df4b842e9395366c335
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 163260833}
+    zuid: c2bab5053ca431343b38e41c6c8bdc75
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 163260836}
+    zuid: 8e44533924940c641a9c2ceb6cd12b5d
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 163260835}
+    zuid: 55d2624f44669a345926b22dc2419bb5
 --- !u!1 &166002286
 GameObject:
   m_ObjectHideFlags: 0
@@ -1205,7 +1331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 763001464499346015, guid: 0d614bb561a3e4f458c2104eb24f5ccd, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 763001464499346015, guid: 0d614bb561a3e4f458c2104eb24f5ccd, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1367,7 +1493,7 @@ Transform:
   - {fileID: 1200143557}
   - {fileID: 2116928759}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &253746871
 GameObject:
@@ -1627,7 +1753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.24958909
+      value: 0.27365363
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -1635,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.01795882
+      value: -0.02999109
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1740,6 +1866,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 293567165}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &293567167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 293567165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &293567168 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 293567165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &293567169 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 293567165}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &293567170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293567167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 5e44b9d98b112e44d89e30cabe1c4aae
+  _gozuid: ea7e5102f80d660479fb7e88bd2840f8
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 293567166}
+    zuid: 9549f0da062f8ba4b96b14b9b1c77070
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 293567169}
+    zuid: c74fedb111baa3940833dc6e25f6057f
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 293567168}
+    zuid: 2f74881b05b958847b671df2ffd59fa2
 --- !u!1001 &332059721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1753,7 +1942,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.25693572
+      value: 0.2741245
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -1761,7 +1950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.021632135
+      value: -0.030226529
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -1866,6 +2055,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 332059721}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &332059723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 332059721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &332059724 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 332059721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &332059725 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 332059721}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &332059726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332059723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 012095bcbf37a1d4fab248a3d8291339
+  _gozuid: d809f11ac8c7fe549a63f0de4d5137a7
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 332059722}
+    zuid: f753a52e1ac9239439023fc65b3bcab9
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 332059725}
+    zuid: de7c6e98417cf56498d85ed39a5367cb
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 332059724}
+    zuid: 8e7cbb7b413715d4bba93f7627805b25
 --- !u!1 &353281752
 GameObject:
   m_ObjectHideFlags: 0
@@ -9016,6 +9268,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 491035404}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &491035406 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 491035404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &491035407 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 491035404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &491035408 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 491035404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &491035409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491035406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: c9d7d45ba829ef544bddd81846044ab8
+  _gozuid: c061718f15aebff468b8677ef76e1e3e
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 491035405}
+    zuid: a6edfe5c236550b489347fef973cdd9d
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 491035408}
+    zuid: 6f67db4497714a0488609f62d1545af5
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 491035407}
+    zuid: 2071048cc1e351a40a67f3515101a01b
 --- !u!1001 &504889443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9395,7 +9710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.24591553
+      value: 0.26124227
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -9403,7 +9718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.016122043
+      value: -0.023785412
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -9508,6 +9823,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 523164245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &523164247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 523164245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &523164248 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 523164245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &523164249 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 523164245}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &523164250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 523164247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 04095c269a84c5d42aa8c203aa70d80f
+  _gozuid: ac4aca81b2d781549b8e137d951b1fe3
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 523164246}
+    zuid: 25861f0f34fd3b04c94e01d2d962af6a
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 523164249}
+    zuid: 8ff7a4ceed301614eb7088f40e8de4de
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 523164248}
+    zuid: 81687f114c7b1b645a43a71524d8fa2e
 --- !u!1 &529062013
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,7 +10037,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &654542208
 GameObject:
@@ -9711,7 +10089,7 @@ Transform:
   - {fileID: 904961850}
   - {fileID: 739658649}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &732770257
 PrefabInstance:
@@ -9726,7 +10104,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.24591553
+      value: 0.26124227
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -9734,7 +10112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.016122043
+      value: -0.023785412
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -9839,6 +10217,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 732770257}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &732770259 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 732770257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &732770260 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 732770257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &732770261 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 732770257}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &732770262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732770259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 7cd0100925709a04786e9b92725b8c07
+  _gozuid: 8b415ad8ba2668946ad7911a90611320
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 732770258}
+    zuid: b97102417bd9617449abdb559298232e
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 732770261}
+    zuid: 989080a2545a71a42a9c552778007755
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 732770260}
+    zuid: eb5f49cdbf3e3b041a88455dcdb5960b
 --- !u!1001 &739658648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9969,6 +10410,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 739658648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &739658650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 739658648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &739658651 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 739658648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &739658652 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 739658648}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &739658653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739658650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: c6f38a54791971945b850e5a9f1d24ca
+  _gozuid: 7ea25aac6fb05794bac74027a6ad7d06
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 739658649}
+    zuid: 25092334f88897642932836686f48d26
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 739658652}
+    zuid: 3d91ab7bf43f3834a9e3fe740b85c1d4
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 739658651}
+    zuid: a8dd7aff42c21c34899f080586acf346
 --- !u!1 &787248588
 GameObject:
   m_ObjectHideFlags: 0
@@ -10188,7 +10692,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &806459107
 GameObject:
@@ -10388,6 +10892,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &839326195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839326198}
+  - component: {fileID: 839326197}
+  - component: {fileID: 839326196}
+  m_Layer: 0
+  m_Name: StolenManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &839326196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839326195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2686cfae2b814488710f085cee7076, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &839326197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839326195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f5331f3856f9a4198906401c9872b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carrying: []
+  stolen: []
+  money: 0
+--- !u!4 &839326198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839326195}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.44835925, y: -0.25032985, z: -0.0036555177}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &863768995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4766371465550437759, guid: 316b236d85cdeac4c8a1e8a77fe0eafe, type: 3}
@@ -10528,6 +11092,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 904961849}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &904961851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 904961849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &904961852 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 904961849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &904961853 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 904961849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &904961854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904961851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 959526f54b6da234db43c63e27b5941d
+  _gozuid: becab6b91a71fab4eb5c4558c1c55035
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 904961850}
+    zuid: 3df774e3428b9724ea2b21620b5394ce
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 904961853}
+    zuid: e719f494e06b7284b89c0492892c06b3
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 904961852}
+    zuid: 34a9196a21a42d14ea5720819f2d8cc1
 --- !u!1001 &921984213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10541,7 +11168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.25326252
+      value: 0.27732694
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -10549,7 +11176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.019795537
+      value: -0.031827748
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -10654,6 +11281,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 921984213}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &921984215 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 921984213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &921984216 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 921984213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &921984217 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 921984213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &921984218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921984215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: cba7ab8cc3790584f84ee8675473d5c5
+  _gozuid: a08f46f153d9f1047938889015377fd5
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 921984214}
+    zuid: 6eb0aa2df5b19454b8698e69ae1fe161
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 921984217}
+    zuid: 47b838717b7c24642aeba7e5615a9c39
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 921984216}
+    zuid: 2917b2c199dffa744ace00d87d27c76e
 --- !u!1 &939151186
 GameObject:
   m_ObjectHideFlags: 0
@@ -10918,6 +11608,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 987901742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &987901744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 987901742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &987901745 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 987901742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &987901746 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 987901742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &987901747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987901744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: d303170779b6daa41a448876fc3c2fcf
+  _gozuid: f9bc39d32ea217a45b27c57e384b956d
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 987901743}
+    zuid: fd34566f57479db4287d12c0aa3f8207
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 987901746}
+    zuid: a1f91e8baf8184f498340862a559e752
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 987901745}
+    zuid: 3090ca27b9a07a9418ac50aad1c22363
 --- !u!1 &1086228762
 GameObject:
   m_ObjectHideFlags: 0
@@ -10980,7 +11733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.23856866
+      value: 0.259004
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -10988,7 +11741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.012448609
+      value: -0.022666276
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -11093,6 +11846,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1097663115}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1097663117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1097663115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1097663118 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1097663115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1097663119 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1097663115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1097663120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097663117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: f751a8e86a5da6e43817bcd3e0c3e1c6
+  _gozuid: 48282dfc050605f44b908f1c6559e0b0
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1097663116}
+    zuid: bc66cd3514025664b9ab0d22e0bd3790
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1097663119}
+    zuid: 3dd1f73d5614b1249a8e02b71b4d5c89
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1097663118}
+    zuid: 73f8ec1df1d4d0a46a74f90dd8701d6e
 --- !u!1 &1103025079
 GameObject:
   m_ObjectHideFlags: 0
@@ -15447,7 +16263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.25693595
+      value: 0.27412474
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -15455,7 +16271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.021632254
+      value: -0.030226648
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -15560,6 +16376,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1111413040}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1111413042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1111413040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1111413043 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1111413040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1111413044 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1111413040}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1111413045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1111413042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 54a173c2824d3314bb253190009f96ec
+  _gozuid: ea9c1c95570cef74b8006d3c561aed20
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1111413041}
+    zuid: 300c61fdfa2063741b0381da4b2257f4
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1111413044}
+    zuid: 72389d1939d15f4479875723fdce0fd8
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1111413043}
+    zuid: 399c7b6af51607c4593dc1ad5be07644
 --- !u!1001 &1130579942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15999,6 +16878,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1206586318}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1206586320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1206586318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1206586321 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1206586318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1206586322 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1206586318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1206586323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206586320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 4d486e0b659599f46963712d6354bcfc
+  _gozuid: d3570f90a2cb63d4094ee8af09a6e15c
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1206586319}
+    zuid: 2d99f3cdb601ffe48864b73b9094d18d
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1206586322}
+    zuid: b0680636e198ca74585ac362339b188e
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1206586321}
+    zuid: d3b9063a77a029e4c937e45b575bfa75
 --- !u!1 &1256568338
 GameObject:
   m_ObjectHideFlags: 0
@@ -16497,7 +17439,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1432857738
 GameObject:
@@ -28738,7 +29680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1498220202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28851,7 +29793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.24958885
+      value: 0.2598065
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -28859,7 +29801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.0179587
+      value: -0.023067534
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -28964,6 +29906,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1510159808}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1510159810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1510159808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1510159811 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1510159808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1510159812 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1510159808}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1510159813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510159810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 04188980c53744d4bbff7c2234e8082b
+  _gozuid: 9d9d1b35ada35654091a55d5437eb2c5
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1510159809}
+    zuid: c315483630d710a4aa5b4656c7d80d73
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1510159812}
+    zuid: 71d29dd7fc21e54438bd71fa205e34ca
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1510159811}
+    zuid: dbfc0fd3faf796b4d9701ba18b009ce7
 --- !u!1001 &1540667274
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28977,7 +29982,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.24958897
+      value: 0.27365327
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -28985,7 +29990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.01795876
+      value: -0.029990911
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -29090,6 +30095,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1540667274}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1540667276 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1540667274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1540667277 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1540667274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1540667278 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1540667274}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1540667279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1540667276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: eabb4e8d6ff3f664897a0715af795311
+  _gozuid: 6143d1ae4bddbd342b8f0cad021c39f0
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1540667275}
+    zuid: 1eaf064eb0e3c10459782fefb3f11358
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1540667278}
+    zuid: a55b9c0b07b8d05478950a7235011f99
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1540667277}
+    zuid: 576701001840b6046b3a8f1fd3eee0e0
 --- !u!1001 &1544906970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29357,7 +30425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Size.y
-      value: 0.2532624
+      value: 0.2773267
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.x
@@ -29365,7 +30433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_Offset.y
-      value: -0.019795477
+      value: -0.03182763
       objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -29470,6 +30538,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1617909521}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1617909523 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1617909521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1617909524 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1617909521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1617909525 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1617909521}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1617909526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617909523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 3cc4b558a987b8d4bb0e7c983a968ce5
+  _gozuid: 851aace87a1312a4baa623f11768a5cc
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1617909522}
+    zuid: 65dcff72ddc799b4eae7ad4acd4391dc
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1617909525}
+    zuid: 9544bf2011eeb7f468c97d6a6cf3fd69
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1617909524}
+    zuid: e1bdff4699132e14fb3f0dd67b1c30b2
 --- !u!1 &1638205797
 GameObject:
   m_ObjectHideFlags: 0
@@ -62950,6 +64081,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1745327993}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1745327995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1745327993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1745327996 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1745327993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1745327997 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1745327993}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745327998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745327995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 2437b48731f493b4eaac7754b5ac852c
+  _gozuid: b15d7bba45fa4ec4ead459704285abb1
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1745327994}
+    zuid: 4e09e9d9c613afe409f3b58454cb2479
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1745327997}
+    zuid: 8869967cb8072b4448d7646ab3e317f0
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1745327996}
+    zuid: d10bde9453b2861479cc7f0632197113
 --- !u!1 &1767078438
 GameObject:
   m_ObjectHideFlags: 0
@@ -63245,6 +64439,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1846201172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1846201174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1846201172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1846201175 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1846201172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1846201176 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1846201172}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1846201177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846201174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: f770790fb8492694db83f94cc2bcd3ba
+  _gozuid: 1a8b2c8358a7f32418bdb0f9093f90c2
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1846201173}
+    zuid: 13b696ed702eeda498c1c76729165498
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1846201176}
+    zuid: 5dad3b51d172db64a93939623d07a7f4
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1846201175}
+    zuid: 290681f9478042f40b6badc198dd2409
 --- !u!1001 &1861378261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63375,6 +64632,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1861378261}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1861378263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1861378261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1861378264 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1861378261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1861378265 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1861378261}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861378266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861378263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: f522748e462cad243bc16d642daba24b
+  _gozuid: 3b8660769264f074a9717150d7859a86
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1861378262}
+    zuid: 97803b737fa06284ba03288b57a29309
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1861378265}
+    zuid: 2ac312e876bed764bb01bb7ffd67dda2
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1861378264}
+    zuid: 66f70ba564c6bdb4997adb638ce06a44
 --- !u!1001 &1882146751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63790,6 +65110,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
   m_PrefabInstance: {fileID: 1985174378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1985174380 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587392, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1985174378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1985174381 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587132, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1985174378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1985174382 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7873633671100587134, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+  m_PrefabInstance: {fileID: 1985174378}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1985174383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985174380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d3dbe3a42223b24a8cc44e36ba653fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPreSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPreLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostSave:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  onPostLoad:
+    m_PersistentCalls:
+      m_Calls: []
+    targetZUIDs: []
+  showSettings: 0
+  groupID: 0
+  _zuid: 6f10a4658bf484b4f990fc8d61ffb1b2
+  _gozuid: 7d4050512d2cec44991f671e5d768cee
+  serializedComponents:
+  - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1985174379}
+    zuid: 6b22366a10d02c6459a4ea1217b93baf
+  - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1985174382}
+    zuid: a5f7b8779c0e5ba42855588f9d4ba6c5
+  - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    persistenceType: 0
+    component: {fileID: 1985174381}
+    zuid: ff5a966e6a6aa7149ba909f1257926f0
 --- !u!1 &1988071600
 GameObject:
   m_ObjectHideFlags: 0
@@ -63943,7 +65326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2013257280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64054,7 +65437,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &2025502905
 MonoBehaviour:
@@ -64073,7 +65456,10 @@ MonoBehaviour:
   mainMenu: {fileID: 1498220201}
   InventoriesUI: {fileID: 529062013}
   events: {fileID: 47210531}
-  stolenManager: {fileID: 0}
+  stolenManager: {fileID: 839326197}
+  stealableContentCarrying: {fileID: 0}
+  stealableContentStolen: {fileID: 0}
+  stolenObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
   onMainMenu: 1
 --- !u!114 &2025502906
 MonoBehaviour:
