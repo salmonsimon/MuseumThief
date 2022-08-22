@@ -1,23 +1,33 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using ZSerializer;
+using System.IO;
 
-public class StolenManager : PersistentMonoBehaviour
+public class StolenManager : MonoBehaviour
 {
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
     public int money;
 
-    [NonZSerialized] public Transform stealableContentCarrying;
-    [NonZSerialized] public Transform stealableContentStolen;
-    [NonZSerialized] public GameObject stolenObject;
+    public async void SaveStolenManager()
+    {
+        var json = JsonUtility.ToJson(this);
+        await ZSerializer.ZSerialize.WriteToFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave", json);
+    }
+
+    public async void LoadStolenManager()
+    {
+        string path = Application.persistentDataPath + "/GlobalData/stolenManager.zsave";
+
+        if (File.Exists(path))
+            JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
+                    this);
+    }
 
     public void AddToCarrying(Stealable stealable)
         {
             carrying.Add(stealable);
-        }
+    }
 
     public void ResetCarrying()
     {
@@ -38,36 +48,10 @@ public class StolenManager : PersistentMonoBehaviour
             AddToStolen(stealable);
 
         ResetCarrying();
+
+        SaveStolenManager();
     }
 
-    private void ListItems(List<Stealable> stealableList, Transform stealableContent)
-    {
-        foreach (Transform stealable in stealableContent)
-        {
-            Destroy(stealable.gameObject);
-        }
-
-        foreach (var stealable in stealableList)
-        {
-            GameObject obj = Instantiate(stolenObject, stealableContent);
-
-            var name = obj.transform.Find("Item Name").GetComponent<Text>();
-            var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
-
-            name.text = stealable.stealableName;
-            icon.sprite = stealable.icon;
-        }
-    }
-
-    public void ListItemsCarrying()
-    {
-        ListItems(carrying, stealableContentCarrying);
-    }
-
-    public void ListItemsStolen()
-    {
-        ListItems(stolen, stealableContentStolen);
-    }
     public int GetMoney()
     {
         return money;

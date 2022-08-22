@@ -144,14 +144,11 @@ public class PatrollingGuard : Guard
 
     IEnumerator ChangePatrollingGoalDelayed()
     {
-        Debug.Log("Starting to wait");
         waiting = true;
 
         yield return new WaitForSeconds(waitInPatrollingPoint);
 
         waiting = false;
-
-        Debug.Log("Wait finished");
 
         ChangePatrollingGoal();
     }

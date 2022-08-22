@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject InventoriesUI;
     [SerializeField] private StolenManager stolenManager;
 
+    [SerializeField] private Transform stealableContentCarrying;
+    [SerializeField] private Transform stealableContentStolen;
+    [SerializeField] private GameObject stolenObject;
+
     private bool gameIsPaused = false;
+    private bool gameHasBeenSaved = false;
     [SerializeField] private bool onMainMenu = true;
 
     private void Awake()
@@ -50,9 +56,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (onMainMenu == false && Input.GetKeyDown(KeyCode.Escape))
+        if (!gameIsPaused && !onMainMenu && Input.GetKeyDown(KeyCode.Escape))
             PauseGame();
-        else if (onMainMenu == false && gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
+        else if (gameIsPaused && !onMainMenu && gameIsPaused && Input.GetKeyDown(KeyCode.Escape))
             ResumeGame();
     }
 
@@ -67,10 +73,12 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
-        ZSerializer.ZSerialize.LoadScene();
+        if (gameHasBeenSaved) 
+            ZSerializer.ZSerialize.LoadScene();
 
         if (!onMainMenu)
         {
+            stolenManager.LoadStolenManager();
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
@@ -114,7 +122,7 @@ public class GameManager : MonoBehaviour
         Application.Quit();
 
         //To quit the editor application
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void DeleteSavedGame()
@@ -162,5 +170,39 @@ public class GameManager : MonoBehaviour
     public bool IsGamePaused()
     {
         return gameIsPaused;
+    }
+
+    private void ListItems(List<Stealable> stealableList, Transform stealableContent)
+    {
+        foreach (Transform stealable in stealableContent)
+        {
+            Destroy(stealable.gameObject);
+        }
+
+        foreach (var stealable in stealableList)
+        {
+            GameObject obj = Instantiate(stolenObject, stealableContent);
+
+            var name = obj.transform.Find("Item Name").GetComponent<Text>();
+            var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+
+            name.text = stealable.stealableName;
+            icon.sprite = stealable.icon;
+        }
+    }
+
+    public void ListItemsCarrying()
+    {
+        ListItems(stolenManager.carrying, stealableContentCarrying);
+    }
+
+    public void ListItemsStolen()
+    {
+        ListItems(stolenManager.stolen, stealableContentStolen);
+    }
+
+    public void SetGameHasBeenSaved (bool x)
+    {
+        gameHasBeenSaved = x;
     }
 }

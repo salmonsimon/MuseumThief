@@ -22,6 +22,7 @@ public class Portal : Collidable
 
             //Save game here
             await ZSerializer.ZSerialize.SaveScene();
+            GameManager.instance.SetGameHasBeenSaved(true);
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
         }
