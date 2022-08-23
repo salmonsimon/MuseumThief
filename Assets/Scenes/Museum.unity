@@ -37786,11 +37786,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 801708360214178274, guid: c9198048deb5ee344a2bf33619560999, type: 3}
       propertyPath: chaseLenght
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 801708360214178274, guid: c9198048deb5ee344a2bf33619560999, type: 3}
       propertyPath: triggerLenght
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 801708360214178274, guid: c9198048deb5ee344a2bf33619560999, type: 3}
+      propertyPath: roundingDistance
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 801708360214178274, guid: c9198048deb5ee344a2bf33619560999, type: 3}
       propertyPath: currentPatrollingGoal
