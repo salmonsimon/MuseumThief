@@ -57,3 +57,8 @@ On game you'll have two menus, the **Main Menu** which appears when you launch t
 <picture>
 <img src="ScreenShots/MainMenu.PNG" width="600">
 </picture>
+
+#### Pause Menu
+<picture>
+<img src="ScreenShots/PauseMenu.PNG" width="600">
+</picture>
