@@ -15,11 +15,21 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject InventoriesUI;
+    [SerializeField] private GameObject purchaseConfirmationUI;
     [SerializeField] private StolenManager stolenManager;
 
     [SerializeField] private Transform stealableContentCarrying;
     [SerializeField] private Transform stealableContentStolen;
     [SerializeField] private GameObject stolenObject;
+
+    [SerializeField] private Transform itemShopContent;
+    [SerializeField] private Transform selectedItemContent;
+    [SerializeField] private GameObject itemButtonObject;
+    [SerializeField] private GameObject itemObject;
+    [SerializeField] private GameObject itemDescription;
+    [SerializeField] private GameObject itemPrice;
+    public Item selectedItem;
+
 
     private bool gameIsPaused = false;
     private bool gameHasBeenSaved = false;
@@ -204,5 +214,81 @@ public class GameManager : MonoBehaviour
     public void SetGameHasBeenSaved (bool x)
     {
         gameHasBeenSaved = x;
+    }
+
+    private void ListShopItems(List<Item> itemList, Transform itemContent)
+    {
+        foreach (Transform item in itemContent)
+        {
+            Destroy(item.gameObject);
+        }
+
+        foreach (var item in itemList)
+        {
+            GameObject obj = Instantiate(itemButtonObject, itemContent);
+
+            var name = obj.transform.Find("Item Name").GetComponent<Text>();
+            var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+
+            name.text = item.itemName;
+            icon.sprite = item.icon;
+
+            obj.transform.GetComponent<ItemController>().item = item;
+
+            Button thisButton = obj.transform.GetComponent<Button>();
+            thisButton.onClick.AddListener(SetSelectedItem);
+            thisButton.onClick.AddListener(DisplaySelectedItem);
+            thisButton.onClick.AddListener(ConfirmPurchase);
+        }
+    }
+
+
+
+    public void ListShopItems()
+    {
+        ListShopItems(stolenManager.shopItems, itemShopContent);
+    }
+
+    public void BuyItem()
+    {
+
+    }
+
+    private void ConfirmPurchase()
+    {
+        purchaseConfirmationUI.SetActive(true);
+    }
+
+    private void SetSelectedItem()
+    {
+        ItemController itemController = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<ItemController>();
+        selectedItem = itemController.item;
+    }
+
+    public void DeselectSelectedItem()
+    {
+        selectedItem = null;
+    }
+
+    private void DisplaySelectedItem()
+    {
+        foreach (Transform item in selectedItemContent)
+        {
+            Destroy(item.gameObject);
+        }
+
+        GameObject obj = Instantiate(itemObject, selectedItemContent);
+
+        var name = obj.transform.Find("Item Name").GetComponent<Text>();
+        var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+
+        name.text = selectedItem.itemName;
+        icon.sprite = selectedItem.icon;
+
+        var description = itemDescription.GetComponent<Text>();
+        description.text = selectedItem.itemDescription;
+
+        var priceText = itemPrice.GetComponent<Text>();
+        priceText.text = "The price for this item is: $" + selectedItem.price;
     }
 }

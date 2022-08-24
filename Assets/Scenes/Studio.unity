@@ -435,10 +435,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stolen Inventory
       objectReference: {fileID: 0}
-    - target: {fileID: 6660181505740948762, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
 --- !u!224 &122792721 stripped
@@ -25302,7 +25298,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   carrying: []
   stolen: []
+  shopItems: []
+  ownedItems: []
   money: 0
+  backpackCapacity: 0
 --- !u!4 &855311591
 Transform:
   m_ObjectHideFlags: 0
@@ -26314,6 +26313,11 @@ MonoBehaviour:
   stealableContentCarrying: {fileID: 2435392028267051314}
   stealableContentStolen: {fileID: 122792721}
   stolenObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
+  itemShopContent: {fileID: 0}
+  itemBuyWindowContent: {fileID: 0}
+  itemObject: {fileID: 0}
+  itemDescription: {fileID: 0}
+  itemPrice: {fileID: 0}
   onMainMenu: 0
 --- !u!1 &1193939720
 GameObject:

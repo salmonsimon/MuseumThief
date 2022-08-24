@@ -7,7 +7,11 @@ public class StolenManager : MonoBehaviour
 {
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
+    public List<Item> shopItems = new List<Item>();
+    public List<Item> ownedItems = new List<Item>();
+
     public int money;
+    public int backpackCapacity;
 
     public async void SaveStolenManager()
     {
