@@ -1444,8 +1444,6 @@ namespace ZSerializer
             {
                 var path = GetGlobalDataPath(dataType, fileName);
 
-                Debug.Log(path);
-
                 if (!File.Exists(path))
                 {
                     throw new SerializationException(

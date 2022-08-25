@@ -26,6 +26,8 @@ MonoBehaviour:
     - ZSerializer/Samples/2 - Scene Groups/House/Scenes/Bedroom
     - ZSerializer/Samples/2 - Scene Groups/House/Scenes/Kitchen
   unityComponentTypes:
+  - UnityEngine.HingeJoint2D, UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
   - UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
   - UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral,
@@ -145,10 +147,7 @@ MonoBehaviour:
         PublicKeyToken=null
       - ParentTest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       - SerializationTest, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-      - StolenManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
       values:
-      - isOn: 1
-        groupID: 0
       - isOn: 1
         groupID: 0
       - isOn: 1

@@ -7,14 +7,17 @@ public class Item : ScriptableObject
 {
     public string itemName;
     public string itemDescription;
-    public int price;
     public Sprite icon;
 
-    public bool sold = false;
-    public bool canBePurchased = true;
+    public int price;
+    public bool infiniteAmount = false;
+    public ItemType itemType;
 
-    public void SetAsSold()
+    public enum ItemType
     {
-        sold = true;
+        Backpack,
+        Rope,
+        Saw,
+        Spinach
     }
 }

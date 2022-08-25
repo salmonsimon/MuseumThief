@@ -12,6 +12,9 @@ public class StolenManager : MonoBehaviour
 
     public int money;
     public int backpackCapacity;
+    public int rope;
+    public bool saw;
+    public bool spinach;
 
     public async void SaveStolenManager()
     {
@@ -63,5 +66,13 @@ public class StolenManager : MonoBehaviour
     public void AddMoney(int newMoney)
     {
         money += newMoney;
+    }
+
+    public void ShopToOwned(Item item)
+    {
+        if (!item.infiniteAmount)
+            shopItems.Remove(item);
+
+        ownedItems.Add(item);
     }
 }
