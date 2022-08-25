@@ -16610,18 +16610,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f5331f3856f9a4198906401c9872b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showSettings: 0
-  isOn: 1
-  groupID: 0
-  autoSync: 1
-  _zuid: e51b2826ea5974443a3d775776137fa5
-  _gozuid: 4b73f9dfea607524084db707ccb108b1
   carrying: []
   stolen: []
+  shopItems: []
+  ownedItems: []
   money: 0
-  stealableContentCarrying: {fileID: 1176531599}
-  stealableContentStolen: {fileID: 1707812857}
-  stolenObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
+  backpackCapacity: 0
+  rope: 0
+  saw: 0
+  spinach: 0
 --- !u!4 &464074527
 Transform:
   m_ObjectHideFlags: 0
@@ -17231,7 +17228,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &709286498
 GameObject:
@@ -17673,17 +17670,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 940111041}
   m_CullTransparentMesh: 1
---- !u!114 &958502712 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 958502708, guid: e277b3d70636e4a4e81cfbca65c5adee, type: 3}
-  m_PrefabInstance: {fileID: 7118442815621407221}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c450ef30c2f4743b3a973793697353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &983070715
 GameObject:
   m_ObjectHideFlags: 0
@@ -17977,7 +17963,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 4339dbdefb0fd9547ba028d1f329179e
+  _zuid: e5ef1baa713011348bf3e4bfced8299f
   _gozuid: c44162b8254ddae43aa16b68b9ced61f
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -18078,7 +18064,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1152625733
 MonoBehaviour:
@@ -18151,18 +18137,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59218ddcfbeefe24c9de76926d290a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 958502712}
+  player: {fileID: 0}
   pauseMenu: {fileID: 2060029145}
   mainMenu: {fileID: 52672516}
   InventoriesUI: {fileID: 1827227074}
-  events: {fileID: 0}
+  selectedItemPanel: {fileID: 0}
+  itemShopUI: {fileID: 0}
   stolenManager: {fileID: 464074526}
+  stealableContentCarrying: {fileID: 0}
+  stealableContentStolen: {fileID: 0}
+  stolenObject: {fileID: 0}
+  itemShopContent: {fileID: 0}
+  selectedItemContent: {fileID: 0}
+  inventoryItemContent: {fileID: 0}
+  itemButtonObject: {fileID: 0}
+  itemObject: {fileID: 0}
+  itemDescription: {fileID: 0}
+  itemPrice: {fileID: 0}
+  selectedItem: {fileID: 0}
   onMainMenu: 0
---- !u!224 &1176531599 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2435392027157629886, guid: ddfc50139522e664383e6cd460eb4d41, type: 3}
-  m_PrefabInstance: {fileID: 2435392028267051313}
-  m_PrefabAsset: {fileID: 0}
+  purchaseConfirmationPanel: {fileID: 0}
+  notEnoughFundsPanel: {fileID: 0}
 --- !u!1 &1193939720
 GameObject:
   m_ObjectHideFlags: 0
@@ -18208,7 +18203,7 @@ Transform:
   - {fileID: 353821057}
   - {fileID: 1873290100}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1251966725
 GameObject:
@@ -18843,7 +18838,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 256043c663c6ed744a95b81361c87ef3
+  _zuid: b0877dc5a5927f84d9d0853cb425d81e
   _gozuid: 72964379c8a7898428790b16eb9f0be1
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -19003,7 +18998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1519501395
 GameObject:
@@ -19474,11 +19469,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!224 &1707812857 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6660181506287506273, guid: 7ab354ac814876f4f97f234469f23f67, type: 3}
-  m_PrefabInstance: {fileID: 122792720}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1720984820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2435392026615274949, guid: ddfc50139522e664383e6cd460eb4d41, type: 3}

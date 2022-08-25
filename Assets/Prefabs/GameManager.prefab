@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2531558109057444919
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2531558109057444922}
+  - component: {fileID: 2531558109057444920}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2531558109057444922
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531558109057444919}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 57.88095, y: 80.11957, z: -1.4421132}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2531558109057444920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2531558109057444919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59218ddcfbeefe24c9de76926d290a06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  mainMenu: {fileID: 0}
+  InventoriesUI: {fileID: 0}
+  purchaseConfirmationUI: {fileID: 0}
+  itemShopUI: {fileID: 0}
+  stolenManager: {fileID: 0}
+  stealableContentCarrying: {fileID: 0}
+  stealableContentStolen: {fileID: 0}
+  stolenObject: {fileID: 19131684113406740, guid: 42d508089b1f4ff4d9923377a88c77fb, type: 3}
+  itemShopContent: {fileID: 0}
+  selectedItemContent: {fileID: 0}
+  itemButtonObject: {fileID: 19131684113406740, guid: be8b7bec668c99a469ef9ba0e2d94ab2, type: 3}
+  itemObject: {fileID: 19131684113406740, guid: f05f89627e06bc849be2487feaed034e, type: 3}
+  itemDescription: {fileID: 0}
+  itemPrice: {fileID: 0}
+  selectedItem: {fileID: 0}
+  onMainMenu: 1
+  purchaseConfirmationPanel: {fileID: 0}
+  notEnoughFundsPanel: {fileID: 0}

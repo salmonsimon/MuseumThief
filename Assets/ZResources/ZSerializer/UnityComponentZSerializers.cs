@@ -217,4 +217,57 @@ public sealed class BoxCollider2DZSerializer : ZSerializer.Internal.ZSerializer 
         ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.BoxCollider2D))?.OnDeserialize?.Invoke(this, instance);
     }
 }
+[System.Serializable]
+public sealed class HingeJoint2DZSerializer : ZSerializer.Internal.ZSerializer {
+    public System.Boolean useMotor;
+    public System.Boolean useLimits;
+    public UnityEngine.JointMotor2D motor;
+    public UnityEngine.JointAngleLimits2D limits;
+    public UnityEngine.Vector2 anchor;
+    public UnityEngine.Vector2 connectedAnchor;
+    public System.Boolean autoConfigureConnectedAnchor;
+    public UnityEngine.Rigidbody2D connectedBody;
+    public System.Boolean enableCollision;
+    public System.Single breakForce;
+    public System.Single breakTorque;
+    public System.Boolean enabled;
+    public UnityEngine.HideFlags hideFlags;
+    public Vector2 serializableLimits;
+    public Vector2 serializableMotor;
+    public HingeJoint2DZSerializer (string ZUID, string GOZUID) : base(ZUID, GOZUID) {
+        var instance = ZSerializer.ZSerialize.idMap[ZSerializer.ZSerialize.CurrentGroupID][ZUID] as UnityEngine.HingeJoint2D;
+        useMotor = instance.useMotor;
+        useLimits = instance.useLimits;
+        motor = instance.motor;
+        limits = instance.limits;
+        anchor = instance.anchor;
+        connectedAnchor = instance.connectedAnchor;
+        autoConfigureConnectedAnchor = instance.autoConfigureConnectedAnchor;
+        connectedBody = instance.connectedBody;
+        enableCollision = instance.enableCollision;
+        breakForce = instance.breakForce;
+        breakTorque = instance.breakTorque;
+        enabled = instance.enabled;
+        hideFlags = instance.hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.HingeJoint2D))?.OnSerialize?.Invoke(this, instance);
+    }
+    public override void RestoreValues(UnityEngine.Component component)
+    {
+        var instance = (UnityEngine.HingeJoint2D)component;
+        instance.useMotor = useMotor;
+        instance.useLimits = useLimits;
+        instance.motor = motor;
+        instance.limits = limits;
+        instance.anchor = anchor;
+        instance.connectedAnchor = connectedAnchor;
+        instance.autoConfigureConnectedAnchor = autoConfigureConnectedAnchor;
+        instance.connectedBody = connectedBody;
+        instance.enableCollision = enableCollision;
+        instance.breakForce = breakForce;
+        instance.breakTorque = breakTorque;
+        instance.enabled = enabled;
+        instance.hideFlags = hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.HingeJoint2D))?.OnDeserialize?.Invoke(this, instance);
+    }
+}
 }

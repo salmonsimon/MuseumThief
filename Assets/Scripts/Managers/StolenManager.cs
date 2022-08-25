@@ -7,7 +7,14 @@ public class StolenManager : MonoBehaviour
 {
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
+    public List<Item> shopItems = new List<Item>();
+    public List<Item> ownedItems = new List<Item>();
+
     public int money;
+    public int backpackCapacity;
+    public int rope;
+    public bool saw;
+    public bool spinach;
 
     public async void SaveStolenManager()
     {
@@ -59,5 +66,13 @@ public class StolenManager : MonoBehaviour
     public void AddMoney(int newMoney)
     {
         money += newMoney;
+    }
+
+    public void ShopToOwned(Item item)
+    {
+        if (!item.infiniteAmount)
+            shopItems.Remove(item);
+
+        ownedItems.Add(item);
     }
 }
