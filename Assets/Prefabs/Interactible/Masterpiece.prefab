@@ -216,21 +216,21 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: ce4a2cc710fe49c44b812c8a4a3c6213
-  _gozuid: 2a4c2a851e4182c41aad8aaab045c945
+  _zuid: 
+  _gozuid: 
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     persistenceType: 0
     component: {fileID: 7873633671100587133}
-    zuid: db488b6924639b04690878f2deccd189
+    zuid: 
   - typeFullName: UnityEngine.SpriteRenderer, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     persistenceType: 0
     component: {fileID: 7873633671100587134}
-    zuid: 5dd8dc869eb679544a74e40cd2534ca1
+    zuid: 
   - typeFullName: UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     persistenceType: 0
     component: {fileID: 7873633671100587132}
-    zuid: 5e30805ebe8d42e468762bb0bb19b9ac
+    zuid: 

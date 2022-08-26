@@ -450,6 +450,26 @@ PrefabInstance:
       propertyPath: FieldsEnable.HashSetFieldsEnabled.m_slots.Array.data[2].value.HashCodeMember
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: _zuid
+      value: b43e16fe4e0b3934caca33176c8ebc2c
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: _gozuid
+      value: 2a4c2a851e4182c41aad8aaab045c945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[0].zuid
+      value: 0b04e5541759bc3458de6c8661b11ef5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[1].zuid
+      value: 54ad0439ca5a8214295605dc3f6337eb
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[2].zuid
+      value: d31b8962ef585f94fbbed08234f7552a
+      objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_RootOrder
       value: 17
@@ -16259,6 +16279,26 @@ PrefabInstance:
       propertyPath: FieldsEnable.HashSetFieldsEnabled.m_slots.Array.data[2].value.HashCodeMember
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: _zuid
+      value: ad546838d239a8842bb41ddcf7e84874
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: _gozuid
+      value: 2a4c2a851e4182c41aad8aaab045c945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[0].zuid
+      value: 94eca8ab3efdc1747a4ec34664f4e136
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[1].zuid
+      value: 1f742fd7a4db05142a62c155078cd935
+      objectReference: {fileID: 0}
+    - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
+      propertyPath: serializedComponents.Array.data[2].zuid
+      value: 3d2bb0bd4c429c34c8e013e0b1907854
+      objectReference: {fileID: 0}
     - target: {fileID: 7873633671100587133, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -16616,6 +16656,7 @@ MonoBehaviour:
   ownedItems: []
   money: 0
   backpackCapacity: 0
+  usedBackpackCapacity: 0
   rope: 0
   saw: 0
   spinach: 0
@@ -17963,8 +18004,8 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: e5ef1baa713011348bf3e4bfced8299f
-  _gozuid: c44162b8254ddae43aa16b68b9ced61f
+  _zuid: 9b353871f882856489fa756ab956d7da
+  _gozuid: 2a4c2a851e4182c41aad8aaab045c945
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -18138,6 +18179,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  masterpieceHoldingPosition: {fileID: 0}
+  heldMasterpiece: {fileID: 0}
   pauseMenu: {fileID: 2060029145}
   mainMenu: {fileID: 52672516}
   InventoriesUI: {fileID: 1827227074}
@@ -18154,6 +18197,7 @@ MonoBehaviour:
   itemObject: {fileID: 0}
   itemDescription: {fileID: 0}
   itemPrice: {fileID: 0}
+  moneyAmountText: {fileID: 0}
   selectedItem: {fileID: 0}
   onMainMenu: 0
   purchaseConfirmationPanel: {fileID: 0}
@@ -18838,8 +18882,8 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: b0877dc5a5927f84d9d0853cb425d81e
-  _gozuid: 72964379c8a7898428790b16eb9f0be1
+  _zuid: 28ab1fa13ed988f4ca38d3ffcf687027
+  _gozuid: 2a4c2a851e4182c41aad8aaab045c945
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

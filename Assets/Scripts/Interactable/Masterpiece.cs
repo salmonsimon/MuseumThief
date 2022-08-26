@@ -8,11 +8,13 @@ public class Masterpiece : Collectable
     [NonZSerialized] private Sprite empty;
 
     private float speedDecreaseRate;
-    public Vector3 originalPosition;
+    private Vector3 originalPosition;
+    private Transform originalParent;
 
     private void Awake()
     {
         originalPosition = transform.position;
+        originalParent = transform.parent;
     }
 
     protected override void Start()
@@ -70,7 +72,7 @@ public class Masterpiece : Collectable
 
         GameManager.instance.GetHeldMasterpiece().transform.position = GameManager.instance.GetPlayer().transform.position
             + (new Vector3(playerDirection.x * boxCollider.size.x, playerDirection.y * boxCollider.size.y, 0));
-        GameManager.instance.GetHeldMasterpiece().transform.parent = null;
+        GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
 
         transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER; 
 
