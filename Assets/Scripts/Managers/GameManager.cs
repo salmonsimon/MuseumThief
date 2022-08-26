@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private StolenManager stolenManager;
 
     [SerializeField] private Transform stealableContentCarrying;
+    [SerializeField] private GameObject carryingCapacityText;
+
     [SerializeField] private Transform stealableContentStolen;
     [SerializeField] private GameObject stolenObject;
 
@@ -353,5 +355,14 @@ public class GameManager : MonoBehaviour
     public GameObject GetMasterpieceHoldingPosition()
     {
         return masterpieceHoldingPosition;
+    }
+
+    public void UpdateCarryingCapacityText()
+    {
+        int usedCarryingCapacity = stolenManager.GetUsedCarryingCapacity();
+        int carryingCapacity = stolenManager.GetCarryingCapacity();
+
+
+        carryingCapacityText.GetComponent<Text>().text = usedCarryingCapacity.ToString() + " / " + carryingCapacity.ToString();
     }
 }

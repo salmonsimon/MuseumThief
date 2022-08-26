@@ -26,7 +26,7 @@ public class Masterpiece : Collectable
 
     protected override void OnCollect()
     {
-        int remainingBackpackCapacity = GameManager.instance.GetStolenManager().backpackCapacity - GameManager.instance.GetStolenManager().usedBackpackCapacity;
+        int remainingBackpackCapacity = GameManager.instance.GetStolenManager().GetCarryingCapacity() - GameManager.instance.GetStolenManager().GetUsedCarryingCapacity();
 
         if (GameManager.instance.GetHeldMasterpiece())
         {
