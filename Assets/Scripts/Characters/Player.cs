@@ -15,6 +15,8 @@ public class Player : Mover
             {
                 animator.SetFloat("Horizontal", movement.x);
                 animator.SetFloat("Vertical", movement.y);
+
+                direction = movement.normalized;
             }
 
             animator.SetFloat("Speed", movement.sqrMagnitude);

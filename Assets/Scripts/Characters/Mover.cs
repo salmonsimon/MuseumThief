@@ -9,9 +9,13 @@ public class Mover : MonoBehaviour
     protected BoxCollider2D boxCollider;
     protected Animator animator;
     protected Vector2 movement;
+    protected Vector2 direction;
     protected RaycastHit2D hit;
-    protected float xSpeed = 1f;
-    protected float ySpeed = 0.75f;
+
+    public float xSpeed = 1f;
+    public float ySpeed = 0.75f;
+    protected float normalXSpeed = 1f;
+    protected float normalYSpeed = 0.75f;
 
     private Vector3 originalSize;
 
@@ -60,5 +64,22 @@ public class Mover : MonoBehaviour
         {
             transform.Translate(movement.x * Time.deltaTime, 0, 0);
         }
+    }
+
+    public Vector2 GetDirection()
+    {
+        return direction;
+    }
+
+    public void ResetToNormalSpeed()
+    {
+        xSpeed = normalXSpeed;
+        ySpeed = normalYSpeed;
+    }
+
+    public void AlterSpeed(float percentage)
+    {
+        xSpeed *= percentage;
+        ySpeed *= percentage;
     }
 }

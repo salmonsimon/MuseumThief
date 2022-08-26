@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     [SerializeField] private Player player;
+    [SerializeField] private GameObject masterpieceHoldingPosition;
+    [SerializeField] private Masterpiece heldMasterpiece;
+
     //[SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
@@ -52,7 +55,6 @@ public class GameManager : MonoBehaviour
             Destroy(InventoriesUI.gameObject);
             Destroy(stolenManager.gameObject);
             Destroy(itemShopUI.gameObject);
-            
             //Destroy(floatingTextManager.gameObject);
 
             return;
@@ -336,5 +338,20 @@ public class GameManager : MonoBehaviour
     public void ShowNotEnoughFunds()
     {
         notEnoughFundsPanel.SetActive(true);
+    }
+
+    public Masterpiece GetHeldMasterpiece()
+    {
+        return heldMasterpiece;
+    }
+
+    public void SetHeldMasterpiece(Masterpiece masterpiece)
+    {
+        heldMasterpiece = masterpiece;
+    }
+
+    public GameObject GetMasterpieceHoldingPosition()
+    {
+        return masterpieceHoldingPosition;
     }
 }

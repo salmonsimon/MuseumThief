@@ -20,7 +20,11 @@ public class Portal : Collidable
 
             GameManager.instance.GetStolenManager().CarryingToStolen();
 
-            //Save game here
+            var masterpieces = FindObjectsOfType<Masterpiece>();
+
+            foreach (Masterpiece masterpiece in masterpieces)
+                masterpiece.BackToOriginalPosition();
+
             await ZSerializer.ZSerialize.SaveScene();
             GameManager.instance.SetGameHasBeenSaved(true);
 

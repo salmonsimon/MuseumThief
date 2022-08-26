@@ -12,6 +12,7 @@ public class StolenManager : MonoBehaviour
 
     public int money;
     public int backpackCapacity;
+    public int usedBackpackCapacity;
     public int rope;
     public bool saw;
     public bool spinach;
@@ -32,13 +33,15 @@ public class StolenManager : MonoBehaviour
     }
 
     public void AddToCarrying(Stealable stealable)
-        {
-            carrying.Add(stealable);
+    {
+        carrying.Add(stealable);
+        usedBackpackCapacity += stealable.weight;
     }
 
     public void ResetCarrying()
     {
         carrying.Clear();
+        usedBackpackCapacity = 0;
     }
 
     private void AddToStolen(Stealable stealable)
@@ -51,12 +54,25 @@ public class StolenManager : MonoBehaviour
 
     public void CarryingToStolen()
     {
+        Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
+
+        if (heldMasterpiece)
+            heldMasterpiece.PutInBag();
+
         foreach (Stealable stealable in carrying)
             AddToStolen(stealable);
 
         ResetCarrying();
 
         SaveStolenManager();
+    }
+
+    public void ShopToOwned(Item item)
+    {
+        if (!item.infiniteAmount)
+            shopItems.Remove(item);
+
+        ownedItems.Add(item);
     }
 
     public int GetMoney()
@@ -66,13 +82,5 @@ public class StolenManager : MonoBehaviour
     public void AddMoney(int newMoney)
     {
         money += newMoney;
-    }
-
-    public void ShopToOwned(Item item)
-    {
-        if (!item.infiniteAmount)
-            shopItems.Remove(item);
-
-        ownedItems.Add(item);
     }
 }
