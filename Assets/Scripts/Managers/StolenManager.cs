@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ZSerializer;
 using System.IO;
+using UnityEngine.UI;
 
 public class StolenManager : MonoBehaviour
 {
@@ -35,7 +36,7 @@ public class StolenManager : MonoBehaviour
     public void AddToCarrying(Stealable stealable)
     {
         carrying.Add(stealable);
-        usedBackpackCapacity += stealable.weight;
+        SetUsedCapacity(usedBackpackCapacity + stealable.weight);
     }
 
     public void ResetCarrying()
@@ -82,5 +83,27 @@ public class StolenManager : MonoBehaviour
     public void AddMoney(int newMoney)
     {
         money += newMoney;
+    }
+
+    public int GetUsedCarryingCapacity()
+    {
+        return usedBackpackCapacity;
+    }
+
+    public void SetUsedCapacity(int value)
+    {
+        usedBackpackCapacity = value;
+        GameManager.instance.UpdateCarryingCapacityText();
+    }
+
+    public int GetCarryingCapacity()
+    {
+        return backpackCapacity;
+    }
+
+    public void SetCarryingCapacity(int value)
+    {
+        backpackCapacity = value;
+        GameManager.instance.UpdateCarryingCapacityText();
     }
 }

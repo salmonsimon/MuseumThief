@@ -11,11 +11,13 @@ public class ItemController : MonoBehaviour
         switch (item.itemType)
         {
             case Item.ItemType.Backpack:
-                GameManager.instance.GetStolenManager().backpackCapacity += 3;
+                int backpackCapacity = GameManager.instance.GetStolenManager().GetCarryingCapacity();
 
-                if (GameManager.instance.GetStolenManager().backpackCapacity == 3)
+                GameManager.instance.GetStolenManager().SetCarryingCapacity(backpackCapacity += 3);
+
+                if (backpackCapacity == 3)
                     GameManager.instance.GetStolenManager().shopItems.Add(Resources.Load<Item>("Items/Backpack - Medium"));
-                else if (GameManager.instance.GetStolenManager().backpackCapacity == 6)
+                else if (backpackCapacity == 6)
                     GameManager.instance.GetStolenManager().shopItems.Add(Resources.Load<Item>("Items/Backpack - Big"));
 
                 break;

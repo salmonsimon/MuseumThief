@@ -574,7 +574,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 593518015632366548, guid: 346c48a4febbbfd40a34d7020554b0fd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 593518015632366549, guid: 346c48a4febbbfd40a34d7020554b0fd, type: 3}
       propertyPath: m_Pivot.x
@@ -756,6 +756,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6075688736153391600, guid: 346c48a4febbbfd40a34d7020554b0fd, type: 3}
   m_PrefabInstance: {fileID: 593518017292219118}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &593518017292219121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 26220213849480857, guid: 346c48a4febbbfd40a34d7020554b0fd, type: 3}
+  m_PrefabInstance: {fileID: 593518017292219118}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1998594188280146606 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1405395413638715456, guid: 346c48a4febbbfd40a34d7020554b0fd, type: 3}
@@ -828,6 +833,10 @@ PrefabInstance:
       propertyPath: selectedItemContent
       value: 
       objectReference: {fileID: 621511078}
+    - target: {fileID: 2531558109057444920, guid: bb5e9e88d87e66349ad2cc18323a97be, type: 3}
+      propertyPath: carryingCapacityText
+      value: 
+      objectReference: {fileID: 593518017292219121}
     - target: {fileID: 2531558109057444920, guid: bb5e9e88d87e66349ad2cc18323a97be, type: 3}
       propertyPath: inventoryItemContent
       value: 
