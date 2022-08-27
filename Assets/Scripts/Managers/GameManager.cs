@@ -141,6 +141,7 @@ public class GameManager : MonoBehaviour
         if (!onMainMenu)
         {
             stolenManager.LoadStolenManager();
+            GameManager.instance.UpdateCarryingCapacityText();
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
