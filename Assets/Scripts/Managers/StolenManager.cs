@@ -6,17 +6,37 @@ using UnityEngine.UI;
 
 public class StolenManager : MonoBehaviour
 {
+    #region Carrying/Stolen Variables
+
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
+
+    #endregion
+
+    #region Item Shop Variables
+
     public List<Item> shopItems = new List<Item>();
     public List<Item> ownedItems = new List<Item>();
 
+    #endregion
+
+    #region Main Variables
+
     public int money;
+
+    #endregion
+
+    #region Item variables
+
     public int backpackCapacity;
     public int usedBackpackCapacity;
     public int rope;
     public bool saw;
     public bool spinach;
+
+    #endregion
+
+    #region Save/Load System
 
     public async void SaveStolenManager()
     {
@@ -32,6 +52,10 @@ public class StolenManager : MonoBehaviour
             JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
                     this);
     }
+
+    #endregion
+
+    #region Carrying and Stolen
 
     public void AddToCarrying(Stealable stealable)
     {
@@ -68,6 +92,10 @@ public class StolenManager : MonoBehaviour
         SaveStolenManager();
     }
 
+    #endregion
+
+    #region Item Shop
+
     public void ShopToOwned(Item item)
     {
         if (!item.infiniteAmount)
@@ -75,6 +103,10 @@ public class StolenManager : MonoBehaviour
 
         ownedItems.Add(item);
     }
+
+    #endregion
+
+    #region Getters and Setters
 
     public int GetMoney()
     {
@@ -106,4 +138,6 @@ public class StolenManager : MonoBehaviour
         backpackCapacity = value;
         GameManager.instance.UpdateCarryingCapacityText();
     }
+
+    #endregion
 }
