@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     private bool gameIsPaused = false;
     private bool gameHasBeenSaved = false;
+    private bool firstTimePlaying = true;
     [SerializeField] private bool onMainMenu = true;
 
     #endregion
@@ -26,10 +27,11 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region Menu's UI
+    #region Menu's & UI's
 
     [SerializeField] private GameObject pauseMenu;
     [SerializeField] private GameObject mainMenu;
+    [SerializeField] private GameObject welcomeUI;
 
     #endregion
 
@@ -97,6 +99,7 @@ public class GameManager : MonoBehaviour
             Destroy(InventoriesUI.gameObject);
             Destroy(stolenManager.gameObject);
             Destroy(itemShopUI.gameObject);
+            Destroy(welcomeUI.gameObject);
             //Destroy(floatingTextManager.gameObject);
 
             return;
@@ -135,8 +138,11 @@ public class GameManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene s, LoadSceneMode mode)
     {
-        if (gameHasBeenSaved) 
+        if (gameHasBeenSaved)
+        {
             ZSerializer.ZSerialize.LoadScene();
+            firstTimePlaying = false;
+        }
 
         if (!onMainMenu)
         {
@@ -145,6 +151,9 @@ public class GameManager : MonoBehaviour
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
+
+            if (firstTimePlaying && !gameHasBeenSaved)
+                welcomeUI.SetActive(true);
         }
         else if (onMainMenu)
         {
@@ -435,6 +444,11 @@ public class GameManager : MonoBehaviour
     public GameObject GetMasterpieceHoldingPosition()
     {
         return masterpieceHoldingPosition;
+    }
+
+    public void SetFirstTimePlaying(bool value)
+    {
+        firstTimePlaying = value;    
     }
 
     #endregion
