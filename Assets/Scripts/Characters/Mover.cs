@@ -75,11 +75,15 @@ public class Mover : MonoBehaviour
     {
         xSpeed = normalXSpeed;
         ySpeed = normalYSpeed;
+
+        GetComponent<Animator>().speed = 1;
     }
 
     public void AlterSpeed(float percentage)
     {
         xSpeed *= percentage;
         ySpeed *= percentage;
+
+        GetComponent<Animator>().speed = percentage;
     }
 }
