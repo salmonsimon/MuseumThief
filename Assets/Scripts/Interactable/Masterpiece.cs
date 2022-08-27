@@ -7,7 +7,7 @@ public class Masterpiece : Collectable
     [SerializeField] private Stealable stealable;
     [NonZSerialized] private Sprite empty;
 
-    private float speedDecreaseRate;
+    private float newSpeedRate;
     private Vector3 originalPosition;
     private Transform originalParent;
 
@@ -21,7 +21,7 @@ public class Masterpiece : Collectable
     {
         base.Start();
 
-        speedDecreaseRate = 1f - (Config.MAX_SPEED_DECREASE_RATE * ((float)stealable.weight / 10));
+        newSpeedRate = 1f - (Config.MAX_SPEED_DECREASE_RATE * ((float)stealable.weight / 10));
     }
 
     protected override void OnCollect()
@@ -61,7 +61,7 @@ public class Masterpiece : Collectable
 
         transform.GetChild(0).gameObject.layer = Config.DEFAULT_LAYER;
 
-        GameManager.instance.GetPlayer().AlterSpeed(speedDecreaseRate);
+        GameManager.instance.GetPlayer().AlterSpeed(newSpeedRate);
     }
 
     private void Throw()
