@@ -1,8 +1,15 @@
 # MuseumThief
 
-Museum thief is a game in which your final goal is to steal the most precious item of the museum, **The BIG GEM**, which belonged to your family and was stolen from it years ago. 
+Museum thief is a game in which your final goal is to steal the most precious item of the museum, **The DUCK GEM**, which belonged to your family and was stolen from it years ago. 
 
-To be able to steal **The BIG GEM**, you'll need to climb all the floors in the museum while stealing other masterpieces from it so you can exchange them from money and buy different *items* that will make your climb easier.
+To be able to steal **The DUCK GEM**, you'll need to climb all the floors in the museum while stealing other masterpieces from it so you can exchange them from money and buy different *items* that will make your climb easier.
+
+All art used in this project is not mine, so special thanks to the following artists:
+- [The Quacken](https://deadmadman.itch.io/the-quaken-assets)
+- [Princess Phoenix](https://www.deviantart.com/princess-phoenix)
+- [Aveon Trainer](https://www.deviantart.com/aveontrainer)
+- [Black Hammer (Game UI)](https://assetstore.unity.com/publishers/32893)
+- [Hishimy](https://www.deviantart.com/hishimy)
 
 ## The Studio
 <picture>
