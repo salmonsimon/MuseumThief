@@ -35,6 +35,7 @@ public class Masterpiece : Collectable
         else if (stealable.weight <= remainingBackpackCapacity)
         {
             PutInBag();
+            GameManager.instance.ShowText("Masterpiece picked up", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
         }
         else if (stealable.weight < 11)
         {
@@ -47,7 +48,7 @@ public class Masterpiece : Collectable
                 GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
             }
         }
-        else
+        else if (stealable.weight > 10)
         {
             GameManager.instance.ShowText("Not even hulk can lift this", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
         }
