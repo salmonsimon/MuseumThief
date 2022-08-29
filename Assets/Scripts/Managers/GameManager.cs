@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private StolenManager stolenManager;
+    [SerializeField] private FloatingTextManager floatingTextManager;
 
     #endregion
 
@@ -84,7 +85,6 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    //[SerializeField] private FloatingTextManager floatingTextManager;
 
     #endregion
 
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour
             Destroy(stolenManager.gameObject);
             Destroy(itemShopUI.gameObject);
             Destroy(welcomeUI.gameObject);
-            //Destroy(floatingTextManager.gameObject);
+            Destroy(floatingTextManager.gameObject);
 
             return;
         }
@@ -164,13 +164,10 @@ public class GameManager : MonoBehaviour
 
     }
 
-    /*
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
     {
         floatingTextManager.Show(msg, fontSize, color, position, motion, duration);
     }
-    */
-
 
     #region Main Menu
 
