@@ -25,6 +25,36 @@ Also in the studio you'll find two exits, one for the **Tutorial** and one for t
 <img src="ScreenShots/ToTutorial.gif" width="600">
 </picture>
 
+In the tutorial you'll learn the basics of the game, for example, how to interact with objects, what happens when you steal new masterpieces and so on.
+
+#### Interacting with objects
+
+To interact with new objects, just press the space key.
+
+<picture>
+<img src="ScreenShots/BasicInteraction.gif" width="600">
+</picture>
+
+#### Stealing masterpieces
+
+When stealing masterpieces, the inventories come to play. If you have available space in your carrying backpack, you will just add those items to the carrying inventory, if not, you can carry them on your shoulders, but be aware that it'll make it move slower the heavier the masterpiece.
+
+##### When you have space in your backpack
+<picture>
+<img src="ScreenShots/PutInBagCarrying.gif" width="600">
+</picture>
+
+##### When you don't have space in your backpack
+<picture>
+<img src="ScreenShots/PotHoldingCarrying.gif" width="600">
+</picture>
+
+The most important thing about stealing masterpieces, is that you'll only really steal them if you manage to get back to the studio, when doing that, all the items you had in your carrying backpack will be put into the stolen backpack (which will work as a record of all the stolen masterpieces) and you will be granted money depending on each stolen masterpiece.
+
+<picture>
+<img src="ScreenShots/CarryingToStolen.gif" width="600">
+</picture>
+
 ### Museum
 <picture>
 <img src="ScreenShots/ToMuseum.gif" width="600">
@@ -45,6 +75,8 @@ On the museum you'll find different floors, which as you get higher gets more se
 ## Guards
 
 On game you'll encounter with two types of guards: *Static Guards* which will stay on the same place and guard certain area and *Patrolling Guards* which will be walking through certain defined points. Both guards will chase you if you get close to them, while *Static Guards* are easier to evade since they won't chase you long enough, *Patrolling Guards* are more athletic and will chase you longer, so be aware!
+
+Any masterpiece you have in your carrying inventory will be taken by the guards if you get caught, so to be able to steal a masterpiece you'll have to evade all guards on your way back to the Studio room.
 
 #### Static Gaurds
 <picture>
