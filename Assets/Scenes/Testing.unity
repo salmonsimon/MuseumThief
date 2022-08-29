@@ -452,7 +452,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: _zuid
-      value: b43e16fe4e0b3934caca33176c8ebc2c
+      value: 17161ea56a930d749b06cea363403e55
       objectReference: {fileID: 0}
     - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: _gozuid
@@ -16281,7 +16281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: _zuid
-      value: ad546838d239a8842bb41ddcf7e84874
+      value: 59aed29d264319445a8497e6c05a2d74
       objectReference: {fileID: 0}
     - target: {fileID: 2095674604097055297, guid: 90dab4d61dcb91a44a7c59d7dd701cb1, type: 3}
       propertyPath: _gozuid
@@ -18004,7 +18004,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 9b353871f882856489fa756ab956d7da
+  _zuid: e943c0660857eaf488fe2ed75cf3d34e
   _gozuid: 2a4c2a851e4182c41aad8aaab045c945
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -18178,28 +18178,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59218ddcfbeefe24c9de76926d290a06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  onMainMenu: 0
   player: {fileID: 0}
-  masterpieceHoldingPosition: {fileID: 0}
-  heldMasterpiece: {fileID: 0}
+  stolenManager: {fileID: 464074526}
+  floatingTextManager: {fileID: 0}
   pauseMenu: {fileID: 2060029145}
   mainMenu: {fileID: 52672516}
+  welcomeUI: {fileID: 0}
+  masterpieceHoldingPosition: {fileID: 0}
+  heldMasterpiece: {fileID: 0}
   InventoriesUI: {fileID: 1827227074}
-  selectedItemPanel: {fileID: 0}
-  itemShopUI: {fileID: 0}
-  stolenManager: {fileID: 464074526}
   stealableContentCarrying: {fileID: 0}
+  carryingCapacityText: {fileID: 0}
   stealableContentStolen: {fileID: 0}
   stolenObject: {fileID: 0}
-  itemShopContent: {fileID: 0}
-  selectedItemContent: {fileID: 0}
   inventoryItemContent: {fileID: 0}
+  itemShopUI: {fileID: 0}
+  itemShopContent: {fileID: 0}
   itemButtonObject: {fileID: 0}
+  selectedItem: {fileID: 0}
+  selectedItemPanel: {fileID: 0}
+  selectedItemContent: {fileID: 0}
   itemObject: {fileID: 0}
   itemDescription: {fileID: 0}
   itemPrice: {fileID: 0}
   moneyAmountText: {fileID: 0}
-  selectedItem: {fileID: 0}
-  onMainMenu: 0
   purchaseConfirmationPanel: {fileID: 0}
   notEnoughFundsPanel: {fileID: 0}
 --- !u!1 &1193939720
@@ -18882,7 +18885,7 @@ MonoBehaviour:
     targetZUIDs: []
   showSettings: 0
   groupID: 0
-  _zuid: 28ab1fa13ed988f4ca38d3ffcf687027
+  _zuid: ff8774f2673e5154ab33d8b39963f0db
   _gozuid: 2a4c2a851e4182c41aad8aaab045c945
   serializedComponents:
   - typeFullName: UnityEngine.Transform, UnityEngine.CoreModule, Version=0.0.0.0,

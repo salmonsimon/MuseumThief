@@ -185,7 +185,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stealable: {fileID: 11400000, guid: c61b9b89539f46b4abebf9f69a608a6d, type: 2}
-  originalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2095674604097055297
 MonoBehaviour:
   m_ObjectHideFlags: 0
