@@ -5,16 +5,20 @@ using ZSerializer;
 public class Masterpiece : Collectable
 {
     [SerializeField] private Stealable stealable;
-    [NonZSerialized] private Sprite empty;
 
     private float newSpeedRate;
     private Vector3 originalPosition;
     private Transform originalParent;
 
+    private SpriteRenderer spriteRenderer;
+    public bool isVisible;
+
     private void Awake()
     {
         originalPosition = transform.position;
         originalParent = transform.parent;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected override void Start()
@@ -22,6 +26,16 @@ public class Masterpiece : Collectable
         base.Start();
 
         newSpeedRate = 1f - (Config.MAX_SPEED_DECREASE_RATE * ((float)stealable.weight / 10));
+    }
+
+    private void FixedUpdate()
+    {
+        isVisible = spriteRenderer.isVisible;
+    }
+
+    private void OnBecameInvisible()
+    {
+        spriteRenderer.ResetBounds();
     }
 
     protected override void OnCollect()
@@ -65,8 +79,8 @@ public class Masterpiece : Collectable
 
         GameManager.instance.SetHeldMasterpiece(this);
 
-        GameManager.instance.GetHeldMasterpiece().gameObject.transform.position = GameManager.instance.GetMasterpieceHoldingPosition().transform.position;
         GameManager.instance.GetHeldMasterpiece().gameObject.transform.parent = GameManager.instance.GetPlayer().transform;
+        GameManager.instance.GetHeldMasterpiece().gameObject.transform.position = GameManager.instance.GetMasterpieceHoldingPosition().transform.position;
 
         transform.GetChild(0).gameObject.layer = Config.DEFAULT_LAYER;
 
@@ -79,9 +93,9 @@ public class Masterpiece : Collectable
 
         Vector2 playerDirection = GameManager.instance.GetPlayer().GetDirection();
 
+        GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
         GameManager.instance.GetHeldMasterpiece().transform.position = GameManager.instance.GetPlayer().transform.position
             + (new Vector3(playerDirection.x * boxCollider.size.x, playerDirection.y * boxCollider.size.y, 0));
-        GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
 
         transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER; 
 

@@ -413,6 +413,8 @@ public class GameManager : MonoBehaviour
             GetStolenManager().ShopToOwned(selectedItem.item);
 
             ShowPurchaseConfirmation();
+
+            GetStolenManager().SaveStolenManager();
         }
         else
         {
