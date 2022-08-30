@@ -10,6 +10,9 @@ All art used in this project is not mine, so special thanks to the following art
 - [Aveon Trainer](https://www.deviantart.com/aveontrainer)
 - [Black Hammer (Game UI)](https://assetstore.unity.com/publishers/32893)
 - [Hishimy](https://www.deviantart.com/hishimy)
+- [That Hime Kun](https://www.deviantart.com/that-hime-kun)
+- [Macrovector](https://www.freepik.com/free-vector/fitness-drink-bottles-sport-nutrition-protein-containers-packages-black-white-realistic-dark-transparent-set-isolated_6801359.htm#query=protein&position=43&from_view=search)
+- [Kjpargeter](https://www.freepik.com/free-photo/radial-arm-saw-design_870250.htm#query=3d%20illustration%20saw&position=49&from_view=search)
 
 ## The Studio
 <picture>
