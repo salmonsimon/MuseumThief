@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 922d319331506754db3e225cd8ca4404
+guid: e12a9b978942cac4980d48650ea477de
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -119,10 +119,10 @@ TextureImporter:
       name: protein_0
       rect:
         serializedVersion: 2
-        x: 341
-        y: 863
-        width: 397
-        height: 573
+        x: 103
+        y: 252
+        width: 107
+        height: 161
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,8 +130,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a153c36a31ffd419e2200a609e834a
-      internalID: -1385782144
+      spriteID: f607bbda539763a4f9fc84a518ef0dc3
+      internalID: 1658215052
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      protein_0: -1385782144
+      protein_0: 1658215052
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

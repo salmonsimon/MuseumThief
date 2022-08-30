@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 727e50b3106489844a7812f088ce31d7, type: 3}
+  m_Name: Protein
+  m_EditorClassIdentifier: 
+  itemName: Protein
+  itemDescription: Life's not about how heavy you can lift... it's about not forgetting
+    legs day.
+  icon: {fileID: 1658215052, guid: e12a9b978942cac4980d48650ea477de, type: 3}
+  price: 200
+  infiniteAmount: 0
+  itemType: 3

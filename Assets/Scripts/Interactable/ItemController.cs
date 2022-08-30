@@ -30,8 +30,8 @@ public class ItemController : MonoBehaviour
                 GameManager.instance.GetStolenManager().saw = true;
                 break;
 
-            case Item.ItemType.Spinach:
-                GameManager.instance.GetStolenManager().spinach = true;
+            case Item.ItemType.Protein:
+                GameManager.instance.GetStolenManager().protein = true;
                 break;
         }
     }
