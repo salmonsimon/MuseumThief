@@ -319,22 +319,47 @@ public class GameManager : MonoBehaviour
             Destroy(item.gameObject);
         }
 
+        int ropeAmount = 0;
+        GameObject ropeIcon = null;
+
         foreach (var item in itemList)
         {
-            GameObject obj = Instantiate(itemButtonObject, itemContent);
+            string itemName = item.itemName;
+            bool itemIsRope = itemName == "Rope";
 
-            var name = obj.transform.Find("Item Name").GetComponent<Text>();
-            var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+            if (itemIsRope)
+                ropeAmount++;
 
-            name.text = item.itemName;
-            icon.sprite = item.icon;
+            if (!itemIsRope || ropeAmount == 1)
+            {
+                 GameObject obj = Instantiate(itemButtonObject, itemContent);
 
-            obj.transform.GetComponent<ItemController>().item = item;
+                var name = obj.transform.Find("Item Name").GetComponent<Text>();
+                var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
 
-            Button thisButton = obj.transform.GetComponent<Button>();
-            thisButton.onClick.AddListener(SetSelectedItem);
-            thisButton.onClick.AddListener(DisplaySelectedItem);
-            thisButton.onClick.AddListener(ConfirmPurchase);
+                name.text = itemName;
+                icon.sprite = item.icon;
+
+                obj.transform.GetComponent<ItemController>().item = item;
+
+                Button thisButton = obj.transform.GetComponent<Button>();
+                thisButton.onClick.AddListener(SetSelectedItem);
+                thisButton.onClick.AddListener(DisplaySelectedItem);
+                thisButton.onClick.AddListener(ConfirmPurchase);
+
+                if (itemIsRope)
+                {
+                    ropeIcon = obj;
+                }
+            }
+            else if (item.itemName == "Rope" && ropeAmount > 1)
+            {
+                if (ropeAmount == 2)
+                    ropeIcon.transform.Find("Item Quantity").gameObject.SetActive(true);
+
+                var ropeAmountText = ropeIcon.transform.Find("Item Quantity").GetComponent<Text>();
+                ropeAmountText.text = ropeAmount.ToString();
+            }
         }
     }
 
