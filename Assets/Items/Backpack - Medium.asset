@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Backpack - Medium
   itemDescription: This Backpack has space for two medium masterpieces, or six small
     masterpieces.
-  price: 100
   icon: {fileID: 21300000, guid: 1e5d035f492629f4b86f4233ba3582e6, type: 3}
-  sold: 0
-  canBePurchased: 1
+  price: 150
+  infiniteAmount: 0
+  itemType: 0

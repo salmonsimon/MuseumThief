@@ -184,7 +184,7 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         onMainMenu = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Config.MAIN_SCENE_NAME);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
     }
 
     public void QuitGame()

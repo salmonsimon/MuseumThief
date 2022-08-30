@@ -217,4 +217,115 @@ public sealed class BoxCollider2DZSerializer : ZSerializer.Internal.ZSerializer 
         ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.BoxCollider2D))?.OnDeserialize?.Invoke(this, instance);
     }
 }
+[System.Serializable]
+public sealed class SpriteMaskZSerializer : ZSerializer.Internal.ZSerializer {
+    public System.Int32 frontSortingLayerID;
+    public System.Int32 frontSortingOrder;
+    public System.Int32 backSortingLayerID;
+    public System.Int32 backSortingOrder;
+    public System.Single alphaCutoff;
+    public UnityEngine.Sprite sprite;
+    public System.Boolean isCustomRangeActive;
+    public UnityEngine.SpriteSortPoint spriteSortPoint;
+    public UnityEngine.Bounds bounds;
+    public UnityEngine.Bounds localBounds;
+    public System.Boolean enabled;
+    public UnityEngine.Rendering.ShadowCastingMode shadowCastingMode;
+    public System.Boolean receiveShadows;
+    public System.Boolean forceRenderingOff;
+    public System.Boolean staticShadowCaster;
+    public UnityEngine.MotionVectorGenerationMode motionVectorGenerationMode;
+    public UnityEngine.Rendering.LightProbeUsage lightProbeUsage;
+    public UnityEngine.Rendering.ReflectionProbeUsage reflectionProbeUsage;
+    public System.UInt32 renderingLayerMask;
+    public System.Int32 rendererPriority;
+    public UnityEngine.Experimental.Rendering.RayTracingMode rayTracingMode;
+    public System.String sortingLayerName;
+    public System.Int32 sortingLayerID;
+    public System.Int32 sortingOrder;
+    public System.Boolean allowOcclusionWhenDynamic;
+    public UnityEngine.GameObject lightProbeProxyVolumeOverride;
+    public UnityEngine.Transform probeAnchor;
+    public System.Int32 lightmapIndex;
+    public System.Int32 realtimeLightmapIndex;
+    public UnityEngine.Vector4 lightmapScaleOffset;
+    public UnityEngine.Vector4 realtimeLightmapScaleOffset;
+    public UnityEngine.Material[] sharedMaterials;
+    public UnityEngine.HideFlags hideFlags;
+    public SpriteMaskZSerializer (string ZUID, string GOZUID) : base(ZUID, GOZUID) {
+        var instance = ZSerializer.ZSerialize.idMap[ZSerializer.ZSerialize.CurrentGroupID][ZUID] as UnityEngine.SpriteMask;
+        frontSortingLayerID = instance.frontSortingLayerID;
+        frontSortingOrder = instance.frontSortingOrder;
+        backSortingLayerID = instance.backSortingLayerID;
+        backSortingOrder = instance.backSortingOrder;
+        alphaCutoff = instance.alphaCutoff;
+        sprite = instance.sprite;
+        isCustomRangeActive = instance.isCustomRangeActive;
+        spriteSortPoint = instance.spriteSortPoint;
+        bounds = instance.bounds;
+        localBounds = instance.localBounds;
+        enabled = instance.enabled;
+        shadowCastingMode = instance.shadowCastingMode;
+        receiveShadows = instance.receiveShadows;
+        forceRenderingOff = instance.forceRenderingOff;
+        staticShadowCaster = instance.staticShadowCaster;
+        motionVectorGenerationMode = instance.motionVectorGenerationMode;
+        lightProbeUsage = instance.lightProbeUsage;
+        reflectionProbeUsage = instance.reflectionProbeUsage;
+        renderingLayerMask = instance.renderingLayerMask;
+        rendererPriority = instance.rendererPriority;
+        rayTracingMode = instance.rayTracingMode;
+        sortingLayerName = instance.sortingLayerName;
+        sortingLayerID = instance.sortingLayerID;
+        sortingOrder = instance.sortingOrder;
+        allowOcclusionWhenDynamic = instance.allowOcclusionWhenDynamic;
+        lightProbeProxyVolumeOverride = instance.lightProbeProxyVolumeOverride;
+        probeAnchor = instance.probeAnchor;
+        lightmapIndex = instance.lightmapIndex;
+        realtimeLightmapIndex = instance.realtimeLightmapIndex;
+        lightmapScaleOffset = instance.lightmapScaleOffset;
+        realtimeLightmapScaleOffset = instance.realtimeLightmapScaleOffset;
+        sharedMaterials = instance.sharedMaterials;
+        hideFlags = instance.hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.SpriteMask))?.OnSerialize?.Invoke(this, instance);
+    }
+    public override void RestoreValues(UnityEngine.Component component)
+    {
+        var instance = (UnityEngine.SpriteMask)component;
+        instance.frontSortingLayerID = frontSortingLayerID;
+        instance.frontSortingOrder = frontSortingOrder;
+        instance.backSortingLayerID = backSortingLayerID;
+        instance.backSortingOrder = backSortingOrder;
+        instance.alphaCutoff = alphaCutoff;
+        instance.sprite = sprite;
+        instance.isCustomRangeActive = isCustomRangeActive;
+        instance.spriteSortPoint = spriteSortPoint;
+        instance.bounds = bounds;
+        instance.localBounds = localBounds;
+        instance.enabled = enabled;
+        instance.shadowCastingMode = shadowCastingMode;
+        instance.receiveShadows = receiveShadows;
+        instance.forceRenderingOff = forceRenderingOff;
+        instance.staticShadowCaster = staticShadowCaster;
+        instance.motionVectorGenerationMode = motionVectorGenerationMode;
+        instance.lightProbeUsage = lightProbeUsage;
+        instance.reflectionProbeUsage = reflectionProbeUsage;
+        instance.renderingLayerMask = renderingLayerMask;
+        instance.rendererPriority = rendererPriority;
+        instance.rayTracingMode = rayTracingMode;
+        instance.sortingLayerName = sortingLayerName;
+        instance.sortingLayerID = sortingLayerID;
+        instance.sortingOrder = sortingOrder;
+        instance.allowOcclusionWhenDynamic = allowOcclusionWhenDynamic;
+        instance.lightProbeProxyVolumeOverride = lightProbeProxyVolumeOverride;
+        instance.probeAnchor = probeAnchor;
+        instance.lightmapIndex = lightmapIndex;
+        instance.realtimeLightmapIndex = realtimeLightmapIndex;
+        instance.lightmapScaleOffset = lightmapScaleOffset;
+        instance.realtimeLightmapScaleOffset = realtimeLightmapScaleOffset;
+        instance.sharedMaterials = sharedMaterials;
+        instance.hideFlags = hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.SpriteMask))?.OnDeserialize?.Invoke(this, instance);
+    }
+}
 }
