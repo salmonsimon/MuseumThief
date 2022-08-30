@@ -7,7 +7,7 @@ public class Portal : Collidable
     [SerializeField] private string[] sceneNames;
     [SerializeField] private bool isRandomPortal = false;
 
-    protected async override void OnCollide(Collider2D coll)
+    protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player"))
         {
@@ -18,17 +18,22 @@ public class Portal : Collidable
             else
                 sceneName = sceneNames[0];
 
-            GameManager.instance.GetStolenManager().CarryingToStolen();
-
-            var masterpieces = FindObjectsOfType<Masterpiece>();
-
-            foreach (Masterpiece masterpiece in masterpieces)
-                masterpiece.BackToOriginalPosition();
-
-            await ZSerializer.ZSerialize.SaveScene();
-            GameManager.instance.SetGameHasBeenSaved(true);
-
-            UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+            BackToStudio(sceneName);
         }
+    }
+
+    public async void BackToStudio(string sceneName = "Studio")
+    {
+        GameManager.instance.GetStolenManager().CarryingToStolen();
+
+        var masterpieces = FindObjectsOfType<Masterpiece>();
+
+        foreach (Masterpiece masterpiece in masterpieces)
+            masterpiece.BackToOriginalPosition();
+
+        await ZSerializer.ZSerialize.SaveScene();
+        GameManager.instance.SetGameHasBeenSaved(true);
+
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 }

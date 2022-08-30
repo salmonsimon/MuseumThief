@@ -9,7 +9,7 @@ public class GuardCollision : Collidable
         if (coll.CompareTag("Player"))
         {
             GameManager.instance.GetStolenManager().ResetCarrying();
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Config.MAIN_SCENE_NAME);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
         }
     }
 }
