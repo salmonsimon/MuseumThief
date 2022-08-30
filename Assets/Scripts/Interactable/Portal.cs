@@ -26,6 +26,8 @@ public class Portal : Collidable
     {
         GameManager.instance.GetStolenManager().CarryingToStolen();
 
+        GameManager.instance.GetPlayer().ResetToNormalSpeed();
+
         var masterpieces = FindObjectsOfType<Masterpiece>();
 
         foreach (Masterpiece masterpiece in masterpieces)
