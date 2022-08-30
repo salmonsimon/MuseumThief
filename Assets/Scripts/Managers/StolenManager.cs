@@ -32,7 +32,7 @@ public class StolenManager : MonoBehaviour
     public int usedBackpackCapacity;
     public int rope;
     public bool saw;
-    public bool spinach;
+    public bool protein;
 
     #endregion
 

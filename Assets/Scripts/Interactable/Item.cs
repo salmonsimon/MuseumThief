@@ -21,6 +21,6 @@ public class Item : ScriptableObject
         Backpack,
         Rope,
         Saw,
-        Spinach
+        Protein
     }
 }

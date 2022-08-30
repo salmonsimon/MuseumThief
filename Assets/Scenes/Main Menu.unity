@@ -1178,12 +1178,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: shopItems.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: shopItems.Array.data[1]
       value: 
       objectReference: {fileID: 11400000, guid: cb8b8e71bd6a5bb4692ef15e1cc23bdd, type: 2}
+    - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
+      propertyPath: shopItems.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 615438110ad53d54da227a8cd5ee159d, type: 2}
     - target: {fileID: 4392518467616020851, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: m_RootOrder
       value: 6

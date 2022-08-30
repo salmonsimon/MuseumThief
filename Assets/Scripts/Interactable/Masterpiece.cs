@@ -39,11 +39,11 @@ public class Masterpiece : Collectable
         }
         else if (stealable.weight < 11)
         {
-            if ((stealable.weight == 10 && GameManager.instance.GetStolenManager().spinach) || stealable.weight < 10)
+            if ((stealable.weight == 10 && GameManager.instance.GetStolenManager().protein) || stealable.weight < 10)
             {
                 Grab();
             }
-            else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().spinach)
+            else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
             {
                 GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
             }
