@@ -87,7 +87,7 @@ public class Masterpiece : Collectable
         GameManager.instance.GetPlayer().AlterSpeed(newSpeedRate);
     }
 
-    private void Throw()
+    public void Throw()
     {
         collected = false;
 
