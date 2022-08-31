@@ -1825,7 +1825,7 @@ TextureImporter:
         width: 29
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1833,6 +1833,90 @@ TextureImporter:
       bones: []
       spriteID: 15d809a17bc5d7d41b9fe772d76298f3
       internalID: 1560200074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile weird 0x0
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58e7f15c6e343f488b2ae92fac6d983
+      internalID: -969199446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile weird 0x1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 160
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b67ee7a4028dab4eaefb4c5d75b8327
+      internalID: -421827887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile weird 1x1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a41685f32d71044785b221fa2b084f5
+      internalID: 387574621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile weird 1x0
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6acf6c1a15179ef44a3c8c6c9052e62b
+      internalID: 304897186
       vertices: []
       indices: 
       edges: []
@@ -1881,10 +1965,11 @@ TextureImporter:
       Tile 0x1: -1273353439
       Diagonal Wall 4x3: 1437861232
       Carpet 2 2x0: -216698819
-      Carpet 1 2x0: -1617957429
       Diagonal Wall 1x2: 1100820565
       Diagonal Wall 2x1: 632743679
+      Carpet 1 2x0: -1617957429
       Carpet 1 - 1: -1977547887
+      Tile weird 0x0: -969199446
       Diagonal Wall 5x1: 564527735
       Carpet 2 0x1: 1653498702
       Diagonal Wall 1x1: 475203363
@@ -1895,12 +1980,14 @@ TextureImporter:
       Carpet 1 1x1: 292764769
       Diagonal Wall 2x4: 1456414578
       Window: 1718553761
+      Tile weird 1x1: 387574621
       Carpet 1 - 2: 1990900892
       Carpet 2 1x2: -1161927013
       Carpet 1 2x2: 395816701
       Diagonal Wall 4x2: 1067368339
       Bench: 1916897813
       Wall 1x0: 1105240943
+      Tile weird 1x0: 304897186
       Diagonal Wall 0x2: 906145156
       Carpet 1: 563076081
       Desk 1: -470300788
@@ -1932,6 +2019,7 @@ TextureImporter:
       Wall 2x2: 472898386
       Diagonal Wall 3x3: 1670027468
       Diagonal Wall 4x1: -1897155118
+      Tile weird 0x1: -421827887
       Diagonal Wall 2x2: -374836423
       Shadow Down: 1881789995
   spritePackingTag: 

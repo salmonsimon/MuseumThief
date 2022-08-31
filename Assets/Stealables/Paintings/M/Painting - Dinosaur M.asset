@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealableName: Dinosaur Medium
   weight: 3
-  price: 100
+  price: 30
   icon: {fileID: -1051014116, guid: 570d99a281426b14eaf5bea842f50d25, type: 3}
   sold: 0
