@@ -892,6 +892,111 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Blue Chair - Down
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 640
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7f2f3782723f74ebee44f22583e16e
+      internalID: 533879391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Chair - Left
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 608
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08484b260e32e474fb132e01993b53c8
+      internalID: -1100109622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Blue Chair - Right
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 576
+        width: 24
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b44027f30bcda4ba210660b7954488
+      internalID: 1773459083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Sofa - Right
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 30
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab905fad7e5a0c942b4b501f9a7152a5
+      internalID: -1216637842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Red Sofa - Left
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 288
+        width: 30
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c11478988be6943a0a105cd9525f82
+      internalID: 1283831859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -906,6 +1011,8 @@ TextureImporter:
       Wooden Tiles: 458602480
       Notebook Left: 282515934
       Tiles 3: -590799643
+      Blue Chair - Down: 533879391
+      Red Sofa - Right: -1216637842
       school_1: 1060409354
       Library 3: 938444342
       Notebook - Right: 647764303
@@ -934,10 +1041,13 @@ TextureImporter:
       Tiles: 107044336
       Flower: 721328223
       Tiles 6: 2035454591
+      Blue Chair - Left: -1100109622
       Unfinished Painting 1: 1266418231
       Unfinished Painting 2: 867670359
       Wooden Tile 64x64: -600728808
+      Blue Chair - Right: 1773459083
       Painting 3: 924435409
+      Red Sofa - Left: 1283831859
       Plant: -1801938083
       Painting 5: 561020458
   spritePackingTag: 
