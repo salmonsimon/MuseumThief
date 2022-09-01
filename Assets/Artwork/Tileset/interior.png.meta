@@ -494,7 +494,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abstract Painting 1
+      name: Sunset
       rect:
         serializedVersion: 2
         x: 160
@@ -515,11 +515,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Abstract Painting 2
+      name: Statement
       rect:
         serializedVersion: 2
-        x: 176
-        y: 72
+        x: 177
+        y: 71
         width: 16
         height: 18
       alignment: 0
@@ -737,15 +737,15 @@ TextureImporter:
     nameFileIdTable:
       Stairs Left: -398911253
       Red Carpet 0x1: -661542704
-      Abstract Painting 1: 1786192423
       Vase 1: 1930073773
       Red Carpet 1x1: 1478876583
       Painting 1: 1257716566
       PC: 1304888570
       Window: 47077505
       Tree 2 - 2: 1377353877
-      Abstract Painting 2: 1763216731
+      Sunset: 1786192423
       Tree 2 - 1: -233741473
+      Statement: 1763216731
       Flowers 2: 1009282305
       Tree 1 - 2: 25349662
       Red Carpet 1x0: 678886672
