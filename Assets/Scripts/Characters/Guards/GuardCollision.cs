@@ -10,7 +10,10 @@ public class GuardCollision : Collidable
         {
             GameManager.instance.GetStolenManager().ResetCarrying();
 
-            GameManager.instance.GetHeldMasterpiece().Throw();
+            Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
+
+            if (heldMasterpiece)
+                heldMasterpiece.Throw();
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
         }

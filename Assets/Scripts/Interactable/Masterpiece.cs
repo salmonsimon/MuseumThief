@@ -84,12 +84,13 @@ public class Masterpiece : Collectable
     public void Throw()
     {
         collected = false;
+        Vector3 scale = transform.localScale;
 
         Vector2 playerDirection = GameManager.instance.GetPlayer().GetDirection();
 
         GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
         GameManager.instance.GetHeldMasterpiece().transform.position = GameManager.instance.GetPlayer().transform.position
-            + (new Vector3(playerDirection.x * boxCollider.size.x, playerDirection.y * boxCollider.size.y, 0));
+            + (new Vector3(playerDirection.x * boxCollider.size.x * scale.x, playerDirection.y * boxCollider.size.y * scale.y, 0));
 
         transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER; 
 
