@@ -147,6 +147,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   has2DAnimation: 1
+  xSpeed: 1
+  ySpeed: 0.75
 --- !u!1 &8116518732562806251
 GameObject:
   m_ObjectHideFlags: 0
