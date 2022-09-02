@@ -78,13 +78,13 @@ On the museum you'll find different floors, which as you get higher gets more se
 #### Floor 2 - Fossils and Masterpieces
 <p float="left">
     <picture>
-    <img src="ScreenShots/Floor2Left.PNG" height="300">
+    <img src="ScreenShots/Floor2Left.PNG" height="200">
     </picture>
     <picture>
-    <img src="ScreenShots/Floor2.PNG" height="300">
+    <img src="ScreenShots/Floor2.PNG" height="200">
     </picture>
     <picture>
-    <img src="ScreenShots/Floor2Right.PNG" height="300">
+    <img src="ScreenShots/Floor2Right.PNG" height="200">
     </picture>
 </p>
 
