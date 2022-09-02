@@ -5,6 +5,105 @@ using System.Collections.Generic;
 namespace ZSerializer {
 
 [System.Serializable]
+public sealed class AudioSourceZSerializer : ZSerializer.Internal.ZSerializer {
+    public System.Single volume;
+    public System.Single pitch;
+    public System.Single time;
+    public System.Int32 timeSamples;
+    public UnityEngine.AudioClip clip;
+    public UnityEngine.Audio.AudioMixerGroup outputAudioMixerGroup;
+    public UnityEngine.GamepadSpeakerOutputType gamepadSpeakerOutputType;
+    public System.Boolean loop;
+    public System.Boolean ignoreListenerVolume;
+    public System.Boolean playOnAwake;
+    public System.Boolean ignoreListenerPause;
+    public UnityEngine.AudioVelocityUpdateMode velocityUpdateMode;
+    public System.Single panStereo;
+    public System.Single spatialBlend;
+    public System.Boolean spatialize;
+    public System.Boolean spatializePostEffects;
+    public System.Single reverbZoneMix;
+    public System.Boolean bypassEffects;
+    public System.Boolean bypassListenerEffects;
+    public System.Boolean bypassReverbZones;
+    public System.Single dopplerLevel;
+    public System.Single spread;
+    public System.Int32 priority;
+    public System.Boolean mute;
+    public System.Single minDistance;
+    public System.Single maxDistance;
+    public UnityEngine.AudioRolloffMode rolloffMode;
+    public System.Boolean enabled;
+    public UnityEngine.HideFlags hideFlags;
+    public AudioSourceZSerializer (string ZUID, string GOZUID) : base(ZUID, GOZUID) {
+        var instance = ZSerializer.ZSerialize.idMap[ZSerializer.ZSerialize.CurrentGroupID][ZUID] as UnityEngine.AudioSource;
+        volume = instance.volume;
+        pitch = instance.pitch;
+        time = instance.time;
+        timeSamples = instance.timeSamples;
+        clip = instance.clip;
+        outputAudioMixerGroup = instance.outputAudioMixerGroup;
+        gamepadSpeakerOutputType = instance.gamepadSpeakerOutputType;
+        loop = instance.loop;
+        ignoreListenerVolume = instance.ignoreListenerVolume;
+        playOnAwake = instance.playOnAwake;
+        ignoreListenerPause = instance.ignoreListenerPause;
+        velocityUpdateMode = instance.velocityUpdateMode;
+        panStereo = instance.panStereo;
+        spatialBlend = instance.spatialBlend;
+        spatialize = instance.spatialize;
+        spatializePostEffects = instance.spatializePostEffects;
+        reverbZoneMix = instance.reverbZoneMix;
+        bypassEffects = instance.bypassEffects;
+        bypassListenerEffects = instance.bypassListenerEffects;
+        bypassReverbZones = instance.bypassReverbZones;
+        dopplerLevel = instance.dopplerLevel;
+        spread = instance.spread;
+        priority = instance.priority;
+        mute = instance.mute;
+        minDistance = instance.minDistance;
+        maxDistance = instance.maxDistance;
+        rolloffMode = instance.rolloffMode;
+        enabled = instance.enabled;
+        hideFlags = instance.hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.AudioSource))?.OnSerialize?.Invoke(this, instance);
+    }
+    public override void RestoreValues(UnityEngine.Component component)
+    {
+        var instance = (UnityEngine.AudioSource)component;
+        instance.volume = volume;
+        instance.pitch = pitch;
+        instance.time = time;
+        instance.timeSamples = timeSamples;
+        instance.clip = clip;
+        instance.outputAudioMixerGroup = outputAudioMixerGroup;
+        instance.gamepadSpeakerOutputType = gamepadSpeakerOutputType;
+        instance.loop = loop;
+        instance.ignoreListenerVolume = ignoreListenerVolume;
+        instance.playOnAwake = playOnAwake;
+        instance.ignoreListenerPause = ignoreListenerPause;
+        instance.velocityUpdateMode = velocityUpdateMode;
+        instance.panStereo = panStereo;
+        instance.spatialBlend = spatialBlend;
+        instance.spatialize = spatialize;
+        instance.spatializePostEffects = spatializePostEffects;
+        instance.reverbZoneMix = reverbZoneMix;
+        instance.bypassEffects = bypassEffects;
+        instance.bypassListenerEffects = bypassListenerEffects;
+        instance.bypassReverbZones = bypassReverbZones;
+        instance.dopplerLevel = dopplerLevel;
+        instance.spread = spread;
+        instance.priority = priority;
+        instance.mute = mute;
+        instance.minDistance = minDistance;
+        instance.maxDistance = maxDistance;
+        instance.rolloffMode = rolloffMode;
+        instance.enabled = enabled;
+        instance.hideFlags = hideFlags;
+        ZSerializerSettings.Instance.unityComponentDataList.FirstOrDefault(data => data.Type == typeof(UnityEngine.AudioSource))?.OnDeserialize?.Invoke(this, instance);
+    }
+}
+[System.Serializable]
 public sealed class TransformZSerializer : ZSerializer.Internal.ZSerializer {
     public UnityEngine.Vector3 position;
     public UnityEngine.Vector3 localPosition;

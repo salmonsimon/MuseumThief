@@ -11,6 +11,8 @@ public class Masterpiece : Collectable
     private Transform originalParent;
 
     private SpriteRenderer spriteRenderer;
+    private AudioSource audioSource;
+    private AudioClip grabSFX, throwSFX, putInBagSFX, tooHeavySFX;
 
     private void Awake()
     {
@@ -18,6 +20,12 @@ public class Masterpiece : Collectable
         originalParent = transform.parent;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+
+        grabSFX = Resources.Load<AudioClip>("Audio/Sound FX/Grab");
+        throwSFX = Resources.Load<AudioClip>("Audio/Sound FX/Drop");
+        putInBagSFX = Resources.Load<AudioClip>("Audio/Sound FX/Store");
+        tooHeavySFX = Resources.Load<AudioClip>("Audio/Sound FX/Denied");
     }
 
     protected override void Start()
@@ -53,11 +61,13 @@ public class Masterpiece : Collectable
             }
             else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
             {
+                PlaySound(tooHeavySFX);
                 GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
             }
         }
         else if (stealable.weight > 10)
         {
+            PlaySound(tooHeavySFX);
             GameManager.instance.ShowText("Not even hulk can lift this", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
         }
     }
@@ -69,6 +79,8 @@ public class Masterpiece : Collectable
 
     private void Grab()
     {
+        PlaySound(grabSFX);
+
         collected = true;
 
         GameManager.instance.SetHeldMasterpiece(this);
@@ -83,6 +95,8 @@ public class Masterpiece : Collectable
 
     public void Throw()
     {
+        PlaySound(throwSFX);
+
         collected = false;
         Vector3 scale = transform.localScale;
 
@@ -100,6 +114,8 @@ public class Masterpiece : Collectable
 
     public void PutInBag()
     {
+        PlaySound(putInBagSFX);
+
         collected = true;
 
         GameManager.instance.GetStolenManager().AddToCarrying(stealable);
@@ -113,5 +129,10 @@ public class Masterpiece : Collectable
     {
         if (!collected)
             transform.position = originalPosition;
+    }
+
+    private void PlaySound(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip);
     }
 }
