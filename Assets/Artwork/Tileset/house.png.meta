@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 99
+  spritePixelsToUnits: 97
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -1965,9 +1965,9 @@ TextureImporter:
       Tile 0x1: -1273353439
       Diagonal Wall 4x3: 1437861232
       Carpet 2 2x0: -216698819
-      Diagonal Wall 1x2: 1100820565
-      Diagonal Wall 2x1: 632743679
       Carpet 1 2x0: -1617957429
+      Diagonal Wall 2x1: 632743679
+      Diagonal Wall 1x2: 1100820565
       Carpet 1 - 1: -1977547887
       Tile weird 0x0: -969199446
       Diagonal Wall 5x1: 564527735
