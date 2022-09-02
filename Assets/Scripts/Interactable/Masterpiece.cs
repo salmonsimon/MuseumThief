@@ -11,7 +11,6 @@ public class Masterpiece : Collectable
     private Transform originalParent;
 
     private SpriteRenderer spriteRenderer;
-    public bool isVisible;
 
     private void Awake()
     {
@@ -26,11 +25,6 @@ public class Masterpiece : Collectable
         base.Start();
 
         newSpeedRate = 1f - (Config.MAX_SPEED_DECREASE_RATE * ((float)stealable.weight / 10));
-    }
-
-    private void FixedUpdate()
-    {
-        isVisible = spriteRenderer.isVisible;
     }
 
     private void OnBecameInvisible()

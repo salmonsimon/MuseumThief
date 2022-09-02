@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
+  m_Name: Painting - Sand Dune
+  m_EditorClassIdentifier: 
+  stealableName: Sand Dunes
+  weight: 3
+  price: 25
+  icon: {fileID: -634060350, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  sold: 0

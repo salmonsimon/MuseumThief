@@ -683,7 +683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Painting - Ghosts
+      name: Painting - Magical Girl
       rect:
         serializedVersion: 2
         x: 134
@@ -792,6 +792,7 @@ TextureImporter:
       Painting - Paseo por la Playa: -755086619
       Painting - Bloody: 507269857
       Painting - Something 2: -1698329353
+      Painting - Magical Girl: -372562316
       Painting - Sea: -343334663
       Painting - Mona Lisa (): -663871522
       Painting - Flowers 2: 1728954521
@@ -801,7 +802,6 @@ TextureImporter:
       Painting - Desert: -1222680502
       Painting - Waterfall: 837203696
       Painting - Trees: -539317296
-      Painting - Ghosts: -372562316
       Painting -  Open Arms: -1819377467
       Painting - House: 1444511722
       Painting - Princess 4: -1040237156
