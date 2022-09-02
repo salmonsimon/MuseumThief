@@ -75,6 +75,19 @@ On the museum you'll find different floors, which as you get higher gets more se
 <img src="ScreenShots/Floor1.PNG" width="600">
 </picture>
 
+#### Floor 2 - Fossils and Masterpieces
+<p float="left">
+    <picture>
+    <img src="ScreenShots/Floor2Left.PNG" height="300">
+    </picture>
+    <picture>
+    <img src="ScreenShots/Floor2.PNG" height="300">
+    </picture>
+    <picture>
+    <img src="ScreenShots/Floor2Right.PNG" height="300">
+    </picture>
+</p>
+
 ## Guards
 
 On game you'll encounter with two types of guards: *Static Guards* which will stay on the same place and guard certain area and *Patrolling Guards* which will be walking through certain defined points. Both guards will chase you if you get close to them, while *Static Guards* are easier to evade since they won't chase you long enough, *Patrolling Guards* are more athletic and will chase you longer, so be aware!
