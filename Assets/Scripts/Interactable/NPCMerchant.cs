@@ -11,7 +11,7 @@ public class NPCMerchant : Collidable
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                GetComponent<AudioSource>().Play();
+                GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
                 GameManager.instance.ShowItemShop();
                 GameManager.instance.ListShopItems();
             }

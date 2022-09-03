@@ -8,6 +8,8 @@ public class GuardCollision : Collidable
     {
         if (coll.CompareTag("Player"))
         {
+            GameManager.instance.GetSoundManager().PlaySound(Config.CAUGHT_SFX);
+
             GameManager.instance.GetStolenManager().ResetCarrying();
 
             Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();

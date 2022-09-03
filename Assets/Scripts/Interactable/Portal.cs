@@ -24,6 +24,8 @@ public class Portal : Collidable
 
     public async void BackToStudio(string sceneName = "Studio")
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
+
         GameManager.instance.GetStolenManager().CarryingToStolen();
 
         GameManager.instance.GetPlayer().ResetToNormalSpeed();

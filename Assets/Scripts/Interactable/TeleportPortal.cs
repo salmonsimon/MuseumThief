@@ -19,6 +19,7 @@ public class TeleportPortal : Collidable
     {
         if (coll.CompareTag("Player"))
         {
+            GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
             GameManager.instance.GetPlayer().transform.position = teleportPoint.transform.position;
 
             if (newSong)
@@ -26,7 +27,6 @@ public class TeleportPortal : Collidable
                 audioSource.clip = newSong;
                 audioSource.Play();
             }
-
         }
     }
 }
