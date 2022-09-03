@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
 
         grabSFX = Resources.Load<AudioClip>("Audio/Sound FX/Grab");
-        throwSFX = Resources.Load<AudioClip>("Audio/Sound FX/Drop");
+        throwSFX = Resources.Load<AudioClip>("Audio/Sound FX/Throw");
         storeSFX = Resources.Load<AudioClip>("Audio/Sound FX/Store");
 
         clickSFX = Resources.Load<AudioClip>("Audio/Sound FX/Click");
