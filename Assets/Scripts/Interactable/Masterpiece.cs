@@ -53,11 +53,13 @@ public class Masterpiece : Collectable
             }
             else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
             {
+                GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
                 GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
             }
         }
         else if (stealable.weight > 10)
         {
+            GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
             GameManager.instance.ShowText("Not even hulk can lift this", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
         }
     }
@@ -69,6 +71,8 @@ public class Masterpiece : Collectable
 
     private void Grab()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.GRAB_SFX);
+
         collected = true;
 
         GameManager.instance.SetHeldMasterpiece(this);
@@ -83,6 +87,8 @@ public class Masterpiece : Collectable
 
     public void Throw()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.THROW_SFX);
+
         collected = false;
         Vector3 scale = transform.localScale;
 
@@ -100,6 +106,8 @@ public class Masterpiece : Collectable
 
     public void PutInBag()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.STORE_SFX);
+
         collected = true;
 
         GameManager.instance.GetStolenManager().AddToCarrying(stealable);

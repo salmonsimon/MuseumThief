@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private StolenManager stolenManager;
     [SerializeField] private FloatingTextManager floatingTextManager;
+    [SerializeField] private SoundManager soundManager;
 
     #endregion
 
@@ -101,6 +102,7 @@ public class GameManager : MonoBehaviour
             Destroy(itemShopUI.gameObject);
             Destroy(welcomeUI.gameObject);
             Destroy(floatingTextManager.gameObject);
+            Destroy(soundManager.gameObject);
 
             return;
         }
@@ -217,6 +219,7 @@ public class GameManager : MonoBehaviour
     #region Pause Menu
     public void PauseGame()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
         gameIsPaused = true;
 
         Time.timeScale = 0f;
@@ -383,6 +386,8 @@ public class GameManager : MonoBehaviour
     }
     private void DisplaySelectedItem()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.CLICK_SFX);
+
         foreach (Transform item in selectedItemContent)
         {
             Destroy(item.gameObject);
@@ -424,11 +429,13 @@ public class GameManager : MonoBehaviour
     }
     public void ShowPurchaseConfirmation()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.BOUGHT_SFX);
         purchaseConfirmationPanel.SetActive(true);
     }
 
     public void ShowNotEnoughFunds()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
         notEnoughFundsPanel.SetActive(true);
     }
 
@@ -445,6 +452,11 @@ public class GameManager : MonoBehaviour
     public StolenManager GetStolenManager()
     {
         return stolenManager;
+    }
+
+    public SoundManager GetSoundManager()
+    {
+        return soundManager;
     }
     public bool IsGamePaused()
     {

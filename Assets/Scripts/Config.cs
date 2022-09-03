@@ -8,4 +8,14 @@ public class Config
 
     public static int DEFAULT_LAYER = 0;
     public static int BLOCKING_LAYER = 9;
+
+    public const string GRAB_SFX = "Grab";
+    public const string THROW_SFX = "Drop";
+    public const string STORE_SFX = "Store";
+    public const string CLICK_SFX = "Click";
+    public const string DENIED_SFX = "Denied";
+    public const string HOVER_SFX = "Hover";
+    public const string CAUGHT_SFX = "Death";
+    public const string BOUGHT_SFX = "Bought";
+    public const string PORTAL_SFX = "Portal";
 }
