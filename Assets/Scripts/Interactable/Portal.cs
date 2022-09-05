@@ -30,7 +30,7 @@ public class Portal : Collidable
     {
         GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
 
-        GameManager.instance.GetStolenManager().CarryingToStolen();
+        List<Stealable> carryingList = GameManager.instance.GetStolenManager().CarryingToStolen();
 
         GameManager.instance.GetPlayer().ResetToNormalSpeed();
 
@@ -43,5 +43,7 @@ public class Portal : Collidable
         GameManager.instance.SetGameHasBeenSaved(true);
 
         GameManager.instance.GetLevelLoader().LoadLevel(sceneName, Config.CROSSFADE_TRANSITION);
+
+        GameManager.instance.SoldDialogues(carryingList);
     }
 }

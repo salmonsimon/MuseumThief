@@ -87,6 +87,13 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Sold Masterpieces
+
+    [SerializeField] private Transform SoldMasterpieceCanvas;
+    [SerializeField] private GameObject SoldMasterpiecePanel;
+
+    #endregion
+
 
     #endregion
 
@@ -438,6 +445,50 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #endregion
+
+    #region Sold Masterpieces
+
+    public void SoldDialogues(List<Stealable> stealableList)
+    {
+        foreach (Transform panel in SoldMasterpieceCanvas)
+        {
+            Destroy(panel.gameObject);
+        }
+
+        foreach (Stealable stealable in stealableList)
+        {
+            GameObject newPanel = Instantiate(SoldMasterpiecePanel, SoldMasterpieceCanvas);
+            DisplaySoldMasterpiece(stealable, newPanel);
+        }
+    }
+
+    private void DisplaySoldMasterpiece(Stealable stealable, GameObject soldMasterpieceDialoguePanel)
+    {
+        GameManager.instance.GetSoundManager().PlaySound(Config.BOUGHT_SFX);
+
+        Transform soldMasterpieceContent = soldMasterpieceDialoguePanel.transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Sold Masterpiece Content");
+
+        foreach (Transform item in soldMasterpieceContent)
+        {
+            Destroy(item.gameObject);
+        }
+
+        GameObject obj = Instantiate(itemObject, soldMasterpieceContent);
+
+        var name = obj.transform.Find("Item Name").GetComponent<Text>();
+        var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+
+        name.text = stealable.stealableName;
+        icon.sprite = stealable.icon;
+
+        var description = soldMasterpieceDialoguePanel.transform.Find("Text Panel").GetComponentInChildren<Text>();
+        description.text = stealable.soldDialogue;
+
+        var priceText = soldMasterpieceDialoguePanel.transform.Find("Price Panel").GetComponentInChildren<Text>();
+        priceText.text = "I'll give you $" + selectedItem.item.price + "for this...";
+    }
 
     #endregion
 

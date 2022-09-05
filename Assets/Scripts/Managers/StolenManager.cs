@@ -77,7 +77,7 @@ public class StolenManager : MonoBehaviour
         stealable.SetAsSold();
     }
 
-    public void CarryingToStolen()
+    public List<Stealable> CarryingToStolen()
     {
         Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
 
@@ -87,9 +87,13 @@ public class StolenManager : MonoBehaviour
         foreach (Stealable stealable in carrying)
             AddToStolen(stealable);
 
+        List<Stealable> carryingList = carrying;
+
         ResetCarrying();
 
         SaveStolenManager();
+
+        return carryingList;
     }
 
     #endregion
