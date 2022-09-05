@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class GuardCollision : Collidable
 {
+    private bool caught = false;
+
+    protected override void Start()
+    {
+        base.Start();
+
+        caught = false;
+    }
+
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player"))
+        if (coll.CompareTag("Player") && !caught)
         {
+            caught = true;
+
             GameManager.instance.GetSoundManager().PlaySound(Config.CAUGHT_SFX);
 
             GameManager.instance.GetStolenManager().ResetCarrying();
@@ -17,7 +28,7 @@ public class GuardCollision : Collidable
             if (heldMasterpiece)
                 heldMasterpiece.Throw();
 
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
+            GameManager.instance.GetLevelLoader().LoadLevel(Config.STUDIO_SCENE_NAME, Config.CAUGHT_TRANSITION);
         }
     }
 }

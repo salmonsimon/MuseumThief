@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private StolenManager stolenManager;
     [SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private SoundManager soundManager;
+    [SerializeField] private LevelLoader levelLoader;
 
     #endregion
 
@@ -103,6 +104,7 @@ public class GameManager : MonoBehaviour
             Destroy(welcomeUI.gameObject);
             Destroy(floatingTextManager.gameObject);
             Destroy(soundManager.gameObject);
+            Destroy(levelLoader.gameObject);
 
             return;
         }
@@ -149,7 +151,7 @@ public class GameManager : MonoBehaviour
         if (!onMainMenu)
         {
             stolenManager.LoadStolenManager();
-            GameManager.instance.UpdateCarryingCapacityText();
+            UpdateCarryingCapacityText();
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
@@ -164,6 +166,7 @@ public class GameManager : MonoBehaviour
             mainMenu.SetActive(true);
         }
 
+        StartCoroutine(levelLoader.FinishTransition());
     }
 
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -179,14 +182,16 @@ public class GameManager : MonoBehaviour
         onMainMenu = true;
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene(Config.MAIN_MENU_SCENE_NAME);
+        //SceneManager.LoadScene(Config.MAIN_MENU_SCENE_NAME);
+        levelLoader.LoadLevel(Config.MAIN_MENU_SCENE_NAME, Config.CROSSFADE_TRANSITION);
         pauseMenu.SetActive(false);
     }
 
     public void PlayGame()
     {
         onMainMenu = false;
-        UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
+        levelLoader.LoadLevel(Config.STUDIO_SCENE_NAME, Config.CROSSFADE_TRANSITION);
+        //UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
     }
 
     public void QuitGame()
@@ -217,20 +222,19 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Pause Menu
+
     public void PauseGame()
     {
         GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
-        gameIsPaused = true;
+        GameManager.instance.SetGameIsPaused(true);
 
-        Time.timeScale = 0f;
         pauseMenu.SetActive(true);
     }
 
     public void ResumeGame()
     {
-        gameIsPaused = false;
+        GameManager.instance.SetGameIsPaused(false);
 
-        Time.timeScale = 1f;
         pauseMenu.SetActive(false);
     }
 
@@ -458,10 +462,26 @@ public class GameManager : MonoBehaviour
     {
         return soundManager;
     }
+
+    public LevelLoader GetLevelLoader()
+    {
+        return levelLoader;
+    }
     public bool IsGamePaused()
     {
         return gameIsPaused;
     }
+
+    public void SetGameIsPaused(bool x)
+    {
+        gameIsPaused = x;
+
+        if (x)
+            Time.timeScale = 0f;
+        else
+            Time.timeScale = 1f;
+    }
+
     public void SetGameHasBeenSaved(bool x)
     {
         gameHasBeenSaved = x;
