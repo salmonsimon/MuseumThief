@@ -18,4 +18,7 @@ public class Config
     public const string CAUGHT_SFX = "Death";
     public const string BOUGHT_SFX = "Bought";
     public const string PORTAL_SFX = "Portal";
+
+    public const string CROSSFADE_TRANSITION = "Crossfade";
+    public const string CAUGHT_TRANSITION = "Caught";
 }

@@ -7,10 +7,14 @@ public class Portal : Collidable
     [SerializeField] private string[] sceneNames;
     [SerializeField] private bool isRandomPortal = false;
 
+    private bool teleporting = false;
+
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player"))
+        if (coll.CompareTag("Player") && !teleporting)
         {
+            teleporting = true;
+
             string sceneName;
 
             if (isRandomPortal)
@@ -38,6 +42,6 @@ public class Portal : Collidable
         await ZSerializer.ZSerialize.SaveScene();
         GameManager.instance.SetGameHasBeenSaved(true);
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+        GameManager.instance.GetLevelLoader().LoadLevel(sceneName, Config.CROSSFADE_TRANSITION);
     }
 }
