@@ -49,8 +49,6 @@ public class LevelLoader : MonoBehaviour
     {
         GameManager.instance.SetGameIsPaused(false);
 
-        //yield return new WaitForSeconds(endTransitionTime);
-
         switch (lastTransitionType)
         {
             case Config.CROSSFADE_TRANSITION:

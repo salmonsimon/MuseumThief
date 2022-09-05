@@ -182,7 +182,6 @@ public class GameManager : MonoBehaviour
         onMainMenu = true;
 
         Time.timeScale = 1f;
-        //SceneManager.LoadScene(Config.MAIN_MENU_SCENE_NAME);
         levelLoader.LoadLevel(Config.MAIN_MENU_SCENE_NAME, Config.CROSSFADE_TRANSITION);
         pauseMenu.SetActive(false);
     }
@@ -191,16 +190,11 @@ public class GameManager : MonoBehaviour
     {
         onMainMenu = false;
         levelLoader.LoadLevel(Config.STUDIO_SCENE_NAME, Config.CROSSFADE_TRANSITION);
-        //UnityEngine.SceneManagement.SceneManager.LoadScene(Config.STUDIO_SCENE_NAME);
     }
 
     public void QuitGame()
     {
-        //To quit the built game
         Application.Quit();
-
-        //To quit the editor application
-        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void DeleteSavedGame()
