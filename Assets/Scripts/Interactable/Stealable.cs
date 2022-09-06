@@ -10,6 +10,9 @@ public class Stealable : ScriptableObject
     public int price;
     public Sprite icon;
 
+    [TextArea(3, 10)]
+    public string soldDialogue;
+
     public bool sold = false;
 
     public void SetAsSold()

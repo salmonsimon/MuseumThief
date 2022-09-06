@@ -87,6 +87,13 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Sold Masterpieces
+
+    [SerializeField] private Transform SoldMasterpieceCanvas;
+    [SerializeField] private GameObject SoldMasterpiecePanel;
+
+    #endregion
+
 
     #endregion
 
@@ -438,6 +445,49 @@ public class GameManager : MonoBehaviour
     }
 
     #endregion
+
+    #endregion
+
+    #region Sold Masterpieces
+
+    public void SoldDialogues(List<Stealable> stealableList)
+    {
+        GameManager.instance.GetSoundManager().PlaySound(Config.BOUGHT_SFX);
+
+        foreach (Transform panel in SoldMasterpieceCanvas)
+        {
+            Destroy(panel.gameObject);
+
+            Debug.Log("destroyed");
+        }
+
+        foreach (Stealable stealable in stealableList)
+        {
+            GameObject newPanel = Instantiate(SoldMasterpiecePanel, SoldMasterpieceCanvas);
+            DisplaySoldMasterpiece(stealable, newPanel);
+
+            Debug.Log("Shown");
+        }
+    }
+
+    private void DisplaySoldMasterpiece(Stealable stealable, GameObject soldMasterpieceDialoguePanel)
+    {
+        Transform soldMasterpieceContent = soldMasterpieceDialoguePanel.transform.Find("Sold Masterpiece").transform.Find("Scroll View").transform.Find("Viewport").transform.Find("Sold Masterpiece Content");
+
+        GameObject obj = Instantiate(itemObject, soldMasterpieceContent);
+
+        var icon = obj.transform.Find("Item Icon").GetComponent<Image>();
+        icon.sprite = stealable.icon;
+
+        var name = soldMasterpieceDialoguePanel.transform.Find("Stealable Name").GetComponentInChildren<Text>();
+        name.text = stealable.stealableName;
+
+        var description = soldMasterpieceDialoguePanel.transform.Find("Text Panel").GetComponentInChildren<Text>();
+        description.text = stealable.soldDialogue;
+
+        var priceText = soldMasterpieceDialoguePanel.transform.Find("Price Panel").GetComponentInChildren<Text>();
+        priceText.text = "I'll give you $" + stealable.price + " for this...";
+    }
 
     #endregion
 

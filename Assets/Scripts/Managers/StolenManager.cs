@@ -10,6 +10,7 @@ public class StolenManager : MonoBehaviour
 
     public List<Stealable> carrying = new List<Stealable>();
     public List<Stealable> stolen = new List<Stealable>();
+    public List<Stealable> lastCarrying = new List<Stealable>();
 
     #endregion
 
@@ -69,6 +70,11 @@ public class StolenManager : MonoBehaviour
         usedBackpackCapacity = 0;
     }
 
+    public void ResetLastCarrying()
+    {
+        lastCarrying.Clear();
+    }
+
     private void AddToStolen(Stealable stealable)
     {
         stolen.Add(stealable);
@@ -85,7 +91,10 @@ public class StolenManager : MonoBehaviour
             heldMasterpiece.PutInBag();
 
         foreach (Stealable stealable in carrying)
+        {
             AddToStolen(stealable);
+            lastCarrying.Add(stealable);
+        }
 
         ResetCarrying();
 
@@ -137,6 +146,11 @@ public class StolenManager : MonoBehaviour
     {
         backpackCapacity = value;
         GameManager.instance.UpdateCarryingCapacityText();
+    }
+
+    public List<Stealable> GetLastCarrying()
+    {
+        return lastCarrying;
     }
 
     #endregion
