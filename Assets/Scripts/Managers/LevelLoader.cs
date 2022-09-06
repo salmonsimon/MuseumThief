@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -63,5 +64,18 @@ public class LevelLoader : MonoBehaviour
                 caughtFade.gameObject.SetActive(false);
                 break;
         }
+
+        List<Stealable> lastCarrying = GameManager.instance.GetStolenManager().GetLastCarrying();
+
+        if (lastCarrying.Count > 0)
+        {
+            yield return new WaitForSeconds(endTransitionTime);
+
+            GameManager.instance.SoldDialogues(lastCarrying);
+            GameManager.instance.GetStolenManager().ResetLastCarrying();
+
+            GameManager.instance.GetStolenManager().SaveStolenManager();
+        }
+        
     }
 }
