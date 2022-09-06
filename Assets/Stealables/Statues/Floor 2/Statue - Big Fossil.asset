@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 9
   price: 100
   icon: {fileID: -2042699737, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: You're really strong or have a very clear goal in mind... This fossil
+    is great! Will make a perfect accesory to our garage...
   sold: 0

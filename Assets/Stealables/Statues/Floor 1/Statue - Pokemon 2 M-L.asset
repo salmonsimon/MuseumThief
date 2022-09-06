@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 30
   icon: {fileID: -990451809, guid: 542f4fe29f9a93f428b45506a8197e1a, type: 3}
+  soldDialogue: what is this? another pokemon statue?? i'm really lost now with these
+    new editions...
   sold: 0

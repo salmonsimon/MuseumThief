@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Lake 1 S
   m_EditorClassIdentifier: 
-  stealableName: Lake 1
+  stealableName: The lake at montgeron
   weight: 1
   price: 10
   icon: {fileID: 84062890, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: Monet... amazing artist, this will be sold easily for sure...
   sold: 0

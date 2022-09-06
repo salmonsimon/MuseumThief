@@ -16,4 +16,10 @@ MonoBehaviour:
   weight: 6
   price: 55
   icon: {fileID: -1819377467, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: 'kind of creepy, huh?
+
+
+    it was made by the same artist as the
+    bloody painting! please if you see that one bring it to me, it''ll fetch a steep
+    price.'
   sold: 0

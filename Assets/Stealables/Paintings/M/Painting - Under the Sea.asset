@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 3
   price: 10
   icon: {fileID: -1061081381, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  soldDialogue: Corals, algae, fishes and more... a faithful depiction of it's immensity
+    and mistery...
   sold: 0

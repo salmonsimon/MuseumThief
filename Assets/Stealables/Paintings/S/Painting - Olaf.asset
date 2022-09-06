@@ -16,4 +16,9 @@ MonoBehaviour:
   weight: 1
   price: 40
   icon: {fileID: -2077665351, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: 'Olaf! what a funny and amazing creature it is!
+
+
+    looks as it
+    would start moving even in the painting!'
   sold: 0

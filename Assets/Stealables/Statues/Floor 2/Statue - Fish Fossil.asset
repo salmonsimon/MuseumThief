@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 3
   price: 25
   icon: {fileID: -1313739298, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: Never thought that fish could be made into a fossil and to be preserved
+    in this spectacular way...
   sold: 0

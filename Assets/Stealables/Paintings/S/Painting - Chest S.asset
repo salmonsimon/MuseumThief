@@ -16,4 +16,7 @@ MonoBehaviour:
   weight: 1
   price: 5
   icon: {fileID: -1394626680, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: "minecraft... is that you? \n\nOne of the most basic painting in
+    the whole museum, sorry to dissapoint but none of my clients has asked for this
+    one yet..."
   sold: 0

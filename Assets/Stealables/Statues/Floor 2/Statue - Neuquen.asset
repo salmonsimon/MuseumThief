@@ -16,4 +16,9 @@ MonoBehaviour:
   weight: 9
   price: 120
   icon: {fileID: 1672503923, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: 'This one is amazing!
+
+
+    Also you are amazing to be able to bring
+    this giant buddy on your backpack...'
   sold: 0

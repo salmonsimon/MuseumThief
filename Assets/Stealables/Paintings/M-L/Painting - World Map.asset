@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 50
   icon: {fileID: -307270449, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  soldDialogue: an ancient world map! well it's not that well mantained, or did you
+    by any chance damaged it while bringing it here??
   sold: 0

@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 40
   icon: {fileID: 372685797, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: Really heavy for their price... they're quite normal, sorry, we have
+    10 in the garage.
   sold: 0

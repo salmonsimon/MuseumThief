@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Statue - Fossil Medium 1
   m_EditorClassIdentifier: 
-  stealableName: Fossil Medium 1
+  stealableName: Unidentified Fossil
   weight: 3
   price: 35
   icon: {fileID: -1604695053, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: Do you know what kind of species is this one? I'd need the name of
+    it to be able to sell it later properly...
   sold: 0

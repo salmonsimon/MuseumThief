@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 100
   icon: {fileID: -233741473, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: wow... you really found this one too!! Amazing dude, amazing!
   sold: 0

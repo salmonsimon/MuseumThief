@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 3
   price: 30
   icon: {fileID: -1051014116, guid: 570d99a281426b14eaf5bea842f50d25, type: 3}
+  soldDialogue: "A great depiction of a plesiosaurs... \n\nthey say that they could
+    be up to 14 meters long!"
   sold: 0

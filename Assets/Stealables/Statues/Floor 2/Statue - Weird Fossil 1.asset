@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 25
   icon: {fileID: 213941457, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: mmm, just another weird fossil...
   sold: 0

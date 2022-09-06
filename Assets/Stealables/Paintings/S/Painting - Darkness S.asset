@@ -16,4 +16,9 @@ MonoBehaviour:
   weight: 1
   price: 5
   icon: {fileID: 1634043255, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: 'Darkness...
+
+
+    As you can except from this artist, really makes
+    you cry just by looking at it...'
   sold: 0

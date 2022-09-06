@@ -15,5 +15,6 @@ MonoBehaviour:
   stealableName: Trees
   weight: 1
   price: 5
-  icon: {fileID: 0}
+  icon: {fileID: -539317296, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: "A tree... \ntrees...\nwoods...\nforest?"
   sold: 0

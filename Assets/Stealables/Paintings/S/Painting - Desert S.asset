@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 1
   price: 15
   icon: {fileID: -1222680502, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: The dune! the amazing dune! finally I got my hands on it!
   sold: 0

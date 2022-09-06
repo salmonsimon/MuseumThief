@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 6
   price: 30
   icon: {fileID: 1611202810, guid: 542f4fe29f9a93f428b45506a8197e1a, type: 3}
+  soldDialogue: You are really into these statues, huh...
   sold: 0

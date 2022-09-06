@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealableName: Paseo por la Playa
   weight: 1
-  price: 20
+  price: 25
   icon: {fileID: -755086619, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: "One of the greatest works of Sorolla... \n\nThose reflections on
+    the wet sand... unbelievable..."
   sold: 0

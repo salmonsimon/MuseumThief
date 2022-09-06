@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 25
   icon: {fileID: 21300000, guid: eb6767b2ca15bfc4cab36d6a2b5463ae, type: 3}
+  soldDialogue: Sadly we don't use the life system in this game... Sorry!
   sold: 0
