@@ -6,14 +6,10 @@ public class Portal : Collidable
     [SerializeField] private string[] sceneNames;
     [SerializeField] private bool isRandomPortal = false;
 
-    private bool teleporting = false;
-
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player") && !teleporting)
+        if (coll.CompareTag("Player") && !GameManager.instance.GetPlayer().IsTeleporting())
         {
-            teleporting = true;
-
             string sceneName;
 
             if (isRandomPortal)
@@ -27,6 +23,8 @@ public class Portal : Collidable
 
     public async void UsePortal(string sceneName = "Studio")
     {
+        GameManager.instance.GetPlayer().SetIsTeleporting(true);
+
         GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
 
         GameManager.instance.GetStolenManager().CarryingToStolen();

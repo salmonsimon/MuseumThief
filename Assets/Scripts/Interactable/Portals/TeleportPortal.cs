@@ -8,8 +8,6 @@ public class TeleportPortal : Collidable
     [SerializeField] private AudioClip newSong;
     private AudioSource audioSource;
 
-    private bool teleporting = false;
-
     protected override void Start()
     {
         base.Start();
@@ -19,9 +17,11 @@ public class TeleportPortal : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player") && !teleporting)
+        Player player = GameManager.instance.GetPlayer();
+
+        if (coll.CompareTag("Player") && !player.IsTeleporting())
         {
-            teleporting = true;
+            player.SetIsTeleporting(true);
 
             GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
             GameManager.instance.GetPlayer().transform.position = teleportPoint.transform.position;
@@ -38,8 +38,10 @@ public class TeleportPortal : Collidable
 
     private IEnumerator AsyncTeleportRestore()
     {
+        Player player = GameManager.instance.GetPlayer();
+
         yield return new WaitForSeconds(0.5f);
 
-        teleporting = false;
+        player.SetIsTeleporting(false);
     }
 }

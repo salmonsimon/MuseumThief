@@ -44,7 +44,7 @@ public class PatrollingGuard : Guard
             if (Vector3.Distance(playerTransform.position, startingPosition) < triggerLenght)
             {
                 chasing = true;
-                animator.SetBool("Chasing", chasing);
+                Chasing();
 
                 if (!startedChasing)
                 {
@@ -96,7 +96,7 @@ public class PatrollingGuard : Guard
                 }
 
                 chasing = false;
-                animator.SetBool("Chasing", chasing);
+                FinishedChasing();
 
                 startedChasing = false;
             }
@@ -107,7 +107,7 @@ public class PatrollingGuard : Guard
             if (chasing)
             {
                 chasing = false;
-                animator.SetBool("Chasing", chasing);
+                FinishedChasing();
 
                 startedChasing = false;
 

@@ -76,6 +76,7 @@ public class LevelLoader : MonoBehaviour
 
             GameManager.instance.GetStolenManager().SaveStolenManager();
         }
-        
+
+        GameManager.instance.GetPlayer().SetIsTeleporting(false);
     }
 }

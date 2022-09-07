@@ -15,7 +15,7 @@ public class GuardCollision : Collidable
 
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player") && !caught)
+        if (coll.CompareTag("Player") && !caught && !GameManager.instance.GetPlayer().IsTeleporting())
         {
             caught = true;
 
