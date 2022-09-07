@@ -21,7 +21,7 @@ public class Portal : Collidable
             else
                 sceneName = sceneNames[0];
 
-            BackToStudio(sceneName);
+            BackToStudio();
         }
     }
 

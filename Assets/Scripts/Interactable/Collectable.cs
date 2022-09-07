@@ -11,7 +11,9 @@ public class Collectable : Collidable
         if (coll.CompareTag("Player"))
         {
             if (Input.GetKeyDown(KeyCode.Space))
+            {
                 OnCollect();
+            }
         }
     }
 

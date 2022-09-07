@@ -16,6 +16,6 @@ MonoBehaviour:
   itemDescription: Life's not about how heavy you can lift... it's about not forgetting
     legs day.
   icon: {fileID: 1658215052, guid: e12a9b978942cac4980d48650ea477de, type: 3}
-  price: 200
+  price: 300
   infiniteAmount: 0
   itemType: 3
