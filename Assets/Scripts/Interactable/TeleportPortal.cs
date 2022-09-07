@@ -8,7 +8,7 @@ public class TeleportPortal : Collidable
     [SerializeField] private AudioClip newSong;
     private AudioSource audioSource;
 
-    private bool teleporting = false;
+    public bool teleporting = false;
 
     protected override void Start()
     {
@@ -32,7 +32,14 @@ public class TeleportPortal : Collidable
                 audioSource.Play();
             }
 
-            teleporting = false;
+            StartCoroutine(AsyncTeleportRestore());
         }
+    }
+
+    private IEnumerator AsyncTeleportRestore()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        teleporting = false;
     }
 }

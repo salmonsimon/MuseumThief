@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Window : Portal
 {
     [SerializeField] private int floorNumber;
 
+    private bool teleporting = false;
+
     protected override void OnCollide(Collider2D coll)
     {
-        if (coll.CompareTag("Player"))
+        if (coll.CompareTag("Player") & !teleporting)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -21,7 +21,8 @@ public class Window : Portal
                 }
                 else
                 {
-                    BackToStudio();
+                    teleporting = true;
+                    UsePortal();
                 }
             }
         }
