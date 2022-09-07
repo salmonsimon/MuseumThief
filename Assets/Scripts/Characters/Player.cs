@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Mover
 {
+    private bool isTeleporting = false;
+
     private void Update()
     {
         if (!GameManager.instance.IsGamePaused())
@@ -26,5 +28,15 @@ public class Player : Mover
     private void FixedUpdate()
     {
         UpdateMotor(movement, has2DAnimation);
+    }
+
+    public bool IsTeleporting()
+    {
+        return isTeleporting;
+    }
+
+    public void SetIsTeleporting(bool value)
+    {
+        isTeleporting = value; 
     }
 }

@@ -16,7 +16,10 @@ public class GameManager : MonoBehaviour
     private bool gameIsPaused = false;
     private bool gameHasBeenSaved = false;
     private bool firstTimePlaying = true;
+
     [SerializeField] private bool onMainMenu = true;
+
+    private bool onEmergency = false;
 
     #endregion
 
@@ -549,6 +552,16 @@ public class GameManager : MonoBehaviour
     public void SetFirstTimePlaying(bool value)
     {
         firstTimePlaying = value;    
+    }
+
+    public bool GetOnEmergency()
+    {
+        return onEmergency;
+    }
+
+    public void SetOnEmergency(bool value)
+    {
+        onEmergency = value;
     }
 
     #endregion
