@@ -16,4 +16,9 @@ MonoBehaviour:
   weight: 1
   price: 30
   icon: {fileID: 1625448839, guid: 570d99a281426b14eaf5bea842f50d25, type: 3}
+  soldDialogue: 'For such a small painting, to be over 10.000 years old...
+
+
+    An
+    amazing piece of art.'
   sold: 0

@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 15
   price: 0
   icon: {fileID: 0}
+  soldDialogue: You really were able to bring this back home? this is a bug, please
+    report it hahaha
   sold: 0

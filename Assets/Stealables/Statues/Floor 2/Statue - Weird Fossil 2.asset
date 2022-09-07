@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 40
   icon: {fileID: -263327688, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: This one! demon wings? aamazingly conserved, can't thank you enough!!
   sold: 0

@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 1
   price: 5
   icon: {fileID: 1402425871, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: here comes the sun...
   sold: 0

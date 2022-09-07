@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 20
   icon: {fileID: 138115461, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: a fine piece... always nice to have one on your bedroom...
   sold: 0

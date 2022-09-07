@@ -16,16 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 15
   icon: {fileID: -169815675, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
-  soldDialogue: 'Globe
-
-
-    this blalablablalablablalablablalablablalablablalabla
-
-    blalabla
-
-    blalabla
-
-    blalabla
-
-    blalabla'
+  soldDialogue: A fine Globe, but nothing more than that...
   sold: 1

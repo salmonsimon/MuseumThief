@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 25
   icon: {fileID: 716927959, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  soldDialogue: Didn't you see it already in the tutorial room? I'm sorry but it's
+    price won't be high...
   sold: 0

@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 6
   price: 25
   icon: {fileID: -610918101, guid: 542f4fe29f9a93f428b45506a8197e1a, type: 3}
+  soldDialogue: This seems to be part of another game...
   sold: 0

@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 30
   icon: {fileID: -317943552, guid: 570d99a281426b14eaf5bea842f50d25, type: 3}
+  soldDialogue: other big swimmer... the nothosaurs is believed to be one of the
+    first large ocean reptiles...
   sold: 0

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealableName: T-Rex
   weight: 10
-  price: 100
+  price: 500
   icon: {fileID: -293311272, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: It's impossible... you really brought this one back home? Amazing...
   sold: 0

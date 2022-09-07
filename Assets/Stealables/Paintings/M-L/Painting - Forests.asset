@@ -16,4 +16,15 @@ MonoBehaviour:
   weight: 6
   price: 70
   icon: {fileID: 1663336039, guid: 9696be13f85a8c24dac3142441894698, type: 3}
+  soldDialogue: 'tree
+
+    trees
+
+    woods
+
+    forest...
+
+
+    wait, haven''t I
+    said that already?'
   sold: 0

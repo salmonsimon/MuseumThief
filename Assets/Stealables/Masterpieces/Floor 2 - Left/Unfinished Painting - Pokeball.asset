@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealableName: Unfinished Painting - Pokeball
   weight: 3
-  price: 10
+  price: 5
   icon: {fileID: 277670835, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  soldDialogue: Really amateur, wasn't even finished... Why did you bring it?? I
+    think you should be paying me for this...
   sold: 0

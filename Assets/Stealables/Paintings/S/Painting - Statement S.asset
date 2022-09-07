@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Statement S
   m_EditorClassIdentifier: 
-  stealableName: Statement
+  stealableName: Museum Flyer
   weight: 1
   price: 5
   icon: {fileID: 1763216731, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: "oh... I think you just brought back an announcement flyer from the
+    museum... \nwell, I always pay for new info, but this is not what I meant..."
   sold: 0

@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Statue - Gods XL
   m_EditorClassIdentifier: 
-  stealableName: Statue
+  stealableName: Laocoon and His sons
   weight: 10
-  price: 100
+  price: 500
   icon: {fileID: -952250775, guid: 620a391802e12e04bb0fb878f0736f90, type: 3}
+  soldDialogue: You really brought this giant statue by hand? What are you, Atlas?
+    ...
   sold: 1

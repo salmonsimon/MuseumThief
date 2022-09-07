@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Statue - Ice Bird
   m_EditorClassIdentifier: 
-  stealableName: Ice Bird
+  stealableName: Ice Bird Statue
   weight: 6
   price: 80
   icon: {fileID: 510563385, guid: 2798662f7a6b4f344a074df4548ba6c1, type: 3}
+  soldDialogue: 'Is it another pokemon or not this time?
+
+
+    mmm... damn, cant
+    think too much about it, put it on the fridge in the back quickly please...'
   sold: 0

@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 6
   price: 80
   icon: {fileID: -1334038368, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: "I know this one, I know this one!!\n\n... \n\nWhat was it's name?"
   sold: 0

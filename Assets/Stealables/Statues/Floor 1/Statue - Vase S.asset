@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stealableName: Egyptian Vase
   weight: 1
-  price: 20
+  price: 50
   icon: {fileID: 1930073773, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: 'I''ts amazing that you found this hidden gem! thanks for playing
+    museum thief! '
   sold: 0

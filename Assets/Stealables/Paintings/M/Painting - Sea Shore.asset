@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Sea Shore
   m_EditorClassIdentifier: 
-  stealableName: Sea shore
+  stealableName: Corriendo por la playa
   weight: 3
   price: 15
   icon: {fileID: 1257716566, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: 'Another amazing work by Sorolla...
+
+
+    the sea looks so refreshing...
+    I might need some vacations soon...'
   sold: 0

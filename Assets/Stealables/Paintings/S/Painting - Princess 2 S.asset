@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Princess 2 S
   m_EditorClassIdentifier: 
-  stealableName: Princess 2
+  stealableName: Elsa Princess
   weight: 1
   price: 80
   icon: {fileID: -1783728326, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: 'elsa! amazing, the painting is cold to the touch...
+
+
+    let it
+    go, let it goooo...'
   sold: 0

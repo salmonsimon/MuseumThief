@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 6
   price: 55
   icon: {fileID: -2037607353, guid: 6df7c1f315fa1d54a943644a9eebcff8, type: 3}
+  soldDialogue: Loved this fossil, is so well mantained... Will fetch a decent price...
   sold: 0

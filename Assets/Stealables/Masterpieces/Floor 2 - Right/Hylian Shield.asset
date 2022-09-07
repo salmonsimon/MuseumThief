@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 6
   price: 80
   icon: {fileID: 21300000, guid: d800024097ab5794585618626bdef54f, type: 3}
+  soldDialogue: Definitely my favorite classic...
   sold: 0

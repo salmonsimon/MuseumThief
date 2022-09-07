@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Bananas
   m_EditorClassIdentifier: 
-  stealableName: Bananas
+  stealableName: Bananas x3
   weight: 3
   price: 50
   icon: {fileID: 21300000, guid: 1be06ccc9e422dc42b9f1b2b108cb6c3, type: 3}
+  soldDialogue: Amazing! just as if it were frome another game... will fetch a considerable
+    amount...
   sold: 0

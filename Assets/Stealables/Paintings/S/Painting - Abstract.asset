@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 1
   price: 40
   icon: {fileID: 190450471, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: Abstract as it is, my clients love it... will fetch a nice price!
   sold: 0

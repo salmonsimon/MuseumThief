@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 1
   price: 10
   icon: {fileID: 1786192423, guid: 0a4b6e235956c6d4ba1f040f12a3a48b, type: 3}
+  soldDialogue: The sunset, I feel embraced by its warmth just by looking at it...
   sold: 0

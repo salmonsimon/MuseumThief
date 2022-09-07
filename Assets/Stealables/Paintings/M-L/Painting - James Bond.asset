@@ -16,4 +16,6 @@ MonoBehaviour:
   weight: 6
   price: 25
   icon: {fileID: -2119286653, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: an amateur piece, why is it a painting of james bond being exhibited
+    in this museum??
   sold: 0

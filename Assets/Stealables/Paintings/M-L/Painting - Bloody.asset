@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Bloody
   m_EditorClassIdentifier: 
-  stealableName: Bloody
+  stealableName: Bloody Painting
   weight: 6
   price: 80
   icon: {fileID: 507269857, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: it's the famous bloody painting! they even said that it was painted
+    with real blood, can you believe it? real blood!!
   sold: 0

@@ -16,4 +16,5 @@ MonoBehaviour:
   weight: 3
   price: 15
   icon: {fileID: 837203696, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: A fine waterfall... no more, no less...
   sold: 0
