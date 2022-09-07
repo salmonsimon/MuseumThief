@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
+  m_Name: DuckGem
+  m_EditorClassIdentifier: 
+  stealableName: Duck Gem
+  weight: 9
+  price: 1000
+  icon: {fileID: 21300000, guid: 7f05c1aac2b74be4dadd89b12ecad206, type: 3}
+  soldDialogue: "Finally, I brought it back!! \n\nour family treasure that was down
+    from generations, finally is back in the duck family! It was a tough road, but
+    it has finally come to an end...\n\nThanks a lot for playing museum thief! you
+    can still try to steal all other masterpieces from the game, enjoy!"
+  sold: 0

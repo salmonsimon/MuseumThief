@@ -176,14 +176,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   has2DAnimation: 0
+  xSpeed: 1
+  ySpeed: 0.75
   triggerLenght: 1
   chaseLenght: 1.5
   nextWaypointDistance: 0.08
-  patrollingPath:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  patrollingPath: []
   currentPatrollingPoint: 0
   currentPatrollingGoal: {fileID: 0}
   roundingDistance: 0.16

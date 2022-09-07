@@ -368,7 +368,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 0x0
+      name: lastWall 0x0
       rect:
         serializedVersion: 2
         x: 0
@@ -389,7 +389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 1x0
+      name: lastWall 1x0
       rect:
         serializedVersion: 2
         x: 0
@@ -410,7 +410,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 2x0
+      name: lastWall 2x0
       rect:
         serializedVersion: 2
         x: 0
@@ -431,7 +431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 3x0
+      name: lastWall 3x0
       rect:
         serializedVersion: 2
         x: 0
@@ -452,7 +452,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 4x0
+      name: lastWall 4x0
       rect:
         serializedVersion: 2
         x: 0
@@ -473,7 +473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 5x0
+      name: lastWall 5x0
       rect:
         serializedVersion: 2
         x: 0
@@ -494,7 +494,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 5x1
+      name: lastWall 5x1
       rect:
         serializedVersion: 2
         x: 16
@@ -515,7 +515,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 4x1
+      name: lastWall 4x1
       rect:
         serializedVersion: 2
         x: 16
@@ -536,7 +536,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 3x1
+      name: lastWall 3x1
       rect:
         serializedVersion: 2
         x: 16
@@ -557,7 +557,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 2x1
+      name: lastWall 2x1
       rect:
         serializedVersion: 2
         x: 16
@@ -578,7 +578,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 1x1
+      name: lastWall 1x1
       rect:
         serializedVersion: 2
         x: 16
@@ -599,7 +599,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 0x1
+      name: lastWall 0x1
       rect:
         serializedVersion: 2
         x: 16
@@ -620,7 +620,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 0x2
+      name: lastWall 0x2
       rect:
         serializedVersion: 2
         x: 128
@@ -641,7 +641,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 1x2
+      name: lastWall 1x2
       rect:
         serializedVersion: 2
         x: 128
@@ -662,7 +662,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 2x2
+      name: lastWall 2x2
       rect:
         serializedVersion: 2
         x: 128
@@ -683,7 +683,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 3x2
+      name: lastWall 3x2
       rect:
         serializedVersion: 2
         x: 128
@@ -704,7 +704,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 4x2
+      name: lastWall 4x2
       rect:
         serializedVersion: 2
         x: 128
@@ -725,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Wall 5x2
+      name: lastWall 5x2
       rect:
         serializedVersion: 2
         x: 128
@@ -777,37 +777,37 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      lastWall 0x2: -1991881271
       Escalera - Centro: -548438353
       Escalera - Left: -1591499822
       Pokemon Statue 6: -610918101
       Escalera - Right: -310047874
-      Wall 5x1: 1131210473
-      Wall 0x1: -1572609578
+      lastWall 2x1: 580969054
       Pokemon Statue 4: 742568149
-      Wall 1x2: 2084347274
       Pokemon Statue 3: -347959781
-      Wall 0x2: -1991881271
-      Wall 2x1: 580969054
-      Wall 4x0: -310648108
-      Wall 4x2: 82224240
-      Wall 3x1: 953296423
-      Wall 2x0: 2130759062
-      Wall 5x0: 22583013
-      Wall 1x0: 101336738
+      lastWall 3x1: 953296423
+      lastWall 1x2: 2084347274
+      lastWall 4x1: -1600837997
+      lastWall 1x1: 1661815847
+      lastWall 3x0: -1701046310
+      lastWall 3x2: 707235759
+      lastWall 2x0: 2130759062
       Pokemon Statue 5: 1611202810
-      Wall 1x1: 1661815847
       Stained Glass: -597736568
-      Wall 3x2: 707235759
+      lastWall 4x2: 82224240
       Escalera - Railing: 1730059622
-      Wall 4x1: -1600837997
-      Wall 3x0: -1701046310
-      Wall 2x2: 2138684405
+      lastWall 5x0: 22583013
+      lastWall 5x2: -1932129333
+      lastWall 1x0: 101336738
+      lastWall 0x0: 684452443
       Pokemon Statue 1: 1720833217
       Pokemon Statue 2: -990451809
       Wall: 817020576
       Escalera Completa: -385858793
-      Wall 0x0: 684452443
-      Wall 5x2: -1932129333
+      lastWall 2x2: 2138684405
+      lastWall 5x1: 1131210473
+      lastWall 0x1: -1572609578
+      lastWall 4x0: 987473951
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
