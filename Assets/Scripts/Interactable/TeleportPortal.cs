@@ -8,7 +8,7 @@ public class TeleportPortal : Collidable
     [SerializeField] private AudioClip newSong;
     private AudioSource audioSource;
 
-    public bool teleporting = false;
+    private bool teleporting = false;
 
     protected override void Start()
     {
