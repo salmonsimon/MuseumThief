@@ -4,6 +4,8 @@ Museum thief is a game in which your final goal is to steal the most precious it
 
 To be able to steal **The DUCK GEM**, you'll need to climb all the floors in the museum while stealing other masterpieces from it so you can exchange them from money and buy different *items* that will make your climb easier.
 
+### [Consider playing it in itch.io - Museum Thief](https://salmonsimon.itch.io/museum-thief)
+
 All art used in this project is not mine, so special thanks to the following artists:
 - [The Quacken](https://deadmadman.itch.io/the-quaken-assets)
 - [Princess Phoenix](https://www.deviantart.com/princess-phoenix)
