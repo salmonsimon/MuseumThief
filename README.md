@@ -88,6 +88,12 @@ On the museum you'll find different floors, which as you get higher gets more se
     </picture>
 </p>
 
+#### Floor 3 - Gem
+
+<picture>
+<img src="ScreenShots/Floor3.PNG" height="400">
+</picture>
+
 ## Guards
 
 On game you'll encounter with two types of guards: *Static Guards* which will stay on the same place and guard certain area and *Patrolling Guards* which will be walking through certain defined points. Both guards will chase you if you get close to them, while *Static Guards* are easier to evade since they won't chase you long enough, *Patrolling Guards* are more athletic and will chase you longer, so be aware!
@@ -102,6 +108,14 @@ Any masterpiece you have in your carrying inventory will be taken by the guards 
 #### Patrolling Gaurds
 <picture>
 <img src="ScreenShots/PatrollingGuards.gif" width="600">
+</picture>
+
+## Emergency System
+
+Since your goal is to steal the gem that sits atop the museum, the most valuable masterpiece of it, an emergency system has been set in case of any inconvenience... An alarm sounds and it calls several guards to aid on each floor in the search of the thief, so be on guard and try to avoid them all!
+
+<picture>
+<img src="ScreenShots/EmergencyAlert.gif" width="600">
 </picture>
 
 ## Menus
