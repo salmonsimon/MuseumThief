@@ -74,7 +74,6 @@ public class Guard : Mover
                 retreating = false;
 
                 Chasing();
-                //animator.SetBool("Chasing", chasing);
             }
 
             if (path == null)
@@ -119,7 +118,6 @@ public class Guard : Mover
                 {
                     chasing = false;
                     FinishedChasing();
-                    //animator.SetBool("Chasing", chasing);
                     return;
                 }
 
@@ -135,7 +133,6 @@ public class Guard : Mover
 
                 chasing = false;
                 FinishedChasing();
-                //animator.SetBool("Chasing", chasing);
             }
             
         }
@@ -145,7 +142,6 @@ public class Guard : Mover
             {
                 chasing = false;
                 FinishedChasing();
-                //animator.SetBool("Chasing", chasing);
                 return;
             }
 
@@ -183,7 +179,6 @@ public class Guard : Mover
 
             chasing = false;
             FinishedChasing();
-            //animator.SetBool("Chasing", chasing);
         }
     }
 
