@@ -10,6 +10,9 @@ public class Guard : Mover
     [SerializeField] protected float chaseLenght = 3;
     [SerializeField] protected float nextWaypointDistance = 0.08f;
 
+    private float chasingXSpeed = 1.5f;
+    private float chasingYSpeed = 1.3f;
+
     protected bool chasing;
     private bool retreating;
     protected bool onChasingPath;
@@ -69,7 +72,8 @@ public class Guard : Mover
             {
                 chasing = true;
                 retreating = false;
-                animator.SetBool("Chasing", chasing);
+
+                Chasing();
             }
 
             if (path == null)
@@ -113,7 +117,7 @@ public class Guard : Mover
                 if (retreating && chasing)
                 {
                     chasing = false;
-                    animator.SetBool("Chasing", chasing);
+                    FinishedChasing();
                     return;
                 }
 
@@ -128,7 +132,7 @@ public class Guard : Mover
                 }
 
                 chasing = false;
-                animator.SetBool("Chasing", chasing);
+                FinishedChasing();
             }
             
         }
@@ -137,7 +141,7 @@ public class Guard : Mover
             if (retreating && chasing)
             {
                 chasing = false;
-                animator.SetBool("Chasing", chasing);
+                FinishedChasing();
                 return;
             }
 
@@ -174,7 +178,22 @@ public class Guard : Mover
             }
 
             chasing = false;
-            animator.SetBool("Chasing", chasing);
+            FinishedChasing();
         }
+    }
+
+    public void Chasing()
+    {
+        xSpeed = chasingXSpeed;
+        ySpeed = chasingYSpeed;
+
+        animator.SetBool("Chasing", true);
+    }
+
+    public void FinishedChasing()
+    {
+        ResetToNormalSpeed();
+
+        animator.SetBool("Chasing", false);
     }
 }

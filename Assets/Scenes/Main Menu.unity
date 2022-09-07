@@ -1670,9 +1670,13 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
-      propertyPath: shopItems.Array.data[1]
+      propertyPath: shopItems.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: cb8b8e71bd6a5bb4692ef15e1cc23bdd, type: 2}
+    - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
+      propertyPath: shopItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 0522691d2c17e3444bed58bb23926939, type: 2}
     - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: shopItems.Array.data[2]
       value: 
@@ -1680,7 +1684,7 @@ PrefabInstance:
     - target: {fileID: 4392518467616020848, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: shopItems.Array.data[3]
       value: 
-      objectReference: {fileID: 11400000, guid: 0522691d2c17e3444bed58bb23926939, type: 2}
+      objectReference: {fileID: 11400000, guid: db05395c16b797646954f525226f9dfa, type: 2}
     - target: {fileID: 4392518467616020851, guid: 75e558de2a1bfd44eb5222b866354f81, type: 3}
       propertyPath: m_RootOrder
       value: 8

@@ -21,11 +21,11 @@ public class Portal : Collidable
             else
                 sceneName = sceneNames[0];
 
-            BackToStudio(sceneName);
+            UsePortal(sceneName);
         }
     }
 
-    public async void BackToStudio(string sceneName = "Studio")
+    public async void UsePortal(string sceneName = "Studio")
     {
         GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
 
