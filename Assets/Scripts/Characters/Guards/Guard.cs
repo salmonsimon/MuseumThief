@@ -11,7 +11,7 @@ public class Guard : Mover
     [SerializeField] protected float nextWaypointDistance = 0.08f;
 
     private float chasingXSpeed = 1.5f;
-    private float chasingYSpeed = 1.3f;
+    private float chasingYSpeed = 1.5f;
 
     protected bool chasing;
     private bool retreating;
