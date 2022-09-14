@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   has2DAnimation: 1
   xSpeed: 1
-  ySpeed: 0.75
+  ySpeed: 1
 --- !u!82 &2131633084475363751
 AudioSource:
   m_ObjectHideFlags: 0

@@ -4,8 +4,6 @@ public class Window : Portal
 {
     [SerializeField] private int floorNumber;
 
-    private bool teleporting = false;
-
     protected override void OnCollide(Collider2D coll)
     {
         if (coll.CompareTag("Player") & !GameManager.instance.GetPlayer().IsTeleporting())
@@ -28,7 +26,6 @@ public class Window : Portal
                     }
                     else
                     {
-                        teleporting = true;
                         UsePortal();
                     }
                 }

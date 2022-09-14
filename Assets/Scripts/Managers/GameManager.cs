@@ -460,16 +460,12 @@ public class GameManager : MonoBehaviour
         foreach (Transform panel in SoldMasterpieceCanvas)
         {
             Destroy(panel.gameObject);
-
-            Debug.Log("destroyed");
         }
 
         foreach (Stealable stealable in stealableList)
         {
             GameObject newPanel = Instantiate(SoldMasterpiecePanel, SoldMasterpieceCanvas);
             DisplaySoldMasterpiece(stealable, newPanel);
-
-            Debug.Log("Shown");
         }
     }
 
