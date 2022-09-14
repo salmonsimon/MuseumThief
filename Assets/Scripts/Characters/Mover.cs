@@ -13,9 +13,9 @@ public class Mover : MonoBehaviour
     protected RaycastHit2D hit;
 
     public float xSpeed = 1f;
-    public float ySpeed = 0.75f;
+    public float ySpeed = 1f;
     protected float normalXSpeed = 1f;
-    protected float normalYSpeed = 0.75f;
+    protected float normalYSpeed = 1f;
 
     private Vector3 originalSize;
 
@@ -42,27 +42,30 @@ public class Mover : MonoBehaviour
 
     protected virtual void UpdateMotor(Vector2 input, bool has2DAnimation)
     {
-        movement = new Vector2(input.x * xSpeed, input.y * ySpeed);
+        movement = new Vector2(input.x, input.y).normalized;
 
         if (!has2DAnimation)
         {
             updateSprite(movement);
         }
 
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, movement.y),
-                                Mathf.Abs(movement.y * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+        float movementX = movement.x * xSpeed;
+        float movementY = movement.y * ySpeed;
+
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(0, movementY),
+                                Mathf.Abs(movementY * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
 
         if (hit.collider == null)
         {
-            transform.Translate(0, movement.y * Time.deltaTime, 0);
+            transform.Translate(0, movementY * Time.deltaTime, 0);
         }
 
-        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(movement.x, 0),
-                                Mathf.Abs(movement.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+        hit = Physics2D.BoxCast(transform.position, boxCollider.size, 0, new Vector2(movementX, 0),
+                                Mathf.Abs(movementX * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
 
         if (hit.collider == null)
         {
-            transform.Translate(movement.x * Time.deltaTime, 0, 0);
+            transform.Translate(movementX * Time.deltaTime, 0, 0);
         }
     }
 
