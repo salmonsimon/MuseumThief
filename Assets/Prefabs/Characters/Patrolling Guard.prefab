@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   has2DAnimation: 0
-  xSpeed: 1
+  xSpeed: 0.75
   ySpeed: 0.75
   triggerLenght: 1
   chaseLenght: 1.5
