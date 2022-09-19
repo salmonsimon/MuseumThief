@@ -6,6 +6,7 @@ public class TeleportPortal : Collidable
 {
     [SerializeField] private GameObject teleportPoint;
     [SerializeField] private AudioClip newSong;
+
     private AudioSource audioSource;
 
     protected override void Start()
