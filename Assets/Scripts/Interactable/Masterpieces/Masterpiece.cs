@@ -85,6 +85,8 @@ public class Masterpiece : Collectable
         transform.GetChild(0).gameObject.layer = Config.DEFAULT_LAYER;
 
         GameManager.instance.GetPlayer().AlterSpeed(newSpeedRate);
+
+        GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
     }
 
     public void Throw()
@@ -104,6 +106,8 @@ public class Masterpiece : Collectable
 
         GameManager.instance.SetHeldMasterpiece(null);
         GameManager.instance.GetPlayer().ResetToNormalSpeed();
+
+        GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
     }
 
     public virtual void PutInBag()

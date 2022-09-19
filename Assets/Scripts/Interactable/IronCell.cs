@@ -15,6 +15,8 @@ public class IronCell : Collidable
                 {
                     GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
                     Destroy(gameObject);
+
+                    GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
                 }
                 else
                 {

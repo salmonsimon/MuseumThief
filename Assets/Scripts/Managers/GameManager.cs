@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private LevelLoader levelLoader;
+    [SerializeField] private PathfinderGraphUpdater pathfinderGraphUpdater;
 
     #endregion
 
@@ -115,6 +116,7 @@ public class GameManager : MonoBehaviour
             Destroy(floatingTextManager.gameObject);
             Destroy(soundManager.gameObject);
             Destroy(levelLoader.gameObject);
+            Destroy(pathfinderGraphUpdater.gameObject);
 
             return;
         }
@@ -510,9 +512,19 @@ public class GameManager : MonoBehaviour
     {
         return levelLoader;
     }
+
+    public PathfinderGraphUpdater GetPathfinderGraphUpdater()
+    {
+        return pathfinderGraphUpdater;
+    }
     public bool IsGamePaused()
     {
         return gameIsPaused;
+    }
+
+    public bool IsOnMainMenu()
+    {
+        return onMainMenu;
     }
 
     public void SetGameIsPaused(bool x)
