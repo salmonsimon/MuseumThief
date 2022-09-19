@@ -91,23 +91,49 @@ public class Masterpiece : Collectable
 
     public void Throw()
     {
-        GameManager.instance.GetSoundManager().PlaySound(Config.THROW_SFX);
+        Vector2 playerDirection = GameManager.instance.GetPlayer().GetDirection();
+        Vector3 playerPosition = GameManager.instance.GetPlayer().transform.position;
+        BoxCollider2D playerCollider = GameManager.instance.GetPlayer().GetComponent<BoxCollider2D>();
 
-        collected = false;
         Vector3 scale = transform.localScale;
 
-        Vector2 playerDirection = GameManager.instance.GetPlayer().GetDirection();
+        float masterpieceScaledSizeX = boxCollider.size.x * scale.x;
+        float masterpieceScaledSizeY = boxCollider.size.y * scale.y;
 
-        GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
-        GameManager.instance.GetHeldMasterpiece().transform.position = GameManager.instance.GetPlayer().transform.position
-            + (new Vector3(playerDirection.x * boxCollider.size.x * scale.x, playerDirection.y * boxCollider.size.y * scale.y, 0));
+        float masterpieceBlockingScaledSizeX = transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().size.x * scale.x;
+        float masterpieceBlockingScaledSizeY = transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().size.y * scale.y;
 
-        transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER; 
+        Vector2 masterpieceBlockingScaledSize = new Vector2(masterpieceBlockingScaledSizeX, masterpieceBlockingScaledSizeY);
 
-        GameManager.instance.SetHeldMasterpiece(null);
-        GameManager.instance.GetPlayer().ResetToNormalSpeed();
+        Vector3 afterThrowPosition = GameManager.instance.GetPlayer().transform.position
+                + (new Vector3(playerDirection.x * masterpieceScaledSizeX, playerDirection.y * masterpieceScaledSizeY, 0));
 
-        GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
+        RaycastHit2D hit = Physics2D.BoxCast(afterThrowPosition, masterpieceBlockingScaledSize, 0, new Vector2(playerDirection.x, playerDirection.y),
+                                Mathf.Abs(playerDirection.magnitude * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
+
+        
+
+        if (hit.collider == null)
+        {
+            GameManager.instance.GetSoundManager().PlaySound(Config.THROW_SFX);
+
+            collected = false;
+
+            GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
+            GameManager.instance.GetHeldMasterpiece().transform.position = afterThrowPosition;
+
+            transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER;
+
+            GameManager.instance.SetHeldMasterpiece(null);
+            GameManager.instance.GetPlayer().ResetToNormalSpeed();
+
+            GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
+        }
+        else
+        {
+            GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
+            GameManager.instance.ShowText("Can't throw there!", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
+        }
     }
 
     public virtual void PutInBag()
