@@ -16,6 +16,6 @@ MonoBehaviour:
   itemDescription: The largest backpack in store. Will hold up to one large masterpiece,
     you do the maths...
   icon: {fileID: 21300000, guid: b3ac628e63c18d54fb622a1da7836527, type: 3}
-  price: 300
+  price: 100
   infiniteAmount: 0
   itemType: 0

@@ -181,6 +181,8 @@ MonoBehaviour:
   triggerLenght: 1
   chaseLenght: 1.5
   nextWaypointDistance: 0.08
+  chasingXSpeed: 1
+  chasingYSpeed: 1
   patrollingPath: []
   currentPatrollingPoint: 0
   currentPatrollingGoal: {fileID: 0}

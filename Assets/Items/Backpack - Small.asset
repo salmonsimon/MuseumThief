@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Bagpack - Small
   itemDescription: This backpack, despite small, can hold up to three small masterpieces
     or a medium one.
-  price: 50
   icon: {fileID: 21300000, guid: 31c5786c9f86af841badd09248e210c6, type: 3}
-  sold: 0
-  canBePurchased: 1
+  price: 30
+  infiniteAmount: 0
+  itemType: 0
