@@ -21,4 +21,8 @@ public class Config
 
     public const string CROSSFADE_TRANSITION = "Crossfade";
     public const string CAUGHT_TRANSITION = "Caught";
+
+    public const string SHAKE_FILE = "Cinemachine/2D Shake";
+
+    public const string CINEMACHINE_CAMERA_TAG = "Cinemachine Camera";
 }

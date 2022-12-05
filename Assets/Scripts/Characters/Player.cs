@@ -39,4 +39,21 @@ public class Player : Mover
     {
         isTeleporting = value; 
     }
+
+    public void ShakeIfHeavy()
+    {
+        Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
+
+        if (heldMasterpiece)
+        {
+            int weight = heldMasterpiece.GetStealable().weight;
+
+            if (weight >= 6)
+            {
+                int shakeAmplitude = weight - 5;
+
+                GameManager.instance.GetCinemachineShake().ShakeCamera(shakeAmplitude, .2f);
+            }
+        }
+    }
 }

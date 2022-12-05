@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SoundManager soundManager;
     [SerializeField] private LevelLoader levelLoader;
     [SerializeField] private PathfinderGraphUpdater pathfinderGraphUpdater;
+    [SerializeField] private CinemachineShake cinemachineShake;
 
     #endregion
 
@@ -117,6 +118,7 @@ public class GameManager : MonoBehaviour
             Destroy(soundManager.gameObject);
             Destroy(levelLoader.gameObject);
             Destroy(pathfinderGraphUpdater.gameObject);
+            Destroy(cinemachineShake.gameObject);
 
             return;
         }
@@ -170,6 +172,14 @@ public class GameManager : MonoBehaviour
 
             if (firstTimePlaying && !gameHasBeenSaved)
                 welcomeUI.SetActive(true);
+
+            GameObject virtualCameraGameObject = GameObject.FindGameObjectWithTag(Config.CINEMACHINE_CAMERA_TAG);
+
+            if (virtualCameraGameObject)
+            {
+                Cinemachine.CinemachineVirtualCamera virtualCamera = virtualCameraGameObject.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+                virtualCamera.Follow = player.transform;
+            }
         }
         else if (onMainMenu)
         {
@@ -517,6 +527,12 @@ public class GameManager : MonoBehaviour
     {
         return pathfinderGraphUpdater;
     }
+
+    public CinemachineShake GetCinemachineShake()
+    {
+        return cinemachineShake;
+    }
+
     public bool IsGamePaused()
     {
         return gameIsPaused;
