@@ -42,16 +42,18 @@ public class StolenManager : MonoBehaviour
     public async void SaveStolenManager()
     {
         var json = JsonUtility.ToJson(this);
-        await ZSerializer.ZSerialize.WriteToFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave", json);
+        //await ZSerializer.ZSerialize.WriteToFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave", json);
     }
 
     public async void LoadStolenManager()
     {
         string path = Application.persistentDataPath + "/GlobalData/stolenManager.zsave";
 
+        /*
         if (File.Exists(path))
             JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
                     this);
+        */
     }
 
     #endregion

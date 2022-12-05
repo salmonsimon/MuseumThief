@@ -124,6 +124,8 @@ public class GameManager : MonoBehaviour
 
             return;
         }
+        else
+            Settings.Load();
 
         instance = this;
     }

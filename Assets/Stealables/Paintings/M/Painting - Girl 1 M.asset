@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
   m_Name: Painting - Girl 1 M
   m_EditorClassIdentifier: 
-  stealableName: "Despues del ba\xF1o"
+  stealableName: Despues del bano
   weight: 3
   price: 20
   icon: {fileID: 1402634252, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}

@@ -4,6 +4,8 @@ using ZSerializer;
 
 public class Masterpiece : Collectable
 {
+    private BoxCollider2D blockingCollider;
+
     [SerializeField] private Stealable stealable;
 
     private float newSpeedRate;
@@ -12,12 +14,19 @@ public class Masterpiece : Collectable
 
     private SpriteRenderer spriteRenderer;
 
+    private bool isBeingHeld = false;
+
     protected virtual void Awake()
     {
         originalPosition = transform.position;
         originalParent = transform.parent;
 
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        Transform blockingColliderTransform = transform.Find("Blocking Collider");
+
+        if (blockingColliderTransform)
+            blockingCollider = blockingColliderTransform.GetComponent<BoxCollider2D>();
     }
 
     protected override void Start()
@@ -25,6 +34,19 @@ public class Masterpiece : Collectable
         base.Start();
 
         newSpeedRate = 1f - (Config.MAX_SPEED_DECREASE_RATE * ((float)stealable.weight / 10));
+
+        if (blockingCollider)
+            UpdateSortingOrder();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+
+        if (blockingCollider)
+            UpdateSortingOrder();
+
+        UpdateSortingLayer();
     }
 
     private void OnBecameInvisible()
@@ -36,34 +58,41 @@ public class Masterpiece : Collectable
     {
         int remainingBackpackCapacity = GameManager.instance.GetStolenManager().GetCarryingCapacity() - GameManager.instance.GetStolenManager().GetUsedCarryingCapacity();
 
-        
-        if (GameManager.instance.GetHeldMasterpiece())
+        Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
+
+        if (heldMasterpiece)
         {
-            Throw();
-        }
-        else if (stealable.weight <= remainingBackpackCapacity)
-        {
-            PutInBag();
-            GameManager.instance.ShowText("Masterpiece picked up", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
-        }
-        else if (stealable.weight < 11)
-        {
-            if ((stealable.weight == 10 && GameManager.instance.GetStolenManager().protein) || stealable.weight < 10)
+            if (heldMasterpiece == this)
             {
-                Grab();
+                Throw();
+                GameManager.instance.GetPlayer().AfterThrowCooldown();
             }
-            else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
+        }
+        else if (!GameManager.instance.GetPlayer().OnPickCooldown())
+        {
+            if (stealable.weight <= remainingBackpackCapacity)
+            {
+                PutInBag();
+                GameManager.instance.ShowText("Masterpiece picked up", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
+            }
+            else if (stealable.weight < 11)
+            {
+                if ((stealable.weight == 10 && GameManager.instance.GetStolenManager().protein) || stealable.weight < 10)
+                {
+                    Grab();
+                }
+                else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
+                {
+                    GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
+                    GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
+                }
+            }
+            else if (stealable.weight > 10)
             {
                 GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
-                GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
+                GameManager.instance.ShowText("Not even hulk can lift this", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
             }
         }
-        else if (stealable.weight > 10)
-        {
-            GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
-            GameManager.instance.ShowText("Not even hulk can lift this", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);
-        }
-
     }
 
     public Stealable GetStealable()
@@ -78,11 +107,12 @@ public class Masterpiece : Collectable
         collected = true;
 
         GameManager.instance.SetHeldMasterpiece(this);
+        isBeingHeld = true;
 
         GameManager.instance.GetHeldMasterpiece().gameObject.transform.parent = GameManager.instance.GetPlayer().transform;
         GameManager.instance.GetHeldMasterpiece().gameObject.transform.position = GameManager.instance.GetMasterpieceHoldingPosition().transform.position;
 
-        transform.GetChild(0).gameObject.layer = Config.DEFAULT_LAYER;
+        blockingCollider.gameObject.layer = Config.DEFAULT_LAYER;
 
         GameManager.instance.GetPlayer().AlterSpeed(newSpeedRate);
 
@@ -100,8 +130,8 @@ public class Masterpiece : Collectable
         float masterpieceScaledSizeX = boxCollider.size.x * scale.x;
         float masterpieceScaledSizeY = boxCollider.size.y * scale.y;
 
-        float masterpieceBlockingScaledSizeX = transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().size.x * scale.x;
-        float masterpieceBlockingScaledSizeY = transform.GetChild(0).gameObject.GetComponent<BoxCollider2D>().size.y * scale.y;
+        float masterpieceBlockingScaledSizeX = blockingCollider.gameObject.GetComponent<BoxCollider2D>().size.x * blockingCollider.transform.localScale.x * scale.x;
+        float masterpieceBlockingScaledSizeY = blockingCollider.gameObject.GetComponent<BoxCollider2D>().size.y * blockingCollider.transform.localScale.y * scale.y;
 
         Vector2 masterpieceBlockingScaledSize = new Vector2(masterpieceBlockingScaledSizeX, masterpieceBlockingScaledSizeY);
 
@@ -122,12 +152,16 @@ public class Masterpiece : Collectable
             GameManager.instance.GetHeldMasterpiece().transform.parent = originalParent;
             GameManager.instance.GetHeldMasterpiece().transform.position = afterThrowPosition;
 
-            transform.GetChild(0).gameObject.layer = Config.BLOCKING_LAYER;
+            blockingCollider.gameObject.layer = Config.BLOCKING_LAYER;
 
             GameManager.instance.SetHeldMasterpiece(null);
             GameManager.instance.GetPlayer().ResetToNormalSpeed();
 
             GameManager.instance.GetPathfinderGraphUpdater().UpdatePathfinderGraphs();
+
+            isBeingHeld = false;
+
+            UpdateSortingOrder();
         }
         else
         {
@@ -153,5 +187,44 @@ public class Masterpiece : Collectable
     {
         if (!collected)
             transform.position = originalPosition;
+    }
+
+    public void UpdateSortingOrder()
+    {
+        int newSortingOrder = 1000 - (int)(GetLowerBorderYPosition() * 100);
+
+        this.spriteRenderer.sortingOrder = newSortingOrder;
+    }
+
+    private float GetLowerBorderYPosition()
+    {
+        return blockingCollider.bounds.min.y;
+    }
+
+    public void UpdateSortingLayer()
+    {
+        if (blockingCollider)
+        {
+            if (GetLowerBorderYPosition() < transform.position.y && !isBeingHeld)
+            {
+                this.spriteRenderer.sortingLayerName = "Items Above Player";
+            }
+            else
+            {
+                this.spriteRenderer.sortingLayerName = "Items";
+            }
+        }
+        else
+        {
+            if (GameManager.instance.GetPlayer().transform.position.y < transform.position.y &&
+            !isBeingHeld)
+            {
+                this.spriteRenderer.sortingLayerName = "Items Above Player";
+            }
+            else
+            {
+                this.spriteRenderer.sortingLayerName = "Items";
+            }
+        }
     }
 }
