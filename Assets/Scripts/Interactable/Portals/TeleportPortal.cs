@@ -13,7 +13,7 @@ public class TeleportPortal : Collidable
     {
         base.Start();
 
-        audioSource = GameObject.FindWithTag("Audio").GetComponent<AudioSource>();
+        audioSource = GameManager.instance.GetMusicManager().GetComponent<AudioSource>();
     }
 
     protected override void OnCollide(Collider2D coll)

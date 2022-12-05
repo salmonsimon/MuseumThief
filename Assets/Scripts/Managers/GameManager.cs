@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private StolenManager stolenManager;
     [SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private SoundManager soundManager;
+    [SerializeField] private MusicManager musicManager;
     [SerializeField] private LevelLoader levelLoader;
     [SerializeField] private PathfinderGraphUpdater pathfinderGraphUpdater;
     [SerializeField] private CinemachineShake cinemachineShake;
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
             Destroy(welcomeUI.gameObject);
             Destroy(floatingTextManager.gameObject);
             Destroy(soundManager.gameObject);
+            Destroy(musicManager.gameObject);
             Destroy(levelLoader.gameObject);
             Destroy(pathfinderGraphUpdater.gameObject);
             Destroy(cinemachineShake.gameObject);
@@ -516,6 +518,11 @@ public class GameManager : MonoBehaviour
     public SoundManager GetSoundManager()
     {
         return soundManager;
+    }
+
+    public MusicManager GetMusicManager()
+    {
+        return musicManager;
     }
 
     public LevelLoader GetLevelLoader()

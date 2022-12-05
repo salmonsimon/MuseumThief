@@ -5,6 +5,9 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     private AudioSource audioSource;
+    private float sfxVolume = 1f;
+
+    private AudioClip stepSFX;
     private AudioClip grabSFX, throwSFX, storeSFX;
     private AudioClip clickSFX, deniedSFX, hoverSFX, boughtSFX;
     private AudioClip caughtSFX;
@@ -13,6 +16,7 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
+        stepSFX = Resources.Load<AudioClip>("Audio/Sound FX/Steps");
 
         grabSFX = Resources.Load<AudioClip>("Audio/Sound FX/Grab");
         throwSFX = Resources.Load<AudioClip>("Audio/Sound FX/Throw");
@@ -28,45 +32,74 @@ public class SoundManager : MonoBehaviour
         portalSFX = Resources.Load<AudioClip>("Audio/Sound FX/Portal");
     }
 
+    private void Start()
+    {
+        UpdateVolume(Settings.Instance.SFXVolume);
+    }
+
+    public void UpdateVolume(float value)
+    {
+        sfxVolume = value;
+
+        audioSource.volume = sfxVolume;
+        Settings.Instance.SFXVolume = sfxVolume;
+
+        Settings.Save();
+    }
+
+    public float GetSFXVolume()
+    {
+        return sfxVolume;
+    }
+
     public void PlaySound(string str)
     {
         switch (str)
         {
-        case Config.GRAB_SFX:
-            audioSource.PlayOneShot(grabSFX);
-            break;
+            case Config.STEP_SFX:
+                audioSource.PlayOneShot(stepSFX);
+                break;
 
-        case Config.THROW_SFX:
-            audioSource.PlayOneShot(throwSFX);
-            break;
+            case Config.GRAB_SFX:
+                audioSource.PlayOneShot(grabSFX);
+                break;
 
-        case Config.STORE_SFX:
-            audioSource.PlayOneShot(storeSFX);
-            break;
+            case Config.THROW_SFX:
+                audioSource.PlayOneShot(throwSFX);
+                break;
 
-        case Config.CLICK_SFX:
-            audioSource.PlayOneShot(clickSFX);
-            break;
+            case Config.STORE_SFX:
+                audioSource.PlayOneShot(storeSFX);
+                break;
 
-        case Config.DENIED_SFX:
-            audioSource.PlayOneShot(deniedSFX);
-            break;
+            case Config.CLICK_SFX:
+                audioSource.PlayOneShot(clickSFX);
+                break;
 
-        case Config.HOVER_SFX:
-            audioSource.PlayOneShot(hoverSFX);
-            break;
+            case Config.DENIED_SFX:
+                audioSource.PlayOneShot(deniedSFX);
+                break;
 
-        case Config.BOUGHT_SFX:
-            audioSource.PlayOneShot(boughtSFX);
-            break;
+            case Config.HOVER_SFX:
+                audioSource.PlayOneShot(hoverSFX);
+                break;
 
-        case Config.CAUGHT_SFX:
-            audioSource.PlayOneShot(caughtSFX);
-            break;
+            case Config.BOUGHT_SFX:
+                audioSource.PlayOneShot(boughtSFX);
+                break;
 
-        case Config.PORTAL_SFX:
-            audioSource.PlayOneShot(portalSFX);
-            break;
+            case Config.CAUGHT_SFX:
+                audioSource.PlayOneShot(caughtSFX);
+                break;
+
+            case Config.PORTAL_SFX:
+                audioSource.PlayOneShot(portalSFX);
+                break;
         }
+    }
+
+    public void PlaySound(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip);
     }
 }
