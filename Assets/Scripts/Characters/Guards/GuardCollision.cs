@@ -19,6 +19,8 @@ public class GuardCollision : Collidable
         {
             caught = true;
 
+            GameManager.instance.GetPlayer().SetIsTeleporting(true);
+
             GameManager.instance.GetSoundManager().PlaySound(Config.CAUGHT_SFX);
 
             GameManager.instance.GetStolenManager().ResetCarrying();
