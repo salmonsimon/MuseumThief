@@ -32,10 +32,6 @@ MonoBehaviour:
     PublicKeyToken=null
   - UnityEngine.BoxCollider2D, UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral,
     PublicKeyToken=null
-  - UnityEngine.SpriteMask, UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  - UnityEngine.AudioSource, UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
   unityComponentDataList:
   - typeFullName: UnityEngine.AI.NavMeshAgent, UnityEngine.AIModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null

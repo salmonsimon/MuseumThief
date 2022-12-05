@@ -8,6 +8,7 @@ TagManager:
   - Stealable
   - Interactible
   - Audio
+  - Cinemachine Camera
   layers:
   - Default
   - TransparentFX

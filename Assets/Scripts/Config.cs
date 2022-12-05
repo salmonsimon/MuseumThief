@@ -1,14 +1,17 @@
 public class Config
 {
-    public static string STUDIO_SCENE_NAME = "Studio";
-    public static string MAIN_MENU_SCENE_NAME = "Main Menu";
-    public static string MUSEUM_SCENE_NAME = "Museum";
+    public const string STUDIO_SCENE_NAME = "Studio";
+    public const string MAIN_MENU_SCENE_NAME = "Main Menu";
+    public const string MUSEUM_SCENE_NAME = "Museum";
 
-    public static float MAX_SPEED_DECREASE_RATE = 0.8f;
+    public const float MAX_SPEED_DECREASE_RATE = 0.8f;
 
-    public static int DEFAULT_LAYER = 0;
-    public static int BLOCKING_LAYER = 9;
+    public const float BIG_DELAY = 0.5f;
 
+    public const int DEFAULT_LAYER = 0;
+    public const int BLOCKING_LAYER = 9;
+
+    public const string STEP_SFX = "Step";
     public const string GRAB_SFX = "Grab";
     public const string THROW_SFX = "Drop";
     public const string STORE_SFX = "Store";
@@ -21,4 +24,8 @@ public class Config
 
     public const string CROSSFADE_TRANSITION = "Crossfade";
     public const string CAUGHT_TRANSITION = "Caught";
+
+    public const string SHAKE_FILE = "Cinemachine/2D Shake";
+
+    public const string CINEMACHINE_CAMERA_TAG = "Cinemachine Camera";
 }

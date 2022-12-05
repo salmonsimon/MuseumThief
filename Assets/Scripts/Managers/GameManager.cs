@@ -29,8 +29,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private StolenManager stolenManager;
     [SerializeField] private FloatingTextManager floatingTextManager;
     [SerializeField] private SoundManager soundManager;
+    [SerializeField] private MusicManager musicManager;
     [SerializeField] private LevelLoader levelLoader;
     [SerializeField] private PathfinderGraphUpdater pathfinderGraphUpdater;
+    [SerializeField] private CinemachineShake cinemachineShake;
 
     #endregion
 
@@ -115,8 +117,10 @@ public class GameManager : MonoBehaviour
             Destroy(welcomeUI.gameObject);
             Destroy(floatingTextManager.gameObject);
             Destroy(soundManager.gameObject);
+            Destroy(musicManager.gameObject);
             Destroy(levelLoader.gameObject);
             Destroy(pathfinderGraphUpdater.gameObject);
+            Destroy(cinemachineShake.gameObject);
 
             return;
         }
@@ -170,6 +174,14 @@ public class GameManager : MonoBehaviour
 
             if (firstTimePlaying && !gameHasBeenSaved)
                 welcomeUI.SetActive(true);
+
+            GameObject virtualCameraGameObject = GameObject.FindGameObjectWithTag(Config.CINEMACHINE_CAMERA_TAG);
+
+            if (virtualCameraGameObject)
+            {
+                Cinemachine.CinemachineVirtualCamera virtualCamera = virtualCameraGameObject.GetComponent<Cinemachine.CinemachineVirtualCamera>();
+                virtualCamera.Follow = player.transform;
+            }
         }
         else if (onMainMenu)
         {
@@ -508,6 +520,11 @@ public class GameManager : MonoBehaviour
         return soundManager;
     }
 
+    public MusicManager GetMusicManager()
+    {
+        return musicManager;
+    }
+
     public LevelLoader GetLevelLoader()
     {
         return levelLoader;
@@ -517,6 +534,12 @@ public class GameManager : MonoBehaviour
     {
         return pathfinderGraphUpdater;
     }
+
+    public CinemachineShake GetCinemachineShake()
+    {
+        return cinemachineShake;
+    }
+
     public bool IsGamePaused()
     {
         return gameIsPaused;

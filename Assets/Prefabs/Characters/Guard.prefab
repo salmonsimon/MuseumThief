@@ -181,6 +181,8 @@ MonoBehaviour:
   triggerLenght: 1
   chaseLenght: 2
   nextWaypointDistance: 0.08
+  chasingXSpeed: 1
+  chasingYSpeed: 1
 --- !u!114 &7755229149471601585
 MonoBehaviour:
   m_ObjectHideFlags: 0
