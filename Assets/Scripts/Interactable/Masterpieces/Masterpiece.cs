@@ -205,9 +205,10 @@ public class Masterpiece : Collectable
     {
         if (blockingCollider)
         {
-            if (GetLowerBorderYPosition() < transform.position.y && !isBeingHeld)
+            if (GameManager.instance.GetPlayer().transform.position.y < GetLowerBorderYPosition() 
+                && !isBeingHeld)
             {
-                this.spriteRenderer.sortingLayerName = "Items Above Player";
+                this.spriteRenderer.sortingLayerName = "Items Above Floor";
             }
             else
             {
@@ -219,7 +220,7 @@ public class Masterpiece : Collectable
             if (GameManager.instance.GetPlayer().transform.position.y < transform.position.y &&
             !isBeingHeld)
             {
-                this.spriteRenderer.sortingLayerName = "Items Above Player";
+                this.spriteRenderer.sortingLayerName = "Items Above Floor";
             }
             else
             {

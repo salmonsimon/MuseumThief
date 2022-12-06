@@ -69,31 +69,34 @@ public class PatrollingGuard : Guard
             else
             {
                 reachedEndOfPath = false;
+
+                float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
+
+                if (distance < nextWaypointDistance)
+                {
+                    currentWaypoint++;
+                }
+
+                if (currentWaypoint >= path.vectorPath.Count)
+                {
+                    reachedEndOfPath = true;
+
+                    if (!onChasingPath)
+                        UpdateMotor(Vector3.zero, false);
+
+                    return;
+                }
             }
 
             if (chasing)
             {
                 Vector2 direction = (Vector2)(path.vectorPath[currentWaypoint] - transform.position).normalized;
                 UpdateMotor(direction, false);
-
-                float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
-
-                if (distance < nextWaypointDistance)
-                {
-                    currentWaypoint++;
-                }
             }
             else
             {
                 Vector2 direction = (Vector2)(path.vectorPath[currentWaypoint] - transform.position).normalized;
                 UpdateMotor(direction, false);
-
-                float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
-
-                if (distance < nextWaypointDistance)
-                {
-                    currentWaypoint++;
-                }
 
                 chasing = false;
                 FinishedChasing();
@@ -128,17 +131,26 @@ public class PatrollingGuard : Guard
             else
             {
                 reachedEndOfPath = false;
+
+                float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
+
+                if (distance < nextWaypointDistance)
+                {
+                    currentWaypoint++;
+                }
+
+                if (currentWaypoint >= path.vectorPath.Count)
+                {
+                    reachedEndOfPath = true;
+
+                    UpdateMotor(Vector3.zero, false);
+
+                    return;
+                }
             }
 
             Vector2 direction = (Vector2)(path.vectorPath[currentWaypoint] - transform.position).normalized;
             UpdateMotor(direction, false);
-
-            float distance = Vector2.Distance(transform.position, path.vectorPath[currentWaypoint]);
-
-            if (distance < nextWaypointDistance)
-            {
-                currentWaypoint++;
-            }
         }
     }
 
