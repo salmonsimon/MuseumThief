@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 727e50b3106489844a7812f088ce31d7, type: 3}
   m_Name: Backpack - Small
   m_EditorClassIdentifier: 
-  itemName: Bagpack - Small
+  itemName: Backpack - Small
   itemDescription: This backpack, despite small, can hold up to three small masterpieces
     or a medium one.
   icon: {fileID: 21300000, guid: 31c5786c9f86af841badd09248e210c6, type: 3}

@@ -11,7 +11,7 @@ public class IronCell : Collidable
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                if (GameManager.instance.GetStolenManager().saw)
+                if (ProgressManager.Instance.saw)
                 {
                     GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
                     Destroy(gameObject);

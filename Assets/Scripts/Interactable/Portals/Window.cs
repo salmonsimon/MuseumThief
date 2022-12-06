@@ -10,7 +10,7 @@ public class Window : Portal
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                int ropeCount = GameManager.instance.GetStolenManager().rope;
+                int ropeCount = ProgressManager.Instance.rope;
 
                 if (GameManager.instance.GetOnEmergency())
                 {

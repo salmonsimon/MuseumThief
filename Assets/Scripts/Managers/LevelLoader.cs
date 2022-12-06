@@ -74,8 +74,6 @@ public class LevelLoader : MonoBehaviour
 
             GameManager.instance.SoldDialogues(lastCarrying);
             GameManager.instance.GetStolenManager().ResetLastCarrying();
-
-            GameManager.instance.GetStolenManager().SaveStolenManager();
         }
 
         GameManager.instance.GetPlayer().SetIsTeleporting(false);

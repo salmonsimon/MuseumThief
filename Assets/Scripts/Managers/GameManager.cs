@@ -125,7 +125,9 @@ public class GameManager : MonoBehaviour
             return;
         }
         else
+        {
             Settings.Load();
+        }
 
         instance = this;
     }
@@ -168,7 +170,6 @@ public class GameManager : MonoBehaviour
 
         if (!onMainMenu)
         {
-            stolenManager.LoadStolenManager();
             UpdateCarryingCapacityText();
             player.transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
             InventoriesUI.SetActive(true);
@@ -215,6 +216,10 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         onMainMenu = false;
+
+        ProgressManager.Load();
+        stolenManager.LoadStolenManager();
+
         levelLoader.LoadLevel(Config.STUDIO_SCENE_NAME, Config.CROSSFADE_TRANSITION);
     }
 
@@ -225,18 +230,10 @@ public class GameManager : MonoBehaviour
 
     public void DeleteSavedGame()
     {
-        string path = Application.persistentDataPath;
+        ZSerializer.ZSerialize.DeleteAllSaveFiles();
 
-        DirectoryInfo di = new DirectoryInfo(path);
-
-        foreach (FileInfo file in di.EnumerateFiles())
-        {
-            file.Delete();
-        }
-        foreach (DirectoryInfo dir in di.EnumerateDirectories())
-        {
-            dir.Delete(true);
-        }
+        ProgressManager.Instance.Reset();
+        Settings.Save();
     }
 
     #endregion
@@ -290,8 +287,7 @@ public class GameManager : MonoBehaviour
     public void UpdateCarryingCapacityText()
     {
         int usedCarryingCapacity = stolenManager.GetUsedCarryingCapacity();
-        int carryingCapacity = stolenManager.GetCarryingCapacity();
-
+        int carryingCapacity = ProgressManager.Instance.backpackCapacity;
 
         carryingCapacityText.GetComponent<Text>().text = usedCarryingCapacity.ToString() + " / " + carryingCapacity.ToString();
     }
@@ -329,7 +325,7 @@ public class GameManager : MonoBehaviour
 
     private void DisplayMoneyAmount()
     {
-        moneyAmountText.GetComponent<Text>().text = GetStolenManager().GetMoney().ToString();
+        moneyAmountText.GetComponent<Text>().text = ProgressManager.Instance.money.ToString();
     }
 
     public void ListShopItems()
@@ -434,16 +430,14 @@ public class GameManager : MonoBehaviour
 
     public void BuyItem()
     {
-        if (GetStolenManager().money >= selectedItem.item.price)
+        if (ProgressManager.Instance.money >= selectedItem.item.price)
         {
-            GetStolenManager().money -= selectedItem.item.price;
+            ProgressManager.Instance.money -= selectedItem.item.price;
 
             selectedItem.UseItem();
             GetStolenManager().ShopToOwned(selectedItem.item);
 
             ShowPurchaseConfirmation();
-
-            GetStolenManager().SaveStolenManager();
         }
         else
         {

@@ -56,7 +56,7 @@ public class Masterpiece : Collectable
 
     protected override void OnCollect()
     {
-        int remainingBackpackCapacity = GameManager.instance.GetStolenManager().GetCarryingCapacity() - GameManager.instance.GetStolenManager().GetUsedCarryingCapacity();
+        int remainingBackpackCapacity = ProgressManager.Instance.backpackCapacity - GameManager.instance.GetStolenManager().GetUsedCarryingCapacity();
 
         Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
 
@@ -77,11 +77,11 @@ public class Masterpiece : Collectable
             }
             else if (stealable.weight < 11)
             {
-                if ((stealable.weight == 10 && GameManager.instance.GetStolenManager().protein) || stealable.weight < 10)
+                if ((stealable.weight == 10 && ProgressManager.Instance.protein) || stealable.weight < 10)
                 {
                     Grab();
                 }
-                else if (stealable.weight == 10 && !GameManager.instance.GetStolenManager().protein)
+                else if (stealable.weight == 10 && !ProgressManager.Instance.protein)
                 {
                     GameManager.instance.GetSoundManager().PlaySound(Config.DENIED_SFX);
                     GameManager.instance.ShowText("Too heavy to lift", 24, Color.white, new Vector3(GameManager.instance.GetPlayer().transform.position.x, GameManager.instance.GetPlayer().transform.position.y + 0.16f, 0), Vector3.up * 40, 1f);

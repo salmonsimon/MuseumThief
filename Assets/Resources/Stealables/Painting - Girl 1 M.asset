@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3af3f693e1de74f4ebca307e38d535ab, type: 3}
+  m_Name: Painting - Girl 1 M
+  m_EditorClassIdentifier: 
+  stealableName: Despues del bano
+  weight: 3
+  price: 20
+  icon: {fileID: 1402634252, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
+  soldDialogue: 'such delicate work... Another masterpiece of Sorolla...
+
+
+    the
+    light in this painting is so well made that it feels that it goes through the
+    dress of the lady... '
+  sold: 0
