@@ -26,7 +26,7 @@ public class Mover : MonoBehaviour
         originalSize = transform.localScale;
     }
 
-    private void updateSprite(Vector2 movement)
+    private void UpdateSprite(Vector2 movement)
     {
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
@@ -46,7 +46,7 @@ public class Mover : MonoBehaviour
 
         if (!has2DAnimation)
         {
-            updateSprite(movement);
+            UpdateSprite(movement);
         }
 
         float movementX = movement.x * xSpeed;

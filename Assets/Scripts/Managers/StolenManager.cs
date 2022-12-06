@@ -21,40 +21,35 @@ public class StolenManager : MonoBehaviour
 
     #endregion
 
-    #region Main Variables
+    #region Variables
 
-    public int money;
-
-    #endregion
-
-    #region Item variables
-
-    public int backpackCapacity;
     public int usedBackpackCapacity;
-    public int rope;
-    public bool saw;
-    public bool protein;
 
     #endregion
 
-    #region Save/Load System
-
-    public async void SaveStolenManager()
+    public void LoadStolenManager()
     {
-        var json = JsonUtility.ToJson(this);
-        await ZSerializer.ZSerialize.WriteToFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave", json);
+        foreach (string name in ProgressManager.Instance.stolen)
+        {
+            Stealable stealableToAdd = Resources.Load<Stealable>("Stealables/" + name);
+
+            stolen.Add(stealableToAdd);
+        }
+
+        foreach (string name in ProgressManager.Instance.shopItems)
+        {
+            Item itemToAdd = Resources.Load<Item>("Items/" + name);
+
+            shopItems.Add(itemToAdd);
+        }
+
+        foreach (string name in ProgressManager.Instance.ownedItems)
+        {
+            Item itemToAdd = Resources.Load<Item>("Items/" + name);
+
+            ownedItems.Add(itemToAdd);
+        }
     }
-
-    public async void LoadStolenManager()
-    {
-        string path = Application.persistentDataPath + "/GlobalData/stolenManager.zsave";
-
-        if (File.Exists(path))
-            JsonUtility.FromJsonOverwrite(await ZSerializer.ZSerialize.ReadFromFileGlobal(GlobalDataType.Globally, $"stolenManager.zsave"),
-                    this);
-    }
-
-    #endregion
 
     #region Carrying and Stolen
 
@@ -78,8 +73,10 @@ public class StolenManager : MonoBehaviour
     private void AddToStolen(Stealable stealable)
     {
         stolen.Add(stealable);
+        ProgressManager.Instance.AddStolen(stealable);
 
-        AddMoney(stealable.price);
+        ProgressManager.Instance.AddMoney(stealable.price);
+
         stealable.SetAsSold();
     }
 
@@ -97,8 +94,6 @@ public class StolenManager : MonoBehaviour
         }
 
         ResetCarrying();
-
-        SaveStolenManager();
     }
 
     #endregion
@@ -108,23 +103,18 @@ public class StolenManager : MonoBehaviour
     public void ShopToOwned(Item item)
     {
         if (!item.infiniteAmount)
+        {
             shopItems.Remove(item);
+            ProgressManager.Instance.RemoveShopItem(item);
+        }
 
         ownedItems.Add(item);
+        ProgressManager.Instance.AddOwnedItem(item);
     }
 
     #endregion
 
     #region Getters and Setters
-
-    public int GetMoney()
-    {
-        return money;
-    }
-    public void AddMoney(int newMoney)
-    {
-        money += newMoney;
-    }
 
     public int GetUsedCarryingCapacity()
     {
@@ -134,17 +124,7 @@ public class StolenManager : MonoBehaviour
     public void SetUsedCapacity(int value)
     {
         usedBackpackCapacity = value;
-        GameManager.instance.UpdateCarryingCapacityText();
-    }
 
-    public int GetCarryingCapacity()
-    {
-        return backpackCapacity;
-    }
-
-    public void SetCarryingCapacity(int value)
-    {
-        backpackCapacity = value;
         GameManager.instance.UpdateCarryingCapacityText();
     }
 

@@ -6,8 +6,14 @@ public class Player : Mover
 {
     private bool isTeleporting = false;
 
+    private float newPickTimer = 0;
+    private float newPickCooldown = .3f;
+
     private void Update()
     {
+        if (newPickTimer > 0)
+            newPickTimer -= Time.deltaTime;
+
         if (!GameManager.instance.IsGamePaused())
         {
             movement.x = Input.GetAxisRaw("Horizontal");
@@ -55,5 +61,15 @@ public class Player : Mover
                 GameManager.instance.GetCinemachineShake().ShakeCamera(shakeAmplitude, .2f);
             }
         }
+    }
+
+    public void AfterThrowCooldown()
+    {
+        newPickTimer = newPickCooldown;
+    }
+
+    public bool OnPickCooldown()
+    {
+        return newPickTimer > 0;
     }
 }

@@ -11,27 +11,40 @@ public class ItemController : MonoBehaviour
         switch (item.itemType)
         {
             case Item.ItemType.Backpack:
-                int backpackCapacity = GameManager.instance.GetStolenManager().GetCarryingCapacity();
+                int backpackCapacity = ProgressManager.Instance.backpackCapacity;
 
-                GameManager.instance.GetStolenManager().SetCarryingCapacity(backpackCapacity += 3);
+                ProgressManager.Instance.SetBackpackCapacity(backpackCapacity += 3);
 
                 if (backpackCapacity == 3)
-                    GameManager.instance.GetStolenManager().shopItems.Add(Resources.Load<Item>("Items/Backpack - Medium"));
+                {
+                    Item itemToAdd = Resources.Load<Item>("Items/Backpack - Medium");
+
+                    GameManager.instance.GetStolenManager().shopItems.Add(itemToAdd);
+                    ProgressManager.Instance.AddShopItem(itemToAdd);
+                }
                 else if (backpackCapacity == 6)
-                    GameManager.instance.GetStolenManager().shopItems.Add(Resources.Load<Item>("Items/Backpack - Big"));
+                {
+                    Item itemToAdd = Resources.Load<Item>("Items/Backpack - Big");
+
+                    GameManager.instance.GetStolenManager().shopItems.Add(itemToAdd);
+                    ProgressManager.Instance.AddShopItem(itemToAdd);
+                }
 
                 break;
 
             case Item.ItemType.Rope:
-                GameManager.instance.GetStolenManager().rope += 1;
+                ProgressManager.Instance.rope += 1;
+
                 break;
 
             case Item.ItemType.Saw:
-                GameManager.instance.GetStolenManager().saw = true;
+                ProgressManager.Instance.saw = true;
+
                 break;
 
             case Item.ItemType.Protein:
-                GameManager.instance.GetStolenManager().protein = true;
+                ProgressManager.Instance.protein = true;
+
                 break;
         }
     }
