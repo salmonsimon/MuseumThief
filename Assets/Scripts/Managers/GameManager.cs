@@ -100,6 +100,11 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region Cutscenes
+
+    [SerializeField] private CutsceneManager cutsceneManager;
+
+    #endregion
 
     #endregion
 
@@ -121,6 +126,7 @@ public class GameManager : MonoBehaviour
             Destroy(levelLoader.gameObject);
             Destroy(pathfinderGraphUpdater.gameObject);
             Destroy(cinemachineShake.gameObject);
+            Destroy(cutsceneManager.gameObject);
 
             return;
         }
@@ -165,7 +171,6 @@ public class GameManager : MonoBehaviour
         if (gameHasBeenSaved)
         {
             ZSerializer.ZSerialize.LoadScene();
-            firstTimePlaying = false;
         }
 
         if (!onMainMenu)
@@ -175,8 +180,12 @@ public class GameManager : MonoBehaviour
             InventoriesUI.SetActive(true);
             mainMenu.SetActive(false);
 
-            if (firstTimePlaying && !gameHasBeenSaved)
+            if (firstTimePlaying && cutsceneManager.PlayedIntroCutscene)
+            {
                 welcomeUI.SetActive(true);
+
+                firstTimePlaying = false;
+            }
 
             GameObject virtualCameraGameObject = GameObject.FindGameObjectWithTag(Config.CINEMACHINE_CAMERA_TAG);
 
@@ -589,6 +598,16 @@ public class GameManager : MonoBehaviour
     public void SetOnEmergency(bool value)
     {
         onEmergency = value;
+    }
+
+    public void ShowInventoriesUI(bool value)
+    {
+        InventoriesUI.SetActive(value);
+    }
+
+    public CutsceneManager GetCutsceneManager()
+    {
+        return cutsceneManager;
     }
 
     #endregion

@@ -9,6 +9,8 @@ TagManager:
   - Interactible
   - Audio
   - Cinemachine Camera
+  - Intro Cutscene
+  - Museum Cutscene
   layers:
   - Default
   - TransparentFX

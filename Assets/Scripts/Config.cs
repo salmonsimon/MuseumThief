@@ -6,6 +6,7 @@ public class Config
 
     public const float MAX_SPEED_DECREASE_RATE = 0.8f;
 
+    public const float SMALL_DELAY = 0.1f;
     public const float BIG_DELAY = 0.5f;
 
     public const int DEFAULT_LAYER = 0;
@@ -28,4 +29,6 @@ public class Config
     public const string SHAKE_FILE = "Cinemachine/2D Shake";
 
     public const string CINEMACHINE_CAMERA_TAG = "Cinemachine Camera";
+    public const string INTRO_CUTSCENE_TAG = "Intro Cutscene";
+    public const string MUSEUM_CUTSCENE_TAG = "Museum Cutscene";
 }
