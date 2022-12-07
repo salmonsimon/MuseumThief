@@ -25,12 +25,16 @@ public class Portal : Collidable
     {
         GameManager.instance.GetPlayer().SetIsTeleporting(true);
 
+        if (GameManager.instance.GetOnEmergency())
+        {
+            GameManager.instance.SetOnEmergency(false);
+            GameManager.instance.GetSoundManager().StopSoundEffects();
+        }
+
         GameManager.instance.GetSoundManager().PlaySound(Config.PORTAL_SFX);
 
         GameManager.instance.GetStolenManager().CarryingToStolen();
         GameManager.instance.GetPlayer().ResetToNormalSpeed();
-
-        GameManager.instance.SetOnEmergency(false);
 
         var masterpieces = FindObjectsOfType<Masterpiece>();
 

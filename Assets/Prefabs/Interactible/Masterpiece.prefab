@@ -133,7 +133,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2043264195
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 1402425871, guid: 079aaaa3767d1ac4291fb440dbfc8e20, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stealable: {fileID: 11400000, guid: c61b9b89539f46b4abebf9f69a608a6d, type: 2}
+  originalParent: {fileID: 0}
 --- !u!114 &2095674604097055297
 MonoBehaviour:
   m_ObjectHideFlags: 0

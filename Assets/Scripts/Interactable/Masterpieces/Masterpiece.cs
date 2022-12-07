@@ -10,7 +10,7 @@ public class Masterpiece : Collectable
 
     private float newSpeedRate;
     private Vector3 originalPosition;
-    private Transform originalParent;
+    [SerializeField] private Transform originalParent;
 
     private SpriteRenderer spriteRenderer;
 

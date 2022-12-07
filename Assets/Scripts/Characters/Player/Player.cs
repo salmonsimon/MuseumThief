@@ -9,12 +9,14 @@ public class Player : Mover
     private float newPickTimer = 0;
     private float newPickCooldown = .3f;
 
-    private void Update()
+    private bool isAbleToMove = true;
+
+    protected virtual void Update()
     {
         if (newPickTimer > 0)
             newPickTimer -= Time.deltaTime;
 
-        if (!GameManager.instance.IsGamePaused())
+        if (!GameManager.instance.IsGamePaused() && isAbleToMove)
         {
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
@@ -31,9 +33,10 @@ public class Player : Mover
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        UpdateMotor(movement, has2DAnimation);
+        if (isAbleToMove)
+            UpdateMotor(movement, has2DAnimation);
     }
 
     public bool IsTeleporting()
@@ -46,7 +49,12 @@ public class Player : Mover
         isTeleporting = value; 
     }
 
-    public void ShakeIfHeavy()
+    public void SetIsAbleToMove(bool value)
+    {
+        isAbleToMove = value;
+    }
+
+    public virtual void ShakeIfHeavy()
     {
         Masterpiece heldMasterpiece = GameManager.instance.GetHeldMasterpiece();
 
