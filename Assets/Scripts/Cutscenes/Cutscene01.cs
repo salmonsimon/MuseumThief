@@ -10,6 +10,7 @@ public class Cutscene01 : Cutscene
     [Header("Items")]
 
     [SerializeField] private GameObject duckGem;
+    private Transform duckGemOriginalParent;
 
     [Space(5)]
 
@@ -25,6 +26,11 @@ public class Cutscene01 : Cutscene
     [SerializeField] private GameObject upperRightGuard;
     [SerializeField] private GameObject lowerLeftGuard;
     [SerializeField] private GameObject lowerRightGuard;
+
+    private void Start()
+    {
+        duckGemOriginalParent = duckGem.transform.parent;
+    }
 
     public void PlayCutscene()
     {
@@ -100,7 +106,7 @@ public class Cutscene01 : Cutscene
 
         GameManager.instance.GetSoundManager().PlaySound(Config.CAUGHT_SFX);
 
-        duckGem.transform.parent = null;
+        duckGem.transform.parent = duckGemOriginalParent;
         duckGem.transform.position = new Vector3(duckGem.transform.position.x, duckGem.transform.position.y - .64f, duckGem.transform.position.z);
 
         GameManager.instance.GetLevelLoader().LoadLevel(Config.STUDIO_SCENE_NAME, Config.CAUGHT_TRANSITION);

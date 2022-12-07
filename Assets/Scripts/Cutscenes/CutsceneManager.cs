@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class CutsceneManager : MonoBehaviour
 {
-    private bool playedIntroCutscene = false;
+    [SerializeField] private bool playedIntroCutscene = false;
     public bool PlayedIntroCutscene { get { return playedIntroCutscene; } set { playedIntroCutscene = value; } }
 
-    private bool playedMuseumCutscene = false;
+    [SerializeField] private bool playedMuseumCutscene = false;
     public bool PlayedMuseumCutscene { get { return playedMuseumCutscene; } set { playedMuseumCutscene = value; } }
 
 
@@ -47,12 +47,10 @@ public class CutsceneManager : MonoBehaviour
                     {
                         GameObject museumCutscene = GameObject.FindGameObjectWithTag(Config.MUSEUM_CUTSCENE_TAG);
 
-                        /*
                         if (museumCutscene) 
                         {
                             museumCutscene.GetComponent<Cutscene02>().PlayCutscene();
                         }
-                        */
                     }
 
                     break;
