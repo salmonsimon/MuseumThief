@@ -55,7 +55,8 @@ public class LevelLoader : MonoBehaviour
         {
             case Config.CROSSFADE_TRANSITION:
                 crossFade.SetTrigger("End");
-                yield return new WaitForSeconds(endTransitionTime*2);
+                //yield return new WaitForSeconds(endTransitionTime*2);
+                yield return new WaitForSeconds(endTransitionTime);
                 crossFade.gameObject.SetActive(false);
                 break;
 
@@ -70,6 +71,43 @@ public class LevelLoader : MonoBehaviour
 
         if (lastCarrying.Count > 0)
         {
+            bool broughtDuckGemBack = false;
+
+            foreach (Stealable stealable in lastCarrying)
+            {
+                if (stealable.name == "Duck Gem")
+                {
+                    broughtDuckGemBack = true;
+                    break;
+                }
+            }
+
+            if (broughtDuckGemBack)
+            {
+                Debug.Log("Brought duck gem back home");
+
+                GameObject gameClearedCutscene = GameObject.FindGameObjectWithTag(Config.GAME_CLEARED_CUTSCENE_TAG);
+
+                if (gameClearedCutscene)
+                {
+                    gameClearedCutscene.GetComponent<Cutscene03>().PlayCutscene();
+                }
+
+                yield return new WaitForSeconds(5.3f);
+
+                crossFade.gameObject.SetActive(true);
+                crossFade.SetTrigger("Start");
+
+                yield return new WaitForSeconds(startTransitionTime + Config.SMALL_DELAY);
+
+                GameManager.instance.GetPlayer().transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+                GameManager.instance.ShowInventoriesUI(true);
+
+                crossFade.SetTrigger("End");
+                yield return new WaitForSeconds(endTransitionTime * 2);
+                crossFade.gameObject.SetActive(false);
+            }
+
             yield return new WaitForSeconds(endTransitionTime);
 
             GameManager.instance.SoldDialogues(lastCarrying);

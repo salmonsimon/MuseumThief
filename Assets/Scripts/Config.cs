@@ -32,4 +32,5 @@ public class Config
     public const string CINEMACHINE_CAMERA_TAG = "Cinemachine Camera";
     public const string INTRO_CUTSCENE_TAG = "Intro Cutscene";
     public const string MUSEUM_CUTSCENE_TAG = "Museum Cutscene";
+    public const string GAME_CLEARED_CUTSCENE_TAG = "Game Cleared Cutscene";
 }
