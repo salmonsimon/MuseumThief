@@ -7,6 +7,12 @@ public class Cutscene01 : Cutscene
 {
     [Space(5)]
 
+    [Header("Music")]
+
+    [SerializeField] private AudioClip music;
+
+    [Space(5)]
+
     [Header("Items")]
 
     [SerializeField] private GameObject duckGem;
@@ -30,6 +36,11 @@ public class Cutscene01 : Cutscene
     private void Start()
     {
         duckGemOriginalParent = duckGem.transform.parent;
+
+        if (music && !GameManager.instance.GetCutsceneManager().PlayedIntroCutscene)
+        {
+            GameManager.instance.GetMusicManager().PlayMusic(music, 0);
+        }
     }
 
     public void PlayCutscene()
@@ -104,18 +115,21 @@ public class Cutscene01 : Cutscene
 
         #endregion
 
+        emergencyAlarm.SetTrigger("Stop");
+        GameManager.instance.GetSoundManager().GetComponent<AudioSource>().Stop();
+
         GameManager.instance.GetSoundManager().PlaySound(Config.CAUGHT_SFX);
 
         duckGem.transform.parent = duckGemOriginalParent;
         duckGem.transform.position = new Vector3(duckGem.transform.position.x, duckGem.transform.position.y - .64f, duckGem.transform.position.z);
-
-        GameManager.instance.GetLevelLoader().LoadLevel(Config.STUDIO_SCENE_NAME, Config.CAUGHT_TRANSITION);
 
         ActivatePlayer();
 
         emergencyAlarm.gameObject.SetActive(false);
 
         GameManager.instance.GetCutsceneManager().PlayedIntroCutscene = true;
+
+        GameManager.instance.GetLevelLoader().LoadLevel(Config.STUDIO_SCENE_NAME, Config.CAUGHT_TRANSITION);
 
         gameObject.SetActive(false);
     }

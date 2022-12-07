@@ -52,6 +52,16 @@ public class MusicManager : MonoBehaviour
         PlayMusic(scene.name);
     }
 
+    public void PlayMusic(AudioClip audioClip, float delay)
+    {
+        StopMusic();
+
+        audioSource.loop = true;
+        audioSource.clip = audioClip;
+
+        StartCoroutine(WaitAndPlay(delay));
+    }
+
     public void PlayMusic(string sceneName)
     {
         switch (sceneName)

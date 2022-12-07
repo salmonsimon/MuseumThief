@@ -102,4 +102,10 @@ public class SoundManager : MonoBehaviour
     {
         audioSource.PlayOneShot(audioClip);
     }
+
+    public void StopSoundEffects()
+    {
+        StopAllCoroutines();
+        audioSource.Stop();
+    }
 }
