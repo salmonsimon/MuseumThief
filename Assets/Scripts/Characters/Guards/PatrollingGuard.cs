@@ -11,7 +11,7 @@ public class PatrollingGuard : Guard
     [SerializeField] private float waitInPatrollingPoint = 2f;
 
     private bool waiting = false;
-    private bool startedChasing = false;
+    [SerializeField] private bool startedChasing = false;
 
     protected override void UpdatePath()
     {
@@ -35,8 +35,8 @@ public class PatrollingGuard : Guard
         if (Vector3.Distance(currentPatrollingGoal.position, transform.position) < roundingDistance && !waiting)
             StartCoroutine(ChangePatrollingGoalDelayed());
 
-        if (!startedChasing && !chasing)
-        startingPosition = transform.position;
+        if (!startedChasing && !chasing && !onChasingPath)
+            startingPosition = transform.position;
 
         if (Vector3.Distance(playerTransform.position, startingPosition) < chaseLenght)
         {
@@ -112,8 +112,6 @@ public class PatrollingGuard : Guard
                 chasing = false;
                 FinishedChasing();
 
-                startedChasing = false;
-
                 return;
             }
 
@@ -123,7 +121,8 @@ public class PatrollingGuard : Guard
             if (currentWaypoint >= path.vectorPath.Count)
             {
                 reachedEndOfPath = true;
-                
+                startedChasing = false;
+
                 UpdateMotor(Vector3.zero, false);
 
                 return;
@@ -137,11 +136,13 @@ public class PatrollingGuard : Guard
                 if (distance < nextWaypointDistance)
                 {
                     currentWaypoint++;
+                    startedChasing = false;
                 }
 
                 if (currentWaypoint >= path.vectorPath.Count)
                 {
                     reachedEndOfPath = true;
+                    startedChasing = false;
 
                     UpdateMotor(Vector3.zero, false);
 

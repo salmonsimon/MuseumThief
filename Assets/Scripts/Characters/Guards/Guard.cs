@@ -13,11 +13,11 @@ public class Guard : Mover
     [SerializeField] private float chasingXSpeed = 1.2f;
     [SerializeField] private float chasingYSpeed = 1.2f;
 
-    protected bool chasing;
+    [SerializeField] protected bool chasing;
     private bool retreating;
     protected bool onChasingPath;
     protected Transform playerTransform;
-    protected Vector3 startingPosition;
+    [SerializeField] protected Vector3 startingPosition;
 
     protected Seeker seeker;
     protected Path path;

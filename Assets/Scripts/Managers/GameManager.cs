@@ -136,6 +136,8 @@ public class GameManager : MonoBehaviour
         }
 
         instance = this;
+
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
     }
 
     private void Start()
@@ -259,6 +261,7 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        GameManager.instance.GetSoundManager().PlaySound(Config.HOVER_SFX);
         GameManager.instance.SetGameIsPaused(false);
 
         pauseMenu.SetActive(false);
