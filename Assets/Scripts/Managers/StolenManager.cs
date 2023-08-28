@@ -29,6 +29,10 @@ public class StolenManager : MonoBehaviour
 
     public void LoadStolenManager()
     {
+        stolen.Clear();
+        shopItems.Clear();
+        ownedItems.Clear();
+
         foreach (string name in ProgressManager.Instance.stolen)
         {
             Stealable stealableToAdd = Resources.Load<Stealable>("Stealables/" + name);

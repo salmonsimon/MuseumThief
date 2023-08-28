@@ -15,6 +15,6 @@ MonoBehaviour:
   itemName: Saw
   itemDescription: Having annoying obstacles in life? Nothing a saw can't fix.
   icon: {fileID: 21300000, guid: ae5f82d7a778ddd41afe79a6e89d1ef1, type: 3}
-  price: 250
+  price: 100
   infiniteAmount: 0
   itemType: 2
